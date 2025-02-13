@@ -3,7 +3,8 @@
 Fuse computer vision, machine learning, mechanics, and hardware systems to build bots of the future!  
 * Course: https://www.udacity.com/course/robotics-software-engineer--nd209  
 * GitHub repo:  
-    * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree   
+    * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
+    * https://github.com/nov05/udacity-RoboND-myrobot 
 * Local env:
     * Windows 11
     * VMWare Workstation Player Pro 17.0 for Windows ([blog](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html), [archive](https://web.archive.org/web/20250212212707/https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html))   
