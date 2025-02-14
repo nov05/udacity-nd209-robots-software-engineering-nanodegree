@@ -31,7 +31,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * World design `UdacityOffice`  
 
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2009_00_38-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>  
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2011_30_24-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>  
 
 <br><br><br>  
 
@@ -140,6 +140,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```sh
     $ gedit ~/.gazebo/gui.ini
     ```
+<br><br><br>  
+
+# 👉 **Tips**
+
+* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))  
 
 <br><br><br>  
 
