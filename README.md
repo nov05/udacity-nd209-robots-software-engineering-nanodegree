@@ -56,7 +56,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 # 👉 **Environment**
 
 * Local env:
-    * Windows 11
+    * Windows 11, VS Code  
     * VMWare Workstation Player Pro 17.0 for Windows ([blog](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html), [archive](https://web.archive.org/web/20250212212707/https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html))   
         * Release 17.6.2 (`D:\Program Files (x86)\VMware\VMware Workstation\`)  
     * VM image [`RoboVM V2.1.0.zip`](https://s3-us-west-1.amazonaws.com/udacity-robotics/Virtual+Machines/Lubuntu_071917/RoboVM_V2.1.0.zip):
