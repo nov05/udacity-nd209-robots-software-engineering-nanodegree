@@ -42,9 +42,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2012_10_20-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>
 
-* Prompt **ChatGPT** to help design a robot model. Use **VS Code** to create the necessary model files locally, then commit those files to **GitHub**. Afterward, perform a `git pull` on the VM to retrieve the files from GitHub and import the model into Gazebo for testing and simulation.  
+* Prompt **ChatGPT** to help design a robot model (generating some `.sdf` content). Use **VS Code** to create the necessary model files locally, then commit those files to **GitHub**. Afterward, perform a `git pull` on the VM to retrieve the files from GitHub and import the model into Gazebo for testing and simulation.  
 
-    > Design a simple humanoid robot in Gazebo with a body supported by three spherical wheels arranged in an equilateral triangle. The wheels enable movement in all directions. To maintain the robot's stability, add links between the wheels to keep their relative positions fixed, and connect the wheels to the body to prevent it from sinking to the ground.
+    * Prompts:  
+
+        > Design a simple humanoid robot in Gazebo with a body supported by three spherical wheels arranged in an equilateral triangle. The wheels enable movement in all directions. To maintain the robot's stability, add links between the wheels to keep their relative positions fixed, and connect the wheels to the body to prevent it from sinking to the ground.
 
 * The world `UdacityOffice` with 2 instances of the robot `HumanoidRobot`   
 
@@ -62,8 +64,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * VM image [`RoboVM V2.1.0.zip`](https://s3-us-west-1.amazonaws.com/udacity-robotics/Virtual+Machines/Lubuntu_071917/RoboVM_V2.1.0.zip):
         * `Ubuntu 64-bit Robo V2.1.0.ova`, 4.85 GB  
           Powershell `Get-FileHash -Path "Ubuntu 64-bit Robo V2.1.0.ova" -Algorithm MD5`  
-          VM name: `D:\Users\*\Virtual Machines\Udacity Robotics`
-        * Check Ubuntu version in Terminator  
+          VM name: `D:\Users\*\Virtual Machines\Udacity Robotics`, password `robo-nd`  
+        * Check **Ubuntu** version in Terminator  
             ```bash
             robond@udacity:~$ lsb_release -a
             No LSB modules are available.
@@ -74,7 +76,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
             ```
         * Check CMake version `cmake --version` in Terminator  
           `cmake 3.5.1`
-        * Check Robot Operating System (ROS) version in Terminator
+        * Check **Robot Operating System (ROS)** version in Terminator
             ```bash
             robond@udacity:~$ rosversion -d
             kinetic
@@ -92,10 +94,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         * Update the image in Terminator $`sudo apt-get update && sudo apt-get upgrade -y`  
         * Launch Gazebo in Terminator $`gazebo`
 
-* Clone GitHub repo to the VM `/home/workspace` folder  
+* Clone GitHub repo as the VM `/home/robond/myrobot/` folder  
 
     ```bash
-    robond@udacity:/home/workspace$ sudo git clone https://github.com/nov05/udacity-RoboND-myrobot.git myrobot
+    robond@udacity:/home/robond$ sudo git clone https://github.com/nov05/udacity-RoboND-myrobot.git myrobot
     Cloning into 'myrobot'...
     remote: Enumerating objects: 49, done.
     remote: Counting objects: 100% (12/12), done.
@@ -107,7 +109,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Create a `Personal Access Token` on GitHub and push from the VM 
 
     ```sh
-    robond@udacity:/home/workspace/myrobot$ git push
+    robond@udacity:/home/robond/myrobot$ git push
     warning: push.default is unset; its implicit value has changed in
     Git 2.0 from 'matching' to 'simple'. To squelch this message
     and maintain the traditional behavior, use:
@@ -145,7 +147,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Gazebo plugin build
 
     ```sh
-    $ sudo apt-get update && sudo apt-get upgrade -y
+    $ sudo apt-get update && sudo apt-get upgrade -y  ## Update the image
     $ gedit CMakeLists.txt
     $ cd build
     $ cmake ..
@@ -187,4 +189,5 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Logs**
 
+* 2025-02-14 p1 submission, [LinkedIn post](https://www.linkedin.com/posts/wenjingliu7_robotics-simulation-activity-7296250187637735425-HLvY)    
 * 2025-02-11 repo created  
