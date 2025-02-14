@@ -5,6 +5,38 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
     * https://github.com/nov05/udacity-RoboND-myrobot 
+
+<br><br><br> 
+
+# 👉 **Project 1: Build My World - Udacity Office**
+
+* [Directory structure](https://github.com/nov05/udacity-RoboND-myrobot)   
+
+    ```bash
+        .Project1                          # Build My World Project 
+        ├── model                          # Model files 
+        │   ├── Building
+        │   │   ├── model.config
+        │   │   ├── model.sdf
+        │   ├── HumanoidRobot
+        │   │   ├── model.config
+        │   │   ├── model.sdf
+        ├── script                         # Gazebo World plugin C++ script      
+        │   ├── welcome_message.cpp
+        ├── world                          # Gazebo main World containing models 
+        │   ├── UdacityOffice.world
+        ├── CMakeLists.txt                 # Link libraries 
+        └──                              
+    ```
+
+* World design `UdacityOffice`  
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2009_00_38-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>  
+
+<br><br><br>  
+
+# 👉 **Environment**
+
 * Local env:
     * Windows 11
     * VMWare Workstation Player Pro 17.0 for Windows ([blog](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html), [archive](https://web.archive.org/web/20250212212707/https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html))   
@@ -101,6 +133,12 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
     $ echo $GAZEBO_PLUGIN_PATH
     robond@udacity:~/myrobot/world$ gazebo myworld --verbose
+    ```
+
+* Gazebo remove model dirs
+
+    ```sh
+    $ gedit ~/.gazebo/gui.ini
     ```
 
 <br><br><br>  
