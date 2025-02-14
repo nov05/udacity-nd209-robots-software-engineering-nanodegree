@@ -92,11 +92,14 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     error: update_ref failed for ref 'refs/remotes/origin/master': cannot lock ref 'refs/remotes/origin/master': Unable to create '/home/workspace/myrobot/.git/refs/remotes/origin/master.lock': Permission denied
     ```
 
-* Gazebo plugin after build
+* Gazebo plugin build
 
     ```sh
-    export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
-    echo $GAZEBO_PLUGIN_PATH
+    $ gedit CMakeLists.txt
+    $ cd build
+    $ cmake ..
+    $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
+    $ echo $GAZEBO_PLUGIN_PATH
     robond@udacity:~/myrobot/world$ gazebo myworld --verbose
     ```
 
