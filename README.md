@@ -33,6 +33,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2011_30_24-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>  
 
+* `UdacityOffice` world `welcome_message` plugin  
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2012_10_20-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>
+
 <br><br><br>  
 
 # 👉 **Environment**
@@ -127,15 +131,26 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Gazebo plugin build
 
     ```sh
+    $ sudo apt-get update && sudo apt-get upgrade -y
     $ gedit CMakeLists.txt
     $ cd build
     $ cmake ..
+    $ make    ## You might get errors if your system is not up to date!
     $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
     $ echo $GAZEBO_PLUGIN_PATH
+    $ cd /home/myrobot/world
     robond@udacity:~/myrobot/world$ gazebo UdacityOffice --verbose
     ```
 
-* Gazebo remove model dirs
+    * Edit the world file, add the plugin information   
+    ```
+    $ gedit UdacityOffice
+    ```
+    ```
+    <world name="defaul">
+        <plugin name="welcome_message" filename="libwelcome_message.so"/>
+    ```
+* ✅ Tips: Gazebo remove model dirs
 
     ```sh
     $ gedit ~/.gazebo/gui.ini
