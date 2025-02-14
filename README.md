@@ -42,6 +42,64 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         * Update the image in Terminator $`sudo apt-get update && sudo apt-get upgrade -y`  
         * Launch Gazebo in Terminator $`gazebo`
 
+* Clone GitHub repo to the VM `/home/workspace` folder  
+
+    ```bash
+    robond@udacity:/home/workspace$ sudo git clone https://github.com/nov05/udacity-RoboND-myrobot.git myrobot
+    Cloning into 'myrobot'...
+    remote: Enumerating objects: 49, done.
+    remote: Counting objects: 100% (12/12), done.
+    remote: Compressing objects: 100% (7/7), done.
+    remote: Total 49 (delta 2), reused 4 (delta 1), pack-reused 37 (from 1)
+    Unpacking objects: 100% (49/49), done.
+    Checking connectivity... done.
+    ```
+* Create a `Personal Access Token` on GitHub and push from the VM 
+
+    ```sh
+    robond@udacity:/home/workspace/myrobot$ git push
+    warning: push.default is unset; its implicit value has changed in
+    Git 2.0 from 'matching' to 'simple'. To squelch this message
+    and maintain the traditional behavior, use:
+
+    git config --global push.default matching
+
+    To squelch this message and adopt the new behavior now, use:
+
+    git config --global push.default simple
+
+    When push.default is set to 'matching', git will push local branches
+    to the remote branches that already exist with the same name.
+
+    Since Git 2.0, Git defaults to the more conservative 'simple'
+    behavior, which only pushes the current branch to the corresponding
+    remote branch that 'git pull' uses to update the current branch.
+
+    See 'git help config' and search for 'push.default' for further information.
+    (the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+    'current' instead of 'simple' if you sometimes use older versions of Git)
+
+    Username for 'https://github.com': nov05
+    Password for 'https://nov05@github.com': 
+    Counting objects: 50, done.
+    Delta compression using up to 2 threads.
+    Compressing objects: 100% (47/47), done.
+    Writing objects: 100% (50/50), 109.89 KiB | 0 bytes/s, done.
+    Total 50 (delta 9), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (9/9), completed with 1 local object.
+    To https://github.com/nov05/udacity-RoboND-myrobot.git
+    d491e63..9210327  master -> master
+    error: update_ref failed for ref 'refs/remotes/origin/master': cannot lock ref 'refs/remotes/origin/master': Unable to create '/home/workspace/myrobot/.git/refs/remotes/origin/master.lock': Permission denied
+    ```
+
+* Gazebo plugin after build
+
+    ```sh
+    export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
+    echo $GAZEBO_PLUGIN_PATH
+    robond@udacity:~/myrobot/world$ gazebo myworld --verbose
+    ```
+
 <br><br><br>  
 
 # 👉 **Notes**
