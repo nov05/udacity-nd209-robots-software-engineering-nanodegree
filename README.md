@@ -5,6 +5,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
     * https://github.com/nov05/udacity-RoboND-myrobot 
+* Workflow: 
+    * Create repositories on **GitHub**.  
+    * Download them to both the virtual machine and the local computer.   
+    * Use the VM for graphic design in **Gazebo**, and handle coding and other tasks on the local machine using **VS Code**.
+    * Synchronize all the work through GitHub between both environments.
 
 <br><br><br> 
 
@@ -36,6 +41,15 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * `UdacityOffice` world `welcome_message` plugin  
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2012_10_20-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>
+
+* Prompt **ChatGPT** to help design a robot model. Use **VS Code** to create the necessary model files locally, then commit those files to **GitHub**. Afterward, perform a `git pull` on the VM to retrieve the files from GitHub and import the model into Gazebo for testing and simulation.  
+
+    > Design a simple humanoid robot in Gazebo with a body supported by three spherical wheels arranged in an equilateral triangle. The wheels enable movement in all directions. To maintain the robot's stability, add links between the wheels to keep their relative positions fixed, and connect the wheels to the body to prevent it from sinking to the ground.
+
+* The world `UdacityOffice` with 2 instances of the robot `HumanoidRobot`   
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/imgonline-com-ua-twotoone-biiKjJPC49GKkhu7.jpg" width=800>   
+
 
 <br><br><br>  
 
