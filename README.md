@@ -132,7 +132,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cmake ..
     $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
     $ echo $GAZEBO_PLUGIN_PATH
-    robond@udacity:~/myrobot/world$ gazebo myworld --verbose
+    robond@udacity:~/myrobot/world$ gazebo UdacityOffice --verbose
     ```
 
 * Gazebo remove model dirs
