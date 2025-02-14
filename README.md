@@ -15,7 +15,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 1: Build My World - Udacity Office**
 
-* [Directory structure](https://github.com/nov05/udacity-RoboND-myrobot)   
+* ✅ [Directory structure](https://github.com/nov05/udacity-RoboND-myrobot) (<- Code is contained in this repo.)  
 
     ```bash
         .Project1                          # Build My World Project 
