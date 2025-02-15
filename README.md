@@ -40,6 +40,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * `UdacityOffice` world `welcome_message` plugin  
 
+    * You can add `$ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build` by using `$ nano ~/.bashrc`.
+
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-02-14%2012_10_20-Udacity%20Robotics%20-%20VMware%20Workstation.jpg" width=800>
 
 * Prompt **ChatGPT** to help design a robot model (generating some `.sdf` content). Use **VS Code** to create the necessary model files locally, then commit those files to **GitHub**. Afterward, perform a `git pull` on the VM to retrieve the files from GitHub and import the model into Gazebo for testing and simulation.  
