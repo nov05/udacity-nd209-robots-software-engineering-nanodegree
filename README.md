@@ -15,6 +15,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 1: Build My World - Udacity Office**
 
+* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://youtu.be/z1w60MefD5I)   
+
 * ✅ [Directory structure](https://github.com/nov05/udacity-RoboND-myrobot) (<- Code is contained in this repo.)  
 
     ```bash
