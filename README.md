@@ -4,7 +4,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Course: https://www.udacity.com/course/robotics-software-engineer--nd209  
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
-    * https://github.com/nov05/udacity-RoboND-myrobot 
+    * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1) 
+    * https://github.com/nov05/udacity-RoboND-simple_arm  
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
@@ -175,6 +176,59 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```sh
     $ gedit ~/.gazebo/gui.ini
     ```
+
+* Run Turtlesim nodes in 3 terminals  
+    ```sh
+    $ roscore
+    $ rosrun turtlesim turtlesim_node
+    $ rosrun turtlesim turtle_teleop_key
+    ```
+
+* Build a **Catkin** workspace
+    ```sh
+    $ mkdir -p ~/catkin_ws/src
+    $ cd ~/catkin_ws/src
+    $ catkin_init_workspace
+    $ ls -l
+    $ cd ~/catkin_ws
+    $ catkin_make
+    $ ls   ## two new directories: build and devel
+    ```
+    * Output example:  
+        ```bash
+        robond@udacity:~/catkin_ws/src$ catkin_init_workspace
+        Creating symlink "/home/robond/catkin_ws/src/CMakeLists.txt" pointing to "/opt/ros/kinetic/share/catkin/cmake/toplevel.cmake"
+        ...
+        $ catkin_make
+        $ ls
+        robond@udacity:~/catkin_ws$ ls
+        build  devel  src
+        ```
+
+* Build and launch `simple_arm` package    
+    * \<PAT\> ~ GitHub Personal Access Token  
+    * `Ctrl+c` to kill all procs    
+    ```sh
+    $ cd ~/catkin_ws/src/
+    $ git clone -b first_interaction https://<PAT>@github.com/nov05/udacity-RoboND-simple_arm simple_arm
+    $ cd simple_arm
+    $ git remote -v
+    $ cd ~/catkin_ws
+    $ catkin_make
+    $ source devel/setup.bash
+    $ rosdep check simple_arm  ## output: e.g. All system dependencies have been satisified
+    $ roslaunch simple_arm robot_spawn.launch
+    ```
+
+* Create a new node in `C++`
+    ```sh
+    $ cd ~/catkin_ws/src/simple_arm/
+    $ mkdir src
+    $ cd ~/catkin_ws/src/simple_arm/src/
+    $ touch simple_mover.cpp
+    ```
+    
+
 <br><br><br>  
 
 # 👉 **Tips**
