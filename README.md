@@ -228,6 +228,24 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/src/simple_arm/src/
     $ touch simple_mover.cpp
     ```
+    * Build the node
+    ```sh
+    $ cd ~/catkin_ws/
+    $ catkin_make
+    ```
+    * Launch the arm setting in one terminal
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ roslaunch simple_arm robot_spawn.launch
+    ```
+    * Run the `simple_mover` mode in another terminal
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rosrun simple_arm simple_mover
+    ```
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_simple%20mover.gif" width=600>
     
 
 <br><br><br>  
