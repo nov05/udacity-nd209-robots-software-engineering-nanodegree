@@ -5,7 +5,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
     * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1) 
-    * https://github.com/nov05/udacity-RoboND-simple_arm  
+    * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3) 
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
@@ -212,15 +212,16 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/src/
     $ git clone -b first_interaction https://<PAT>@github.com/nov05/udacity-RoboND-simple_arm simple_arm
     $ cd simple_arm
-    $ git remote -v
+    $ git remote -v  ## check GitHub remote setup
     $ cd ~/catkin_ws
     $ catkin_make
     $ source devel/setup.bash
+    $ rosdep install -i simple_arm  ## output: e.g. #All required rosdeps installed successfully
     $ rosdep check simple_arm  ## output: e.g. All system dependencies have been satisified
     $ roslaunch simple_arm robot_spawn.launch
     ```
 
-* Create a new node in `C++`
+* Create a new node `simple_mover` in `C++`
     ```sh
     $ cd ~/catkin_ws/src/simple_arm/
     $ mkdir src
