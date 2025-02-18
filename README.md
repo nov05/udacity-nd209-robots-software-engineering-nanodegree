@@ -245,8 +245,16 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ source devel/setup.bash
     $ rosrun simple_arm simple_mover
     ```
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_simple%20mover.gif" width=600>
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_simple%20mover.gif" width=800>
     
+* Create a service `GoToPosition` and check it
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rossrv show GoToPosition
+    ```
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_gotoposition%20service.jpg" width=800>
+
 
 <br><br><br>  
 
