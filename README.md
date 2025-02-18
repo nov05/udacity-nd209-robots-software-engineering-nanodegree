@@ -247,13 +247,61 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_simple%20mover.gif" width=800>
     
-* Create a service `GoToPosition` and check it
+* Create a service `GoToPosition` and check
     ```sh
     $ cd ~/catkin_ws/
     $ source devel/setup.bash
     $ rossrv show GoToPosition
     ```
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250217_gotoposition%20service.jpg" width=800>
+
+* Add a node `arm_mover`, build and check. Make sure node `/arm_mover` and service `/arm_mover/safe_move` are there.  
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ roslaunch simple_arm robot_spawn.launch
+    $ rosnode list
+    $ rosservice list
+    ```
+
+* To view the camera image stream, in one terminal:    
+    ```sh
+    $ rqt_image_view /rgb_camera/image_raw
+    ```
+
+    * In another terminal, rotate both joint 1 and joint 2 by approximately pi/2 radians: 
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rosservice call /arm_mover/safe_move "joint_1: 1.57
+    joint_2: 1.57"
+    ```
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_simple_arm_camera_view.jpg" width=800>  
+
+    * The resulting position of the arm was not expected. Looking at the roscore console, we can see the problem. The requested angle for joint 2 was out of the safe bounds, so it was clamped. We requested 1.57 radians, but the maximum joint angle was set to 1.0 radians.  
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_joint2_out_of_bounds.jpg" width=800>
+
+    * By setting the max_joint_2_angle on the parameter server, we should be able to increase joint 2’s maximum angle and bring the blocks into view the next time we request a service.  
+    ```sh
+    $ rosparam set /arm_mover/max_joint_2_angle 1.57
+    $ rosservice call /arm_mover/safe_move "joint_1: 1.57
+    joint_2: 1.57"
+    ```
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_simple_arm_camera_view_2.jpg" width=800>  
+ 
+* Add a node `look_away`. Launch `simple_arm` and camera view. Run the node.
+    * Whenever the camera is pointed towards an uninteresting image - in this case, an image with uniform color - the callback function will request a safe_move service to safely move the arm back to the center position.   
+    * The command below will direct the camera upwards, toward the ceiling, which has a uniform gray color.
+
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rosservice call /arm_mover/safe_move "joint_1: 0
+    joint_2: 0"
+    ```
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_look_away.gif" width=800>  
 
 
 <br><br><br>  
