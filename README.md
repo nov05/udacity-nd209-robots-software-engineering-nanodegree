@@ -150,6 +150,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     error: update_ref failed for ref 'refs/remotes/origin/master': cannot lock ref 'refs/remotes/origin/master': Unable to create '/home/workspace/myrobot/.git/refs/remotes/origin/master.lock': Permission denied
     ```
 
+# 👉 **Build and Launch**    
+
 * Gazebo plugin build
 
     ```sh
@@ -303,6 +305,36 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_look_away.gif" width=800>  
+
+* Launch `empty.world`  
+    ```sh
+    $ cd ~/catkin_ws/
+    $ catkin_make
+    $ source devel/setup.bash
+    $ roslaunch my_robot world.launch
+    ```
+
+* ✅ Tips: Check Gazebo pre-defined materials (colors)
+    ```sh
+    $ nano /usr/share/gazebo-7/media/materials/scripts/gazebo.material 
+    ```
+
+* Launch RViz (ROC Visualization)  
+    ```sh
+    $ roscore     ## in one terminal
+    $ cd ~/catkin_ws      ## in another terminal 
+    $ source devel/setup.bash
+    $ rosrun rviz rviz
+    ```  
+    
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250220-p2-my_robot-rviz.jpg" width=800>   
+
+* ✅ Tips: Check ROS topics
+    ```sh
+    $ rostopic list
+    ```
+
+
 
 
 <br><br><br>  
