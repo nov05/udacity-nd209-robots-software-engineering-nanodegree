@@ -5,15 +5,31 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
     * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1) 
-    * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3) 
-    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, P2 `~/catkin_ws/src`)
+    * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3, as `~/catkin_ws/src/simple_arm` in VM) 
+    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, P2, as `~/catkin_ws/src` in VM)
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
     * Use the VM for graphic design in **Gazebo**, and handle coding and other tasks on the local machine using **VS Code**.
     * Synchronize all the work through GitHub between both environments.
 
+
 <br><br><br> 
+
+
+# 👉 **Project 2: ROS Essentials**  
+
+* Operations:  
+    * Launch `udacity_office.world` 
+        ```sh
+        $ cd ~/catkin_ws/
+        $ source devel/setup.bash
+        $ roslaunch my_robot udacity_office.launch
+        ```
+
+<br><br><br>  
+
+
 
 # 👉 **Project 1: Build My World - Udacity Office**
 
@@ -158,11 +174,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ sudo apt-get update && sudo apt-get upgrade -y  ## Update the image
     $ gedit CMakeLists.txt
     $ cd build
-    $ cmake ..
-    $ make    ## You might get errors if your system is not up to date!
+    $ sudo cmake ..
+    $ sudo make    ## You might get errors if your system is not up to date!
     $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
     $ echo $GAZEBO_PLUGIN_PATH
-    $ cd /home/myrobot/world
+    $ cd ~/myrobot/world
     robond@udacity:~/myrobot/world$ gazebo UdacityOffice --verbose
     ```
 
@@ -311,7 +327,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/
     $ catkin_make
     $ source devel/setup.bash
-    $ roslaunch my_robot world.launch
+    $ roslaunch my_robot my_empty_world.launch
     ```
 
 * ✅ Tips: Check Gazebo pre-defined materials (colors)
@@ -326,15 +342,47 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ source devel/setup.bash
     $ rosrun rviz rviz
     ```  
-    
+
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250220-p2-my_robot-rviz.jpg" width=800>   
+
+* ✅ Tips: Remove unwanted RViz config save directories  
+    ```sh
+    $ gedit ~/.rviz/persistent_settings
+    ```
 
 * ✅ Tips: Check ROS topics
     ```sh
     $ rostopic list
     ```
 
+* Create `ball_chaser` package
+    ```sh
+    $ cd ~/catkin_ws/src/
+    $ catkin_create_pkg ball_chaser roscpp std_msgs message_generation
+    ```
 
+* Check `GoToTarget.srv`
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rossrv show DriveToTarget
+    ```
+
+* Find ROSLaunch processes and kill them  
+    ```sh
+    $ ps aux | grep roslaunch
+    $ kill -9 <PID>
+    ```
+    * Output example 
+        ```sh
+        robond@udacity:~/catkin_ws$ ps aux | grep roslaunch
+        robond    15057  0.1  0.4 323936 54212 pts/0    Tl   14:36   0:02 /usr/bin/python /opt/ros/kinetic/bin/roslaunch my_robot udacity_office.launch
+        robond    16575  0.6  0.4 317344 53844 pts/0    Tl   15:02   0:00 /usr/bin/python /opt/ros/kinetic/bin/roslaunch my_robot udacity_office.launch
+        robond    16989  0.0  0.0  14224   940 pts/0    S+   15:03   0:00 grep --color=auto roslaunch
+        robond@udacity:~/catkin_ws$ kill -9 15057
+        robond@udacity:~/catkin_ws$ kill -9 16575
+        [1]-  Killed                  roslaunch my_robot udacity_office.launch
+        ```
 
 
 <br><br><br>  
@@ -347,9 +395,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Notes**
 
-* [General notes](https://docs.google.com/document/d/1_Db2GAFUqI-keQkRsCEntAGOvuWH1VeEW4K6jkZvGR8)  
+* [General notes](https://docs.google.com/document/d/1_Db2GAFUqI-keQkRsCEntAGOvuWH1VeEW4K6jkZvGR8) (Google Docs)  
+* [Issues](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf) (GitHub Gists)  
+* ✅ [Create VM from `.ova` file on GCP](https://docs.google.com/document/d/14UFho0Y016uKzwcONHoIvHx2xc6Wgn7RNHu0Xd1vahk) (Google Docs)   
 
-[All other notes for this project](https://drive.google.com/drive/folders/1rELDomnQWSf4vpBQr2bQLtAY1zxpogzx)  
+[All other notes for this project](https://drive.google.com/drive/folders/1rELDomnQWSf4vpBQr2bQLtAY1zxpogzx) (Google Drive)  
 
 <br><br><br>  
 
