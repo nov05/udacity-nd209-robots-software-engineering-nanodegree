@@ -263,9 +263,13 @@ do_install() {
 
 			(
 			set -x
-			$sh_c "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2486D2DD83DB69272AFE98867170598AF249743"
-			$sh_c "mkdir -p /etc/apt/sources.list.d"
-			$sh_c "echo deb http://packages.osrfoundation.org/gazebo/$lsb_dist\-stable $dist_version main > /etc/apt/sources.list.d/gazebo-stable.list"
+			## changed by nov05
+			# $sh_c "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D2486D2DD83DB69272AFE98867170598AF249743"
+			# $sh_c "mkdir -p /etc/apt/sources.list.d"
+			# $sh_c "echo deb http://packages.osrfoundation.org/gazebo/$lsb_dist\-stable $dist_version main > /etc/apt/sources.list.d/gazebo-stable.list"
+			$sh_c "mkdir -p /etc/share/keyrings/"
+			$sh_c "curl -sSL https://packages.osrfoundation.org/gazebo.key | sudo tee /usr/share/keyrings/gazebo-archive-keyring.gpg > /dev/null"
+			$sh_c "echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gazebo-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main\" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null"
 			$sh_c "sleep 3; apt-get update; apt-get install -y -q $DEB_PKG_NAME"
 			)
 			exit 0
