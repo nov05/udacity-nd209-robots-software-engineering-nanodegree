@@ -1,3 +1,6 @@
+## Added by Nov05
+secrets/  
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
