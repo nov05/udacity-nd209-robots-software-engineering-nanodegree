@@ -1,26 +1,35 @@
-## 👉 Lauch the loacl environment: 
+## 👉 Launch the enviroment
 
+#### 🏷️ Launch the VMWare enviroment:
+`Ubuntu-16.04` + `ROS` + `Gazebo Classic`  
+The default user is `robond` (password `robo-nd`)  
+
+```sh
+$ gazebo
+```
+
+#### 🏷️ Launch the loacl environment: 
 `WSL2 Ubuntu-22.04` + `ROS2` + `Gazebo Ignition Fortress`
 
 ```sh
 $ echo "export LIBGL_ALWAYS_SOFTWARE=1" >> ~/.bashrc  ## skip if it has been added to ~/.bashrc with user "guido"
 $ source ~/.bashrc   ## skip if it has been added
 $ echo $LIBGL_ALWAYS_SOFTWARE  
+$ ign gazebo    
 $ ign gazebo --render-engine ogre2
-$ ign gazebo
 $ sudo adduser robond  ## skip if user "robond" has been created, password "robo-nd"
-$ sudo usermod -aG sudo robond  ## skip user "robond" has been created
+$ sudo usermod -aG sudo robond  ## skip if user "robond" has been created
 $ su - robond   ## switch current user to robond
 ```
 
 
-## 👉 Course 2 Gazebo World, P1 Build a world
+## 👉 Course 2 Gazebo World, P1 Build a world (no ROS)
 
 ```sh
 $ cd ~
 $ git clone -b master https://<PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot
+$ mkdir -p myrobt/build
 $ cd myrobot/build
-$ rm CMakeCache.txt
 $ sudo cmake ..
 $ sudo make    ## You might get errors if your system is not up to date!
 $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
