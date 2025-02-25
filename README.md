@@ -119,7 +119,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Clone GitHub repo as the VM `/home/robond/myrobot/` folder  
 
     ```bash
-    robond@udacity:/home/robond$ sudo git clone https://github.com/nov05/udacity-RoboND-myrobot.git myrobot
+    $ sudo git clone -b master https://<GitHub-PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot
     Cloning into 'myrobot'...
     remote: Enumerating objects: 49, done.
     remote: Counting objects: 100% (12/12), done.
@@ -179,7 +179,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
     $ echo $GAZEBO_PLUGIN_PATH
     $ cd ~/myrobot/world
-    robond@udacity:~/myrobot/world$ gazebo UdacityOffice --verbose
+    $ gazebo UdacityOffice --verbose
     ```
 
     * Edit the world file, add the plugin information   
@@ -195,6 +195,16 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```sh
     $ gedit ~/.gazebo/gui.ini
     ```
+
+* The course image has pre-installed the following package.
+    * For class workspace:
+        ```sh
+        $ sudo apt-get install ros-noetic-controller-manager
+        ```
+    * For the VM image: 
+        ```sh
+        $ sudo apt-get install ros-kinetic-controller-manager
+        ```
 
 * Run Turtlesim nodes in 3 terminals  
     ```sh
@@ -327,9 +337,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/
     $ catkin_make
     $ source devel/setup.bash
-    $ roslaunch my_robot my_empty_world.launch
+    $ roslaunch my_robot empty_world.launch
     ```
-
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250220-p2-my_robot-rviz.jpg" width=800> 
+    
 * ✅ Tips: Check Gazebo pre-defined materials (colors)
     ```sh
     $ nano /usr/share/gazebo-7/media/materials/scripts/gazebo.material 
@@ -341,9 +352,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws      ## in another terminal 
     $ source devel/setup.bash
     $ rosrun rviz rviz
-    ```  
-
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250220-p2-my_robot-rviz.jpg" width=800>   
+    ```    
 
 * ✅ Tips: Remove unwanted RViz config save directories  
     ```sh
@@ -389,7 +398,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Tips**
 
-* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))  
+* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))   
+* The 
+    `$ sudo gedit opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py` 
+    ```python  
+    ```
 
 <br><br><br>  
 
@@ -397,7 +410,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * [General notes](https://docs.google.com/document/d/1_Db2GAFUqI-keQkRsCEntAGOvuWH1VeEW4K6jkZvGR8) (Google Docs)  
 * [Issues](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf) (GitHub Gists)  
-* ✅ [Create VM from `.ova` file on GCP](https://docs.google.com/document/d/14UFho0Y016uKzwcONHoIvHx2xc6Wgn7RNHu0Xd1vahk) (Google Docs)   
+* ✅ [Create VM from `.ova` file on GCP](https://docs.google.com/document/d/14UFho0Y016uKzwcONHoIvHx2xc6Wgn7RNHu0Xd1vahk) (Google Docs) 
+* [Manage the local environment: WSL (Windows), Ubuntu, ROS, Gazebo](https://docs.google.com/document/d/1-kdRcZU29-APLef3PFzGOV_zRALEjms1VU0im_0pCfU) (Google Docs)     
 
 [All other notes for this project](https://drive.google.com/drive/folders/1rELDomnQWSf4vpBQr2bQLtAY1zxpogzx) (Google Drive)  
 
