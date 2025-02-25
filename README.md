@@ -411,7 +411,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * [General notes](https://docs.google.com/document/d/1_Db2GAFUqI-keQkRsCEntAGOvuWH1VeEW4K6jkZvGR8) (Google Docs)  
 * [Issues](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf) (GitHub Gists)  
 * ✅ [Create VM from `.ova` file on GCP](https://docs.google.com/document/d/14UFho0Y016uKzwcONHoIvHx2xc6Wgn7RNHu0Xd1vahk) (Google Docs) 
-* [Manage the local environment: WSL (Windows), Ubuntu, ROS, Gazebo](https://docs.google.com/document/d/1-kdRcZU29-APLef3PFzGOV_zRALEjms1VU0im_0pCfU) (Google Docs)     
+* ✅ [Set up local environment: `WSL2` (Windows), `Ubuntu 22.04`, `ROS2`, `Gazebo Ignition Fortress`](https://docs.google.com/document/d/1-kdRcZU29-APLef3PFzGOV_zRALEjms1VU0im_0pCfU) (Google Docs)     
 
 [All other notes for this project](https://drive.google.com/drive/folders/1rELDomnQWSf4vpBQr2bQLtAY1zxpogzx) (Google Drive)  
 
