@@ -1,9 +1,25 @@
-## P1 Build a world
+## 👉 Lauch the loacl environment: 
+
+WSL2 Ubuntu-22.04 + ROS2 + Gazebo Ignition Fortress
+
+```sh
+$ # export LIBGL_ALWAYS_SOFTWARE=1   ## skip if have added it to ~/.bashrc
+$ echo $LIBGL_ALWAYS_SOFTWARE  
+$ ign gazebo --render-engine ogre2
+$ ign gazebo
+$ sudo adduser robond  ## create user "robond", password "robo-nd"
+$ sudo usermod -aG sudo robond
+$ su - robond   ## switch current user to robond
+```
+
+
+## 👉 Course 2 Gazebo World, P1 Build a world
 
 ```sh
 $ cd ~
 $ git clone -b master https://<PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot
 $ cd myrobot/build
+$ rm CMakeCache.txt
 $ sudo cmake ..
 $ sudo make    ## You might get errors if your system is not up to date!
 $ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/robond/myrobot/build
@@ -12,7 +28,7 @@ $ cd ~/myrobot/world
 $ gazebo UdacityOffice --verbose
 ```
 
-## Course 3, simple_arm
+## 👉 Course 3 ROS Essentials, simple_arm
 
 ```sh
 $ mkdir -p ~/catkin_ws/src
@@ -49,7 +65,7 @@ $ rosservice call /arm_mover/safe_move "joint_1: 0
 joint_2: 0"
 ```
 
-## Course 3, P2 my_robot
+## 👉 Course 3, P2 my_robot
 
 ```sh
 $ cd ~/catkin_ws/src
