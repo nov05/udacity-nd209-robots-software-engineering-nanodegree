@@ -398,11 +398,28 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Tips**
 
-* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))   
+* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))    
+
 * The 
     `$ sudo gedit opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py` 
     ```python  
     ```
+
+* Check model xacro files  
+
+    ```sh
+    $ sudo apt install liburdfdom-tools
+    $ check_urdf simple_arm.gazebo
+    ```  
+    
+    * e.g.  
+
+        ```sh
+        robond@guido:~/catkin_ws/src/simple_arm/urdf$ check_urdf simple_arm.gazebo.xacro                                                                        
+        Error:   No name given for the robot.                                                                                                                   
+                at line 118 in /build/urdfdom-VnCcob/urdfdom-1.0.4+ds/urdf_parser/src/model.cpp
+        ERROR: Model Parsing the xml failed
+        ```
 
 <br><br><br>  
 
