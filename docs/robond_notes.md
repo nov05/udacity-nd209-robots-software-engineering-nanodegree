@@ -28,7 +28,7 @@ $ cd ~/myrobot/world
 $ gazebo UdacityOffice --verbose
 ```
 
-## 👉 Course 3 ROS Essentials, simple_arm
+## 👉 Course 3 ROS Essentials, the `simple_arm` package
 
 ```sh
 $ cd ~
@@ -44,31 +44,51 @@ $ catkin_make
 $ source devel/setup.bash
 $ rosdep install -i simple_arm       ## output: e.g. #All required rosdeps installed successfully
 $ rosdep check simple_arm            ## output: e.g. All system dependencies have been satisified
+```
+
+#### Launch the robot arm
+```sh
+cd ~/catkin_ws/
+source devel/setup.bash
 $ roslaunch simple_arm robot_spawn.launch
 ```
 
-####  Run the simple_mover node in a new terminal
+#### View the camera image stream, in a new terminal
 ```sh
 cd ~/catkin_ws/
 source devel/setup.bash
-rosrun simple_arm simple_mover
+rqt_image_view /rgb_camera/image_raw           
 ```
 
-#### To view the camera image stream, in a new terminal:
+or    
 ```sh
 cd ~/catkin_ws/
 source devel/setup.bash
-rqt_image_view /rgb_camera/image_raw           ## or
-$ rosrun rqt_image_view rqt_image_view         ## if roscore is running in a terminal
+rosrun rqt_image_view rqt_image_view
 ```
 
-#### Run look_away, in a new terminal
+#### Run `look_away`, in a new terminal
 ```sh
 cd ~/catkin_ws/
 source devel/setup.bash
 rosservice call /arm_mover/safe_move "joint_1: 0
 joint_2: 0"
 ```
+
+####  Run the `simple_mover` node
+* This node will shut down `arm_mover` node. 
+```sh
+cd ~/catkin_ws/
+source devel/setup.bash
+rosrun simple_arm simple_mover
+```
+
+#### Clear logs
+```sh
+$ rm -rf ~/.ros/log
+```
+
+
 
 ## 👉 Course 3, P2 my_robot
 
