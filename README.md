@@ -23,8 +23,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Catkin Workspace `catkin_ws` Directory:  
     * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (<- The development artifacts such as code is included here.) 
     * 2 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
-    ```
-    catkin_ws/
+    ```sh
+    ~/catkin_ws/
     ├── build/
     ├── devel/
     └── src/                   ## managed by GitHub repo `udacity-RoboND-p2-src`
@@ -52,21 +52,21 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * ✅ [Directory structure](https://github.com/nov05/udacity-RoboND-myrobot) (<- Code is contained in this repo.)  
 
-    ```bash
-        .Project1                          # Build My World Project 
-        ├── model                          # Model files 
-        │   ├── Building
-        │   │   ├── model.config
-        │   │   ├── model.sdf
-        │   ├── HumanoidRobot
-        │   │   ├── model.config
-        │   │   ├── model.sdf
-        ├── script                         # Gazebo World plugin C++ script      
-        │   ├── welcome_message.cpp
-        ├── world                          # Gazebo main World containing models 
-        │   ├── UdacityOffice.world
-        ├── CMakeLists.txt                 # Link libraries 
-        └──                              
+    ```sh
+    ~/myrobot/                          # Build My World Project 
+    ├── model/                          # Model files 
+    │   ├── Building/
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    │   ├── HumanoidRobot/
+    │   │   ├── model.config
+    │   │   ├── model.sdf
+    ├── script/                         # Gazebo World plugin C++ script      
+    │   ├── welcome_message.cpp
+    ├── world/                          # Gazebo main World containing models 
+    │   ├── UdacityOffice.world
+    ├── CMakeLists.txt                  # Link libraries 
+    └── ...                             
     ```
 
 * World design `UdacityOffice`  
