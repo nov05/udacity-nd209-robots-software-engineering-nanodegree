@@ -360,9 +360,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ gedit ~/.rviz/persistent_settings
     ```
 
-* ✅ Tips: Check ROS topics
+* ✅ Tips: Check ROS topics, nodes, services
     ```sh
     $ rostopic list
+    $ rosnode list
+    $ rosservice list
     ```
 
 * Create `ball_chaser` package
@@ -376,6 +378,54 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/
     $ source devel/setup.bash
     $ rossrv show DriveToTarget
+    ```
+
+* Test `drive_bot.cpp`
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ roslaunch my_robot empty_world.launch
+    ```
+
+* Enable the robot to move in a circle
+    ```sh
+    rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
+        x: 0.1
+        y: 0.0
+        z: 0.0
+    angular:
+        x: 0.0
+        y: 0.0
+        z: 0.1"
+    ```
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250227_udacity_nd209_p2_robot_circling_in_empty_world.gif?raw=true" width=800>    
+    
+* Request a `ball_chaser/command_robot` service
+    ```sh
+    $ cd ~/catkin_ws/
+    $ source devel/setup.bash
+    $ rosservice call /ball_chaser/command_robot "linear_x: 0.5
+    angular_z: 0.0"  # This request should drive your robot forward
+    $ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+    angular_z: 0.5"  # This request should drive your robot left
+    $ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+    angular_z: -0.5"  # This request should drive your robot right
+    $ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+    angular_z: 0.0"  # This request should bring your robot to a complete stop
+    ```
+
+
+
+
+<br><br><br>  
+
+# 👉 **Tips**
+
+* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))    
+
+* The 
+    `$ sudo gedit opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py` 
+    ```python  
     ```
 
 * Find ROSLaunch processes and kill them  
@@ -396,17 +446,6 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```sh
     rm -rf ~/.gazebo
     rm -rf ~/.ros
-    ```
-
-<br><br><br>  
-
-# 👉 **Tips**
-
-* Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))    
-
-* The 
-    `$ sudo gedit opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py` 
-    ```python  
     ```
 
 * Check model xacro files  

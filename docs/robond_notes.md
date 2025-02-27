@@ -54,52 +54,38 @@ $ cd ~/catkin_ws/src/
 $ git clone -b first_interaction https://<PAT>@github.com/nov05/udacity-RoboND-simple_arm simple_arm
 $ cd ~/catkin_ws
 $ catkin_make
+$ echo "cd ~/catkin_ws" >> ~/.bashrc                        ## add to user .bashrc
+$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc   ## add to user .bashrc
 $ source devel/setup.bash
 $ rosdep install -i simple_arm       ## output: e.g. #All required rosdeps installed successfully
 $ rosdep check simple_arm            ## output: e.g. All system dependencies have been satisified
+$ roslaunch simple_arm robot_spawn.launch   ## launch the robot arm
 ```
 
-#### Launch the robot arm
+* View the camera image stream, in a new terminal
 ```sh
-cd ~/catkin_ws/
-source devel/setup.bash
-roslaunch simple_arm robot_spawn.launch
+$ rqt_image_view /rgb_camera/image_raw    ## or
+$ rosrun rqt_image_view rqt_image_view         
 ```
 
-#### View the camera image stream, in a new terminal
+* Run `look_away`, in a new terminal
 ```sh
-cd ~/catkin_ws/
-source devel/setup.bash
-rqt_image_view /rgb_camera/image_raw           
-```
-
-or    
-```sh
-cd ~/catkin_ws/
-source devel/setup.bash
-rosrun rqt_image_view rqt_image_view
-```
-
-#### Run `look_away`, in a new terminal
-```sh
-cd ~/catkin_ws/
-source devel/setup.bash
-rosservice call /arm_mover/safe_move "joint_1: 0
-joint_2: 0"
+$ rosservice call /arm_mover/safe_move "joint_1: 0
+joint_2: 0"                                                   ## or
 $ rosservice call /arm_mover/safe_move "joint_1: 1.57
 joint_2: 1.57"
 ```
 
-####  Run the `simple_mover` node 
+* Run the `simple_mover` node 
 ```sh
-cd ~/catkin_ws/
-source devel/setup.bash
-rosrun simple_arm simple_mover
+$ rosrun simple_arm simple_mover
 ```
 
-#### Clear logs
+* Clear logs, etc.
 ```sh
 $ rm -rf ~/.ros/log
+$ rm -rf ~/.ros
+$ rm -rf ~/.gazebo
 ```
 
 
@@ -110,8 +96,8 @@ $ rm -rf ~/.ros/log
 ```sh
 $ cd ~/catkin_ws/src/
 $ git config --global init.defaultBranch main
-$ git config --global user.email "you@example.com"    ## any content
-$ git config --global user.name "nov05"
+$ git config --global user.email "you@example.com"    ## any content, no need to change
+$ git config --global user.name "nov05"               ## your GitHub user
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p2-src.git
 $ it checkout -b main
@@ -126,11 +112,27 @@ $ source devel/setup.bash
 $ roslaunch my_robot empty_world.launch
 ```
 
-* Launch `empty_world`  
+* View the camera image stream, in a new terminal
 ```sh
-rm -rf ~/.gazebo
-rm -rf ~/.ros
-cd ~/catkin_ws/
-source devel/setup.bash
-roslaunch my_robot empty_world.launch
+$ rosrun rqt_image_view rqt_image_view     ## or
+$ rqt_image_view /camera/rgb/image_raw   
+         
 ```
+
+* Run `my_robot` in a circle
+```sh
+rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
+    x: 0.1
+    y: 0.0
+    z: 0.0
+angular:
+    x: 0.0
+    y: 0.0
+    z: 0.1"
+```
+
+* Launch `udacity_office`  
+```sh
+roslaunch my_robot udacity_office.launch
+```
+
