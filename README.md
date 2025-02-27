@@ -21,7 +21,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 # 👉 **Project 2: ROS Essentials**  
 
 * Catkin Workspace `catkin_ws` Directory:  
-    * 2 GitHub repositories: `src`, `simple_arm`  
+    * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (<- The development artifacts such as code is included here.) 
     * 2 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
     ```
     catkin_ws/
