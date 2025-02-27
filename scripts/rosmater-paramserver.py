@@ -1,4 +1,3 @@
-## /opt/ros/noetic/lib/python3/dist-packages/rosmaster/paramserver.py
 # Software License Agreement (BSD License)
 #
 # Copyright (c) 2009, Willow Garage, Inc.
@@ -401,3 +400,7 @@ def compute_param_updates(subscribers, param_key, param_value, caller_id_to_igno
 
     return updates
         
+
+
+
+## /opt/ros/noetic/lib/python3/dist-packages/rosmaster/paramserver.py
