@@ -16,7 +16,7 @@ $ gazebo
 
 ```sh
 $ cd ~
-$ git clone -b master https://<PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot
+$ git clone -b master https://<PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot  ## replace <PAT> with your token
 $ mkdir -p myrobt/build
 $ cd myrobot/build
 $ sudo cmake ..
@@ -81,7 +81,7 @@ joint_2: 1.57"
 $ rosrun simple_arm simple_mover
 ```
 
-* Clear logs, etc.
+* Clear logs, etc. if needed
 ```sh
 $ rm -rf ~/.ros/log
 $ rm -rf ~/.ros
@@ -112,16 +112,10 @@ $ source devel/setup.bash
 $ roslaunch my_robot empty_world.launch
 ```
 
-* Adjust the world layout
-```sh
-$ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
-```
-
 * View the camera image stream, in a new terminal
 ```sh
-$ rosrun rqt_image_view rqt_image_view     ## or
-$ rqt_image_view /camera/rgb/image_raw   
-         
+$ rqt_image_view /camera/rgb/image_raw     ## or
+$ rosrun rqt_image_view rqt_image_view           
 ```
 
 * Run `my_robot` in a circle
@@ -136,8 +130,14 @@ angular:
     z: 0.1"
 ```
 
+* Adjust the world layout if needed
+```sh
+$ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
+```
+
 * Launch `udacity_office`  
 ```sh
 roslaunch my_robot udacity_office.launch
 ```
+
 

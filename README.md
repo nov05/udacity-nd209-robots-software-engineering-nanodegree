@@ -393,7 +393,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ rqt_image_view /camera/rgb/image_raw
     ```
 
-* Enable the robot to move in a circle, without RViz node for performance issues caused by insufficient memory  
+* Enable the robot to move in a circle, without RViz node for performance issues caused by insufficient memory.     
+    * *Testing the robot in a simple world, like an empty world, before using it in `udacity_office.world` will save you time.*  
     ```sh
     rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
         x: 0.1
