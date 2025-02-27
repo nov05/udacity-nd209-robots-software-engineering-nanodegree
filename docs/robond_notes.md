@@ -50,7 +50,7 @@ $ rosdep check simple_arm            ## output: e.g. All system dependencies hav
 ```sh
 cd ~/catkin_ws/
 source devel/setup.bash
-$ roslaunch simple_arm robot_spawn.launch
+roslaunch simple_arm robot_spawn.launch
 ```
 
 #### View the camera image stream, in a new terminal
@@ -73,10 +73,11 @@ cd ~/catkin_ws/
 source devel/setup.bash
 rosservice call /arm_mover/safe_move "joint_1: 0
 joint_2: 0"
+$ rosservice call /arm_mover/safe_move "joint_1: 1.57
+joint_2: 1.57"
 ```
 
-####  Run the `simple_mover` node
-* This node will shut down `arm_mover` node. 
+####  Run the `simple_mover` node 
 ```sh
 cd ~/catkin_ws/
 source devel/setup.bash
