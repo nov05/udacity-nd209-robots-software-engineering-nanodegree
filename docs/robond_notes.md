@@ -128,6 +128,8 @@ $ roslaunch my_robot empty_world.launch
 
 * Launch `empty_world`  
 ```sh
+rm -rf ~/.gazebo
+rm -rf ~/.ros
 cd ~/catkin_ws/
 source devel/setup.bash
 roslaunch my_robot empty_world.launch

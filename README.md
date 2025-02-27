@@ -393,7 +393,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         robond@udacity:~/catkin_ws$ kill -9 16575
         [1]-  Killed                  roslaunch my_robot udacity_office.launch
         ```
-
+    ```sh
+    rm -rf ~/.gazebo
+    rm -rf ~/.ros
+    ```
 
 <br><br><br>  
 
