@@ -11,7 +11,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
     * Use the VM for graphic design in **Gazebo**, and handle coding and other tasks on the local machine using **VS Code**.
-    * Synchronize all the work through GitHub between both environments.
+    * Synchronize all the work through GitHub between both environments.    
+* [All Bash commands](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md) (to reproduce the results)
 
 
 <br><br><br> 
@@ -213,6 +214,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ rosrun turtlesim turtle_teleop_key
     ```
 
+### 🏷️ **Course 3, `simple_arm`** 
+
 * Build a **Catkin** workspace
     ```sh
     $ mkdir -p ~/catkin_ws/src
@@ -332,7 +335,9 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250218_look_away.gif" width=800>  
 
-* Launch `empty.world`  
+### 🏷️ **Course 3, P2 `my_robot` with `ball_chaser`**   
+
+* Launch `empty.world`, with a Rviz (ROC Visualization) node  
     ```sh
     $ cd ~/catkin_ws/
     $ catkin_make
@@ -347,7 +352,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ gedit /usr/share/gazebo-11/media/materials/scripts/gazebo.material   ## Gazebo 11 (ROS Notiec)
     ```
 
-* Launch RViz (ROC Visualization)  
+* Launch RViz seperately 
     ```sh
     $ roscore     ## in one terminal
     $ cd ~/catkin_ws      ## in another terminal 
@@ -385,9 +390,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ cd ~/catkin_ws/
     $ source devel/setup.bash
     $ roslaunch my_robot empty_world.launch
+    $ rqt_image_view /camera/rgb/image_raw
     ```
 
-* Enable the robot to move in a circle
+* Enable the robot to move in a circle, without RViz node for performance issues caused by insufficient memory  
     ```sh
     rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
         x: 0.1
@@ -399,7 +405,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         z: 0.1"
     ```
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250227_udacity_nd209_p2_robot_circling_in_empty_world.gif?raw=true" width=800>    
-    
+
 * Request a `ball_chaser/command_robot` service
     ```sh
     $ cd ~/catkin_ws/

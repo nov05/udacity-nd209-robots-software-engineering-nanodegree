@@ -112,6 +112,11 @@ $ source devel/setup.bash
 $ roslaunch my_robot empty_world.launch
 ```
 
+* Adjust the world layout
+```sh
+$ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
+```
+
 * View the camera image stream, in a new terminal
 ```sh
 $ rosrun rqt_image_view rqt_image_view     ## or
