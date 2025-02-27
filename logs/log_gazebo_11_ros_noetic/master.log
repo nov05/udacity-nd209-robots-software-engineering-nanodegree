@@ -1,0 +1,552 @@
+[rosmaster.main][INFO] 2025-02-26 23:48:08,741: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2025-02-26 23:48:08,741: Starting ROS Master Node
+[xmlrpc][INFO] 2025-02-26 23:48:08,742: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][INFO] 2025-02-26 23:48:08,742: Started XML-RPC server [http://guido:11311/]
+[xmlrpc][INFO] 2025-02-26 23:48:08,742: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2025-02-26 23:48:08,742: Master initialized: port[11311], uri[http://guido:11311/]
+[rosmaster.master][INFO] 2025-02-26 23:48:08,762: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,763: +PARAM [/roslaunch/uris/host_guido__35645] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,789: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,790: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,790: +PARAM [/use_sim_time] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,790: +PARAM [/gazebo/enable_ros_network] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,790: +PARAM [/robot_description] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,790: +PARAM [/joint_state_publisher/use_gui] by /roslaunch
+[rosmaster.master][INFO] 2025-02-26 23:48:08,800: +SERVICE [/rosout/get_loggers] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,800: +SERVICE [/rosout/set_logger_level] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,803: +SUB [/clock] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,803: +PUB [/rosout_agg] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,806: +SUB [/rosout] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,841: +PUB [/rosout] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,843: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/']
+[rosmaster.master][INFO] 2025-02-26 23:48:08,845: +SERVICE [/robot_state_publisher/get_loggers] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,846: +SERVICE [/robot_state_publisher/set_logger_level] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,849: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:08,851: +SUB [/clock] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,853: +PUB [/tf] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,853: +PUB [/tf_static] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,858: +SUB [/joint_states] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,934: +PUB [/rosout] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,934: +SERVICE [/rviz/get_loggers] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,935: +SERVICE [/rviz/set_logger_level] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,938: +SUB [/clock] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:08,940: +CACHEDPARAM [/rosout_disable_topics_generation] by /rviz
+[rosmaster.master][INFO] 2025-02-26 23:48:08,944: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/']
+[rosmaster.master][INFO] 2025-02-26 23:48:08,945: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:09,112: +PUB [/rosout] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,115: +SUB [/clock] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,116: +SERVICE [/urdf_spawner/get_loggers] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,117: +SERVICE [/urdf_spawner/set_logger_level] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,118: +CACHEDPARAM [/rosout_disable_topics_generation] by /urdf_spawner
+[rosmaster.master][INFO] 2025-02-26 23:48:09,121: +CACHEDPARAM [/rosout_disable_topics_generation] by /urdf_spawner
+[rosmaster.master][INFO] 2025-02-26 23:48:09,145: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/']
+[rosmaster.master][INFO] 2025-02-26 23:48:09,146: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:09,172: +PUB [/rosout] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,175: +SUB [/clock] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,176: +SERVICE [/joint_state_publisher/get_loggers] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,176: +SERVICE [/joint_state_publisher/set_logger_level] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,189: +PUB [/joint_states] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,246: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/']
+[rosmaster.master][INFO] 2025-02-26 23:48:09,246: publisherUpdate[/joint_states] -> http://guido:41169/ ['http://guido:41581/']
+[rosmaster.master][INFO] 2025-02-26 23:48:09,247: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:09,247: publisherUpdate[/joint_states] -> http://guido:41169/ ['http://guido:41581/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:09,248: +CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.master][INFO] 2025-02-26 23:48:09,373: +PUB [/rosout] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,374: +SERVICE [/gazebo/get_loggers] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,374: +SERVICE [/gazebo/set_logger_level] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,377: +SUB [/clock] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,384: +CACHEDPARAM [/rosout_disable_topics_generation] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:09,447: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/', 'http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:09,448: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/', 'http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:09,473: +PUB [/rosout] /gazebo_gui http://guido:36103/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,474: +SERVICE [/gazebo_gui/get_loggers] /gazebo_gui http://guido:36103/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,474: +SERVICE [/gazebo_gui/set_logger_level] /gazebo_gui http://guido:36103/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,476: +SUB [/clock] /gazebo_gui http://guido:36103/
+[rosmaster.master][INFO] 2025-02-26 23:48:09,481: +CACHEDPARAM [/rosout_disable_topics_generation] by /gazebo_gui
+[rosmaster.master][INFO] 2025-02-26 23:48:09,548: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/', 'http://guido:41007/', 'http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:48:09,549: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:40053/', 'http://guido:41581/', 'http://guido:41007/', 'http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,295: +SUB [/tf] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,297: +SUB [/tf_static] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,388: +PUB [/initialpose] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,389: +PUB [/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,393: -PUB [/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,394: -PUB [/initialpose] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,397: +PUB [/initialpose] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,398: +PUB [/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,398: +PUB [/move_base_simple/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,399: -PUB [/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,399: +PUB [/clicked_point] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,428: +SERVICE [/rviz/reload_shaders] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,428: +SERVICE [/rviz/load_config] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,429: +SERVICE [/rviz/load_config_discarding_changes] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,429: +SERVICE [/rviz/save_config] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,907: +PUB [/clock] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,909: +SERVICE [/gazebo/spawn_sdf_model] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,909: +SERVICE [/gazebo/spawn_urdf_model] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,910: +SERVICE [/gazebo/delete_model] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,911: +SERVICE [/gazebo/delete_light] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,912: +SERVICE [/gazebo/get_model_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,913: +SERVICE [/gazebo/get_model_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,913: +SERVICE [/gazebo/get_world_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,913: +SERVICE [/gazebo/get_joint_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,914: +SERVICE [/gazebo/get_link_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,915: +SERVICE [/gazebo/get_link_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,915: +SERVICE [/gazebo/get_light_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,916: +SERVICE [/gazebo/set_light_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,917: +SERVICE [/gazebo/get_physics_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,917: +PUB [/gazebo/link_states] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,918: +PUB [/gazebo/model_states] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,918: +PUB [/gazebo/performance_metrics] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,919: +SERVICE [/gazebo/set_link_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,919: +SERVICE [/gazebo/set_physics_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,920: +SERVICE [/gazebo/set_model_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,920: +SERVICE [/gazebo/set_model_configuration] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,921: +SERVICE [/gazebo/set_joint_properties] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,921: +SERVICE [/gazebo/set_link_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,924: +SUB [/gazebo/set_link_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,928: +SUB [/gazebo/set_model_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,928: +SERVICE [/gazebo/set_parameters] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,929: +PUB [/gazebo/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,929: +SERVICE [/gazebo/pause_physics] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,930: +PUB [/gazebo/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,930: +SERVICE [/gazebo/unpause_physics] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,931: +SERVICE [/gazebo/apply_body_wrench] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,931: +SERVICE [/gazebo/apply_joint_effort] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,932: +SERVICE [/gazebo/clear_joint_forces] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,933: +SERVICE [/gazebo/clear_body_wrenches] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,934: +SERVICE [/gazebo/reset_simulation] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,934: +SERVICE [/gazebo/reset_world] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:12,939: +PARAM [/gazebo/time_step] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,940: +PARAM [/gazebo/max_update_rate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,941: +PARAM [/gazebo/gravity_x] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,941: +PARAM [/gazebo/gravity_y] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,942: +PARAM [/gazebo/gravity_z] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,942: +PARAM [/gazebo/auto_disable_bodies] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,943: +PARAM [/gazebo/sor_pgs_precon_iters] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,943: +PARAM [/gazebo/sor_pgs_iters] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,944: +PARAM [/gazebo/sor_pgs_w] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,945: +PARAM [/gazebo/sor_pgs_rms_error_tol] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,946: +PARAM [/gazebo/cfm] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,946: +PARAM [/gazebo/erp] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,947: +PARAM [/gazebo/contact_surface_layer] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,947: +PARAM [/gazebo/contact_max_correcting_vel] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,948: +PARAM [/gazebo/max_contacts] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,952: +PARAM [/gazebo/time_step] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,953: +PARAM [/gazebo/max_update_rate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,954: +PARAM [/gazebo/gravity_x] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,954: +PARAM [/gazebo/gravity_y] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,954: +PARAM [/gazebo/gravity_z] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,955: publisherUpdate[/clock] -> http://guido:42505/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,955: +PARAM [/gazebo/auto_disable_bodies] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,955: publisherUpdate[/clock] -> http://guido:41169/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,956: publisherUpdate[/clock] -> http://guido:42505/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,957: +PARAM [/gazebo/sor_pgs_precon_iters] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,957: publisherUpdate[/clock] -> http://guido:41323/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,957: publisherUpdate[/clock] -> http://guido:41169/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,957: publisherUpdate[/clock] -> http://guido:40053/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,958: +PARAM [/gazebo/sor_pgs_iters] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,958: publisherUpdate[/clock] -> http://guido:41581/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,959: +PARAM [/gazebo/sor_pgs_w] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,959: publisherUpdate[/clock] -> http://guido:41323/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,961: publisherUpdate[/clock] -> http://guido:40053/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,961: +PARAM [/gazebo/sor_pgs_rms_error_tol] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,961: publisherUpdate[/clock] -> http://guido:41007/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,962: publisherUpdate[/clock] -> http://guido:36103/ ['http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:12,962: publisherUpdate[/clock] -> http://guido:41581/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,964: +PARAM [/gazebo/cfm] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,968: publisherUpdate[/clock] -> http://guido:41007/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,969: publisherUpdate[/clock] -> http://guido:36103/ ['http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:12,970: +PARAM [/gazebo/erp] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,971: +PARAM [/gazebo/contact_surface_layer] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,971: +PARAM [/gazebo/contact_max_correcting_vel] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:12,971: +PARAM [/gazebo/max_contacts] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:13,041: +CACHEDPARAM [/rosout_disable_topics_generation] by /urdf_spawner
+[rosmaster.master][INFO] 2025-02-26 23:48:14,903: +SERVICE [/camera/set_camera_info] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,909: +SERVICE [/camera/set_parameters] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,909: +PUB [/camera/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,910: +PUB [/camera/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,912: +CACHEDPARAM [/rosout_disable_topics_generation] by /urdf_spawner
+[rosmaster.master][INFO] 2025-02-26 23:48:14,913: +PARAM [/camera/imager_rate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,914: +PARAM [/camera/imager_rate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,915: -SUB [/clock] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,915: -PUB [/rosout] /urdf_spawner http://guido:40053/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,916: -SERVICE [/urdf_spawner/get_loggers] /urdf_spawner rosrpc://guido:43623
+[rosmaster.master][INFO] 2025-02-26 23:48:14,916: -SERVICE [/urdf_spawner/set_logger_level] /urdf_spawner rosrpc://guido:43623
+[rosmaster.master][INFO] 2025-02-26 23:48:14,973: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:41581/', 'http://guido:41007/', 'http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:48:14,974: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:41581/', 'http://guido:41007/', 'http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:48:14,976: +PUB [/camera/rgb/image_raw/compressedDepth] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,977: +SERVICE [/camera/rgb/image_raw/compressedDepth/set_parameters] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,977: +PUB [/camera/rgb/image_raw/compressedDepth/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,978: +PUB [/camera/rgb/image_raw/compressedDepth/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,980: +PARAM [/camera/rgb/image_raw/compressedDepth/format] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,981: +PARAM [/camera/rgb/image_raw/compressedDepth/depth_max] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,981: +PARAM [/camera/rgb/image_raw/compressedDepth/depth_quantization] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,982: +PARAM [/camera/rgb/image_raw/compressedDepth/png_level] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,983: +PARAM [/camera/rgb/image_raw/compressedDepth/format] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,983: +PARAM [/camera/rgb/image_raw/compressedDepth/depth_max] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,983: +PARAM [/camera/rgb/image_raw/compressedDepth/depth_quantization] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,984: +PARAM [/camera/rgb/image_raw/compressedDepth/png_level] by /gazebo
+[rosmaster.master][ERROR] 2025-02-26 23:48:14,988: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 177, in validated_f
+    code, msg, val = f(*newArgs, **kwds)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 435, in searchParam
+    search_key = self.param_server.search_param(caller_id, key)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/paramserver.py", line 116, in search_param
+    raise ValueError("namespace must be global")
+ValueError: namespace must be global
+
+[rosmaster.master][INFO] 2025-02-26 23:48:14,989: +PUB [/scan] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,990: +PUB [/camera/rgb/image_raw/compressed] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,991: +SERVICE [/camera/rgb/image_raw/compressed/set_parameters] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,991: +PUB [/camera/rgb/image_raw/compressed/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,992: +PUB [/camera/rgb/image_raw/compressed/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:14,994: +PARAM [/camera/rgb/image_raw/compressed/format] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,995: +PARAM [/camera/rgb/image_raw/compressed/jpeg_quality] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,997: +PARAM [/camera/rgb/image_raw/compressed/jpeg_progressive] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,998: +PARAM [/camera/rgb/image_raw/compressed/jpeg_optimize] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:14,999: +PARAM [/camera/rgb/image_raw/compressed/jpeg_restart_interval] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,000: +PARAM [/camera/rgb/image_raw/compressed/png_level] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,000: +PARAM [/camera/rgb/image_raw/compressed/format] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,001: +PARAM [/camera/rgb/image_raw/compressed/jpeg_quality] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,001: +PARAM [/camera/rgb/image_raw/compressed/jpeg_progressive] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,002: +PARAM [/camera/rgb/image_raw/compressed/jpeg_optimize] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,002: +PARAM [/camera/rgb/image_raw/compressed/jpeg_restart_interval] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,003: +PARAM [/camera/rgb/image_raw/compressed/png_level] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,010: +PUB [/camera/rgb/image_raw] /gazebo http://guido:41007/
+[rosmaster.master][ERROR] 2025-02-26 23:48:15,032: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 177, in validated_f
+    code, msg, val = f(*newArgs, **kwds)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 435, in searchParam
+    search_key = self.param_server.search_param(caller_id, key)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/paramserver.py", line 116, in search_param
+    raise ValueError("namespace must be global")
+ValueError: namespace must be global
+
+[rosmaster.master][INFO] 2025-02-26 23:48:15,033: +PUB [/tf] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,036: +SUB [/cmd_vel] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,038: +PUB [/odom] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,040: +PUB [/camera/rgb/image_raw/theora] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,045: +SERVICE [/camera/rgb/image_raw/theora/set_parameters] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,048: +PUB [/camera/rgb/image_raw/theora/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,051: +PUB [/camera/rgb/image_raw/theora/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,055: +PARAM [/camera/rgb/image_raw/theora/optimize_for] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,055: +PARAM [/camera/rgb/image_raw/theora/target_bitrate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,056: +PARAM [/camera/rgb/image_raw/theora/quality] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,057: +PARAM [/camera/rgb/image_raw/theora/keyframe_frequency] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,058: +PARAM [/camera/rgb/image_raw/theora/optimize_for] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,058: +PARAM [/camera/rgb/image_raw/theora/target_bitrate] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,059: +PARAM [/camera/rgb/image_raw/theora/quality] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,059: +PARAM [/camera/rgb/image_raw/theora/keyframe_frequency] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:48:15,060: +PUB [/camera/rgb/camera_info] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:48:15,074: publisherUpdate[/tf] -> http://guido:41323/ ['http://guido:41169/', 'http://guido:41007/']
+[rosmaster.master][INFO] 2025-02-26 23:48:15,075: publisherUpdate[/tf] -> http://guido:41323/ ['http://guido:41169/', 'http://guido:41007/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,717: -SUB [/clock] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,717: -PUB [/rosout] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,717: -PUB [/joint_states] /joint_state_publisher http://guido:41581/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,717: -SERVICE [/joint_state_publisher/get_loggers] /joint_state_publisher rosrpc://guido:37133
+[rosmaster.master][INFO] 2025-02-26 23:53:22,718: -SERVICE [/joint_state_publisher/set_logger_level] /joint_state_publisher rosrpc://guido:37133
+[rosmaster.master][INFO] 2025-02-26 23:53:22,757: -SUB [/gazebo/set_link_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,758: -SUB [/gazebo/set_model_state] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,758: -PUB [/clock] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,759: -PUB [/gazebo/link_states] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,760: -PUB [/gazebo/model_states] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,760: -PUB [/gazebo/performance_metrics] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,761: -SERVICE [/gazebo/spawn_sdf_model] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,761: -SERVICE [/gazebo/spawn_urdf_model] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,762: -SERVICE [/gazebo/delete_model] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,762: -SERVICE [/gazebo/delete_light] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,763: -SERVICE [/gazebo/get_model_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,763: -SERVICE [/gazebo/get_model_state] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,764: -SERVICE [/gazebo/get_world_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,764: -SERVICE [/gazebo/get_joint_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,764: -SERVICE [/gazebo/get_link_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,765: -SERVICE [/gazebo/get_link_state] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,766: -SERVICE [/gazebo/get_light_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,766: -SERVICE [/gazebo/set_light_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,767: -SERVICE [/gazebo/get_physics_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,767: -SERVICE [/gazebo/set_link_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,768: -SERVICE [/gazebo/set_physics_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,768: -SERVICE [/gazebo/set_model_state] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,769: -SERVICE [/gazebo/set_model_configuration] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,769: -SERVICE [/gazebo/set_joint_properties] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,769: -SERVICE [/gazebo/set_link_state] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,770: -SERVICE [/gazebo/pause_physics] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,770: -SERVICE [/gazebo/unpause_physics] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,771: -SERVICE [/gazebo/apply_body_wrench] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,771: -SERVICE [/gazebo/apply_joint_effort] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,772: -SERVICE [/gazebo/clear_joint_forces] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,772: -SERVICE [/gazebo/clear_body_wrenches] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,772: -SERVICE [/gazebo/reset_simulation] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,773: -SERVICE [/gazebo/reset_world] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,774: -PUB [/gazebo/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,775: -PUB [/gazebo/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,775: -SERVICE [/gazebo/set_parameters] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,777: -SUB [/cmd_vel] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,777: -PUB [/odom] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,778: -PUB [/tf] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,780: -PUB [/camera/rgb/camera_info] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,780: -SERVICE [/camera/set_camera_info] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,781: -PUB [/camera/rgb/image_raw/compressedDepth] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,781: -PUB [/camera/rgb/image_raw/compressed] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,782: -PUB [/camera/rgb/image_raw] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,782: -PUB [/camera/rgb/image_raw/theora] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,783: -PUB [/camera/rgb/image_raw/compressedDepth/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,783: -PUB [/camera/rgb/image_raw/compressedDepth/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,783: -SERVICE [/camera/rgb/image_raw/compressedDepth/set_parameters] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,784: -PUB [/camera/rgb/image_raw/compressed/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,784: -PUB [/rosout] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,785: -PUB [/camera/rgb/image_raw/compressed/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,785: -PUB [/tf] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,786: -SERVICE [/camera/rgb/image_raw/compressed/set_parameters] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,786: -PUB [/tf_static] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,786: -PUB [/camera/rgb/image_raw/theora/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,787: -SUB [/clock] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,787: -PUB [/camera/rgb/image_raw/theora/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,787: -SUB [/joint_states] /robot_state_publisher http://guido:41169/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,788: -SERVICE [/camera/rgb/image_raw/theora/set_parameters] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:22,788: -SERVICE [/robot_state_publisher/get_loggers] /robot_state_publisher rosrpc://guido:60489
+[rosmaster.master][INFO] 2025-02-26 23:53:22,789: -PUB [/scan] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,790: -SERVICE [/robot_state_publisher/set_logger_level] /robot_state_publisher rosrpc://guido:60489
+[rosmaster.master][INFO] 2025-02-26 23:53:22,790: -PUB [/rosout] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,791: -PUB [/initialpose] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,791: -PUB [/move_base_simple/goal] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,792: -PUB [/clicked_point] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,792: -SUB [/clock] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,793: -SUB [/tf] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,793: -SUB [/tf_static] /rviz http://guido:41323/
+[rosmaster.master][INFO] 2025-02-26 23:53:22,793: -SERVICE [/rviz/get_loggers] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,794: -SERVICE [/rviz/set_logger_level] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,794: -SERVICE [/rviz/reload_shaders] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,795: -SERVICE [/rviz/load_config] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,795: -SERVICE [/rviz/load_config_discarding_changes] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,796: -SERVICE [/rviz/save_config] /rviz rosrpc://guido:32819
+[rosmaster.master][INFO] 2025-02-26 23:53:22,796: -CACHEDPARAM [/rosout_disable_topics_generation] by /rviz
+[rosmaster.master][INFO] 2025-02-26 23:53:22,801: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:41007/', 'http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:53:22,801: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41169/', 'http://guido:41323/', 'http://guido:41007/', 'http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,801: publisherUpdate[/joint_states] -> http://guido:41169/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,802: publisherUpdate[/joint_states] -> http://guido:41169/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,803: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:22,803: publisherUpdate[/clock] -> http://guido:42505/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,803: publisherUpdate[/clock] -> http://guido:42505/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,803: publisherUpdate[/clock] -> http://guido:41169/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,804: publisherUpdate[/clock] -> http://guido:41169/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,804: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:22,804: publisherUpdate[/clock] -> http://guido:41323/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,807: publisherUpdate[/clock] -> http://guido:41007/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,808: publisherUpdate[/clock] -> http://guido:36103/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,808: publisherUpdate[/clock] -> http://guido:41007/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,809: publisherUpdate[/clock] -> http://guido:36103/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,809: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41323/', 'http://guido:41007/', 'http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:53:22,809: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41323/', 'http://guido:41007/', 'http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,810: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41007/', 'http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:53:22,810: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:41007/', 'http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:22,987: publisherUpdate[/clock] -> http://guido:41323/ []: sec=0.18, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,987: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:22,987: publisherUpdate[/tf] -> http://guido:41323/ ['http://guido:41169/']
+[rosmaster.master][INFO] 2025-02-26 23:53:22,987: publisherUpdate[/tf] -> http://guido:41323/ ['http://guido:41169/']: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,988: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:22,988: publisherUpdate[/tf] -> http://guido:41323/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,988: publisherUpdate[/tf] -> http://guido:41323/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,988: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:22,988: publisherUpdate[/tf_static] -> http://guido:41323/ []
+[rosmaster.master][INFO] 2025-02-26 23:53:22,988: publisherUpdate[/tf_static] -> http://guido:41323/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2025-02-26 23:53:22,988: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2025-02-26 23:53:23,109: -PUB [/rosout] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:23,110: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:36103/']
+[rosmaster.master][INFO] 2025-02-26 23:53:23,110: -PUB [/camera/parameter_descriptions] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:23,110: -PUB [/camera/parameter_updates] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:23,111: publisherUpdate[/rosout] -> http://guido:42505/ ['http://guido:36103/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2025-02-26 23:53:23,111: -SUB [/clock] /gazebo http://guido:41007/
+[rosmaster.master][INFO] 2025-02-26 23:53:23,112: -SERVICE [/gazebo/get_loggers] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:23,112: -SERVICE [/gazebo/set_logger_level] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:23,113: -SERVICE [/camera/set_parameters] /gazebo rosrpc://guido:40927
+[rosmaster.master][INFO] 2025-02-26 23:53:23,113: -CACHEDPARAM [/rosout_disable_topics_generation] by /gazebo
+[rosmaster.master][INFO] 2025-02-26 23:53:38,143: -PUB [/rosout_agg] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:53:38,144: -SUB [/clock] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:53:38,144: -SUB [/rosout] /rosout http://guido:42505/
+[rosmaster.master][INFO] 2025-02-26 23:53:38,145: -SERVICE [/rosout/get_loggers] /rosout rosrpc://guido:38807
+[rosmaster.master][INFO] 2025-02-26 23:53:38,145: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://guido:38807
+[rosmaster.master][INFO] 2025-02-26 23:53:38,145: -CACHEDPARAM [/rosout/omit_topics] by /rosout
+[rosmaster.main][INFO] 2025-02-26 23:53:38,159: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2025-02-26 23:53:38,159: stopping master...
+[rospy.core][INFO] 2025-02-26 23:53:38,160: signal_shutdown [atexit]
