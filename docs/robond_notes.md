@@ -28,6 +28,19 @@ $ cd ~/myrobot/world
 $ gazebo UdacityOffice --verbose
 ```
 
+## 👉 Course 3 ROS Essentials, the `catkin` workspace directory
+
+```
+catkin_ws/
+├── build/
+├── devel/
+└── src/                   ## managed by GitHub repo `udacity-RoboND-p2-src`
+    ├── CMakeLists.txt  
+    ├── simple_arm/        ## managed by GitHub repo `udacity-RoboND-simple_arm`
+    ├── my_robot/
+    └── ball_chaser/
+```
+
 ## 👉 Course 3 ROS Essentials, the `simple_arm` package
 
 ```sh
@@ -93,6 +106,7 @@ $ rm -rf ~/.ros/log
 
 ## 👉 Course 3, P2 my_robot
 
+* Get the catkin packages from the repo (except that `simple_arm` is managed by another repo)
 ```sh
 $ cd ~/catkin_ws/src/
 $ git config --global init.defaultBranch main
@@ -110,4 +124,11 @@ $ cd ~/catkin_ws/
 $ catkin_make
 $ source devel/setup.bash
 $ roslaunch my_robot empty_world.launch
+```
+
+* Launch `empty_world`  
+```sh
+cd ~/catkin_ws/
+source devel/setup.bash
+roslaunch my_robot empty_world.launch
 ```

@@ -343,7 +343,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     
 * ✅ Tips: Check Gazebo pre-defined materials (colors)
     ```sh
-    $ nano /usr/share/gazebo-7/media/materials/scripts/gazebo.material 
+    $ nano /usr/share/gazebo-7/media/materials/scripts/gazebo.material    ## Gazebo 7 (ROS Kinetic)
+    $ gedit /usr/share/gazebo-11/media/materials/scripts/gazebo.material   ## Gazebo 11 (ROS Notiec)
     ```
 
 * Launch RViz (ROC Visualization)  
@@ -411,7 +412,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     $ sudo apt install liburdfdom-tools
     $ check_urdf simple_arm.gazebo
     ```  
-    
+
     * e.g.  
 
         ```sh
