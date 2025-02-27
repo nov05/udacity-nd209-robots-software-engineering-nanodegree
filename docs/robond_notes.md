@@ -95,14 +95,15 @@ $ rm -rf ~/.ros/log
 
 ```sh
 $ cd ~/catkin_ws/src/
+$ git config --global init.defaultBranch main
+$ git config --global user.email "you@example.com"    ## any content
+$ git config --global user.name "nov05"
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p2-src.git
 $ git fetch origin
 $ git merge origin/main --allow-unrelated-histories
 $ git add .
 $ git commit -m "init, fetch, merge with simple_arm repo"
-$ git config --global user.email "you@example.com"    ## any content
-$ git config --global user.name "nov05"
 $ git push --set-upstream origin main
 $ cd ~/catkin_ws/
 $ catkin_make
