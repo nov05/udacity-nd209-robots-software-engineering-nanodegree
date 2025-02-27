@@ -100,6 +100,7 @@ $ git config --global user.email "you@example.com"    ## any content
 $ git config --global user.name "nov05"
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p2-src.git
+$ it checkout -b main
 $ git fetch origin
 $ git merge origin/main --allow-unrelated-histories
 $ git add .
