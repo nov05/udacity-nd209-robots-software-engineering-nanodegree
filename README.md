@@ -23,16 +23,46 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Catkin Workspace `catkin_ws` Directory:  
     * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (<- The development artifacts such as code is included here.) 
     * 2 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
-    ```sh
-    ~/catkin_ws/
-    ├── build/
-    ├── devel/
-    └── src/                   ## managed by GitHub repo `udacity-RoboND-p2-src`
-        ├── CMakeLists.txt  
-        ├── simple_arm/        ## managed by GitHub repo `udacity-RoboND-simple_arm`
-        ├── my_robot/
-        └── ball_chaser/
-    ```
+        ```sh
+        ~/catkin_ws/
+        ├── build/
+        ├── devel/
+        └── src/                   ## managed by GitHub repo `udacity-RoboND-p2-src`
+            ├── CMakeLists.txt  
+            ├── simple_arm/        ## managed by GitHub repo `udacity-RoboND-simple_arm`
+            ├── my_robot/
+            └── ball_chaser/
+        ```
+    * Detailed file structure
+        ```sh
+        ~/catkin_ws/src/                   # Project 2, Go Chase It Project
+        ├── my_robot                       # my_robot package                   
+        │   ├── launch                     # launch folder for launch files   
+        │   │   ├── robot_description.launch
+        │   │   ├── udacity_office.launch
+        │   │   └── empty_world.launch
+        │   ├── meshes                     # meshes folder for sensors
+        │   │   └── hokuyo.dae
+        │   ├── urdf                       # urdf folder for xarco files
+        │   │   ├── my_robot.gazebo
+        │   │   └── my_robot.xacro
+        │   ├── world                      # world folder for world files
+        │   │   ├── udacity_office.world
+        │   │   └── empty_world.world
+        │   ├── CMakeLists.txt             # compiler instructions
+        │   └── package.xml                # package info
+        ├── ball_chaser                    # ball_chaser package                   
+        │   ├── launch                     # launch folder for launch files   
+        │   │   └── ball_chaser.launch
+        │   ├── src                        # source folder for C++ scripts
+        │   │   ├── drive_bot.cpp
+        │   │   └── process_images.cpp
+        │   ├── srv                        # service folder for ROS services
+        │   │   └── DriveToTarget.srv
+        │   ├── CMakeLists.txt             # compiler instructions
+        │   └── package.xml                # package info                  
+        └── ...  
+        ```
 
 * Operations:  
     * Launch `udacity_office.world` 
