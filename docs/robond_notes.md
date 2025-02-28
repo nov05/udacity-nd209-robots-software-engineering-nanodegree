@@ -120,7 +120,7 @@ $ rosrun rqt_image_view rqt_image_view
 
 * Run `my_robot` in a circle
 ```sh
-rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
+$ rostopic pub /cmd_vel geometry_msgs/Twist  "linear:
     x: 0.1
     y: 0.0
     z: 0.0
@@ -130,6 +130,19 @@ angular:
     z: 0.1"
 ```
 
+* Test `drive_bot` node
+```sh
+$ rosrun ball_chaser drive_bot
+$ rosservice call /ball_chaser/command_robot "linear_x: 0.5
+angular_z: 0.0"             # This request should drive your robot forward
+$ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+angular_z: 0.5"             # This request should keep your robot left turning
+$ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+angular_z: -0.5"            # This request should keep your robot right turning
+$ rosservice call /ball_chaser/command_robot "linear_x: 0.0
+angular_z: 0.0"             # This request should bring your robot to a complete stop
+```
+
 * Adjust the world layout if needed
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
@@ -137,7 +150,7 @@ $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
 
 * Launch `udacity_office`  
 ```sh
-roslaunch my_robot udacity_office.launch
+$ roslaunch my_robot udacity_office.launch
 ```
 
 
