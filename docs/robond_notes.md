@@ -145,6 +145,7 @@ angular_z: 0.0"             # This request should bring your robot to a complete
 
 * Adjust the world layout if needed
 ```sh
+$ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
 ```
 
