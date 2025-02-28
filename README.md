@@ -33,7 +33,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
             ├── my_robot/
             └── ball_chaser/
         ```
-    * Detailed file structure
+    * Detailed file structure of the repo `src`
         ```sh
         ~/catkin_ws/src/                   # Project 2, Go Chase It Project
         ├── my_robot                       # my_robot package                   
