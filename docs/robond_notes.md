@@ -153,8 +153,22 @@ $ rosrun ball_chaser process_image
 ```
 
 * Adjust the worlds, models, etc. if needed  
-  ⚠️ Do NOT edit or save anything in `roslaunch`!
+  ⚠️ Use `$ gazebo` to edit the worlds. **Do NOT** edit or save anything in `$ roslaunch`! 
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world --verbose
+```  
+
+* Clear logs, etc. if needed
+```sh
+$ rm -rf ~/.ros/log
+$ rm -rf ~/.ros
+$ rm -rf ~/.gazebo      ## it might take a while to re-download and re-render
+```
+
+* Re-build packages if needed
+```sh
+cd ~/catkin_ws               
+catkin_make clean
+catkin_make 
 ```
