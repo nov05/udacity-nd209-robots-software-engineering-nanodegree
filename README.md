@@ -23,7 +23,14 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://youtu.be) 
     * Note: `RViz` was causing insufficient memory issues on my local machine, so I’m using the camera window for visualization instead.
 
-    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_mars_rover.gif?raw=true" width=800>   
+* Explore Room 3, find a Mars rover
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_mars_rover.gif?raw=true" width=800>     
+
+* Explore Room 2, go around the fountain  
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_02_hallway.gif?raw=true" width=800>  
+
+* Explore Room 4, go under the ladder  
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_03_ladder.gif?raw=true" width=800>   
 
 <br>  
 
