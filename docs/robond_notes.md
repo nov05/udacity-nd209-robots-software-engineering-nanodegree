@@ -143,7 +143,7 @@ $ rosservice call /ball_chaser/command_robot "linear_x: 0.0
 angular_z: 0.0"             # This request should bring your robot to a complete stop
 ```
 
-* Adjust the world layout if needed
+* Adjust the worlds, models, etc. if needed
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
