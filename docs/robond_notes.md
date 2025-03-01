@@ -152,10 +152,9 @@ $ rqt_image_view /camera/rgb/image_raw
 $ rosrun ball_chaser process_image  
 ```
 
-* Adjust the worlds, models, etc. if needed
+* Adjust the worlds, models, etc. if needed  
+  ⚠️ Do NOT edit or save anything in `roslaunch`!
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
-$ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
+$ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world --verbose
 ```
-
-
