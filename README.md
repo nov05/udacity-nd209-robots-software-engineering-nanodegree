@@ -73,7 +73,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         ~/catkin_ws/src/                   # Project 2, Go Chase It Project
         ├── my_robot                       # my_robot package                   
         │   ├── launch                     # launch folder for launch files   
-        │   │   ├── robot_description.launch
+        │   │   ├── my_robot.launch
         │   │   ├── udacity_office.launch
         │   │   └── empty_world.launch
         │   ├── meshes                     # meshes folder for sensors
@@ -99,7 +99,35 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         └── ...  
         ```  
 
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-01%2014_16_10-p2_vscode_dir.jpg" width=800>  
+        <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-01%2014_16_10-p2_vscode_dir.jpg" width=800>  
+
+    <br>  
+
+    * The `/my_robot/launch/udacity_office.launch` file is responsible for launching the world and several other nodes. This includes `/my_robot/launch/my_robot.launch`, which launches the `my_robot` model, and `/ball_chaser/launch/ball_chaser.launch`, which launches the `my_ball` model. RViz was originally supposed to be launched as well, but due to the limited video memory on my local machine, I opted to use camera windows for visualizing the simulation instead.
+
+    * If you would need to change the initial positions of `my_robot` and `my_ball`, you can edit the following arguments in `udacity_office.launch`.
+
+        ```xml
+        <!-- Launch other relevant files-->
+        <include file="$(find my_robot)/launch/my_robot.launch">
+            <!-- Robot Pose -->
+            <arg name="my_robot_x" default="0" />
+            <arg name="my_robot_y" default="-6.5" />
+            <arg name="my_robot_z" default="0" />
+            <arg name="my_robot_roll" default="0" />
+            <arg name="my_robot_pitch" default="0" />
+            <arg name="my_robot_yaw" default="1.5707" />
+        </include>
+        <include file="$(find ball_chaser)/launch/ball_chaser.launch">
+            <!-- My Ball Pose -->
+            <arg name="my_ball_x" default="0" />
+            <arg name="my_ball_y" default="-10.5" />
+            <arg name="my_ball_z" default="0" />
+            <arg name="my_ball_roll" default="0" />
+            <arg name="my_ball_pitch" default="0" />
+            <arg name="my_ball_yaw" default="0" />
+        </include>
+        ```
 
 <br><br><br>  
 
