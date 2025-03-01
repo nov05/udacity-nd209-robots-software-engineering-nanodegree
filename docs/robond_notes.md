@@ -109,7 +109,8 @@ $ git push --set-upstream origin main
 $ cd ~/catkin_ws/
 $ catkin_make
 $ source devel/setup.bash
-$ roslaunch my_robot empty_world.launch
+$ roslaunch my_robot empty_world.launch            ## or
+$ roslaunch my_robot udacity_office.launch
 ```
 
 * View the camera image stream, in a new terminal
@@ -143,15 +144,18 @@ $ rosservice call /ball_chaser/command_robot "linear_x: 0.0
 angular_z: 0.0"             # This request should bring your robot to a complete stop
 ```
 
+* Test `prcess_image` node
+```sh
+$ roslaunch my_robot empty_world.launch  
+$ roslaunch my_robot udacity_office.launch
+$ rqt_image_view /camera/rgb/image_raw  
+$ rosrun ball_chaser process_image  
+```
+
 * Adjust the worlds, models, etc. if needed
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world
-```
-
-* Launch `udacity_office`  
-```sh
-$ roslaunch my_robot udacity_office.launch
 ```
 
 
