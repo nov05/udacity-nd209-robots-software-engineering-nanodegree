@@ -20,7 +20,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 2: ROS Essentials - Go Chase it!**  
 
-* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://youtu.be) 
+* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://www.youtube.com/watch?v=E2hdfOP_BzM) 
     * Note: `RViz` was causing insufficient memory issues on my local machine, so I’m using the camera window for visualization instead.
 
 * Explore Room 3, find a Mars rover
