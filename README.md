@@ -590,6 +590,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Logs**
 
+* 2025-03-01 p2 submission, [LinkedIn Post](https://www.linkedin.com/posts/wenjingliu7_20250301-go-chase-it-robotics-simulation-activity-7301743680053252096-KB2n)    
 * 2025-02-27 p2 milestone, robot car circling is enabled, [LinkedIn post](https://www.linkedin.com/posts/wenjingliu7_20250227-udacity-nd209-course-3-p2-robot-activity-7300978129106350080-dVn6/)   
 * 2025-02-14 p1 submission, [LinkedIn post](https://www.linkedin.com/posts/wenjingliu7_robotics-simulation-activity-7296250187637735425-HLvY)    
 * 2025-02-11 repo created   
