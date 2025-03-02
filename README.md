@@ -107,7 +107,6 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     * If you would need to change the initial positions of `my_robot` and `my_ball`, you can edit the following arguments in `udacity_office.launch`.
 
-        ```html
         <!-- Launch other relevant files-->
         <include file="$(find my_robot)/launch/my_robot.launch">
             <!-- Robot Pose -->
@@ -127,7 +126,6 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
             <arg name="my_ball_pitch" default="0" />
             <arg name="my_ball_yaw" default="0" />
         </include>
-        ```
 
 <br><br><br>  
 
