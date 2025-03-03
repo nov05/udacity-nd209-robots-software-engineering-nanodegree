@@ -4,7 +4,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Course: https://www.udacity.com/course/robotics-software-engineer--nd209  
 * GitHub repo:  
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
-    * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1) 
+    * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1, as `~/myrobot` in VM) 
     * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3, as `~/catkin_ws/src/simple_arm` in VM) 
     * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, P2, as `~/catkin_ws/src` in VM)
 * Workflow: 
