@@ -37,6 +37,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`, `Nvidia` GPU   
 
 * Operations:  
+    * Switch to user `robond`
+        ```sh
+        sudo su robond
+        ```
+
     * Launch `udacity_office.world`. (You can echo the setup commands to `~/.bashrc`)
         ```sh
         cd ~/catkin_ws/
@@ -57,7 +62,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         
 * Catkin Workspace `catkin_ws` Directory:  
     * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (<- The development artifacts such as code, etc. are included here.) 
-    * 2 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
+    * 3 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
         ```sh
         ~/catkin_ws/
         ├── build/
