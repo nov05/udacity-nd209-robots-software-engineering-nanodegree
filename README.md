@@ -3,10 +3,10 @@
 Fuse computer vision, machine learning, mechanics, and hardware systems to build bots of the future!  
 * Course: https://www.udacity.com/course/robotics-software-engineer--nd209  
 * GitHub repo:  
-    * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree  
+    * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree (this repo)  
     * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1, as `~/myrobot` in VM) 
     * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3, as `~/catkin_ws/src/simple_arm` in VM) 
-    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, P2, as `~/catkin_ws/src` in VM)
+    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, Project 2, as `~/catkin_ws/src` in VM)
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
@@ -533,9 +533,27 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))    
 
-* The 
-    `$ sudo gedit opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py` 
+* You could technically apply a monkey patch to the Python code, but it's generally not recommended.  
+    ```sh
+    $ sudo gedit /opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py
+    $ sudo gedit /opt/ros/noetic/lib/python3/dist-packages/gazebo_ros/gazebo_interface.py
+    ```
     ```python  
+    def spawn_sdf_model_client(model_name, model_xml, robot_namespace, initial_pose, reference_frame, 
+                               gazebo_namespace):
+    ...
+    def spawn_urdf_model_client(model_name, model_xml, robot_namespace, initial_pose, reference_frame, 
+                                gazebo_namespace):
+        rospy.loginfo("Waiting for service %s/spawn_urdf_model"%gazebo_namespace)
+        rospy.wait_for_service(gazebo_namespace+'/spawn_urdf_model')
+        try:
+            spawn_urdf_model = rospy.ServiceProxy(gazebo_namespace+'/spawn_urdf_model', SpawnModel)
+            rospy.loginfo("Calling service %s/spawn_urdf_model"%gazebo_namespace)
+            resp = spawn_urdf_model(model_name, model_xml, robot_namespace, initial_pose, reference_frame)
+            rospy.loginfo("Spawn status: %s"%resp.status_message)
+            return resp.success
+        except rospy.ServiceException as e:
+            print("Service call failed: %s" % e)
     ```
 
 * Find ROSLaunch processes and kill them  
