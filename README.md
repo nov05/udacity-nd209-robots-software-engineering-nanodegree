@@ -99,6 +99,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         │   │   └── process_images.cpp
         │   ├── srv                        # service folder for ROS services
         │   │   └── DriveToTarget.srv
+        │   ├── models                     # model folder for sdf files
+        │   │   └── my_ball
+        │   │       ├── model.config
+        │   │       └── model.sdf
         │   ├── CMakeLists.txt             # compiler instructions
         │   └── package.xml                # package info                  
         └── ...  
