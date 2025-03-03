@@ -75,7 +75,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         ```
     * Detailed file structure of the repo `src`
         ```sh
-        ~/catkin_ws/src/                   # Project 2, Go Chase It Project
+        ~/catkin_ws/src/                   # Project 2, "Go Chase It"
         ├── my_robot                       # my_robot package                   
         │   ├── launch                     # launch folder for launch files   
         │   │   ├── my_robot.launch
