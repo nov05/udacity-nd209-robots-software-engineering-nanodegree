@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- World File -->
+    <arg name="world_file" default="$(find my_robot)/worlds/udacity_office.world" />
+    <!-- Launch Gazebo World -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="use_sim_time" value="true" />
+        <arg name="debug" value="false" />
+        <arg name="gui" value="true" />
+        <arg name="world_name" value="$(arg world_file)" />
+    </include>
+
+    <!-- Launch other relevant files-->
+    <include file="$(find my_robot)/launch/my_robot.launch">
+        <!-- Robot Pose -->
+        <arg name="my_robot_x" default="0" />
+        <arg name="my_robot_y" default="-6.5" />
+        <arg name="my_robot_z" default="0" />
+        <arg name="my_robot_roll" default="0" />
+        <arg name="my_robot_pitch" default="0" />
+        <arg name="my_robot_yaw" default="1.5707" />
+    </include>
+    <include file="$(find ball_chaser)/launch/ball_chaser.launch">
+        <!-- My Ball Pose -->
+        <arg name="my_ball_x" default="0" />
+        <arg name="my_ball_y" default="-10.5" />
+        <arg name="my_ball_z" default="0" />
+        <arg name="my_ball_roll" default="0" />
+        <arg name="my_ball_pitch" default="0" />
+        <arg name="my_ball_yaw" default="0" />
+    </include>
+
+    <!-- launch rviz -->
+    <!-- <node name="rviz" pkg="rviz" type="rviz" respawn="false" /> -->
+
+</launch>

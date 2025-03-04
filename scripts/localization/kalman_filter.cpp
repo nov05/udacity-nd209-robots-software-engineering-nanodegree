@@ -17,11 +17,11 @@ tuple<MatrixXf, MatrixXf> kalman_filter(MatrixXf x, MatrixXf P,
 {
     // return:
     //     x - current state
-    //     P - state convariance
+    //     P - state covariance
 
     // input:
     //     x - current state
-    //     P - state convariance
+    //     P - state covariance
     //     u - External Motion
     //     F - Next State Function, State Transition Function
     //     H - Measurement Function
