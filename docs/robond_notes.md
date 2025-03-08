@@ -97,7 +97,7 @@ $ rm -rf ~/.gazebo
 $ cd ~/catkin_ws/src/
 $ git config --global init.defaultBranch main
 $ git config --global user.email "you@example.com"    ## any content, no need to change
-$ git config --global user.name "nov05"               ## your GitHub user
+$ git config --global user.name "nov05"               ## your GitHub user ID
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p2-src.git
 $ it checkout -b main
@@ -172,3 +172,74 @@ cd ~/catkin_ws
 catkin_make clean
 catkin_make 
 ```
+
+👉 Course 4, P3
+
+* Do the same with `~/catkin_ws/` to create `~/catkin_ws2/`  
+
+```sh
+$ cd ~
+$ mkdir -p ~/catkin_ws2/src
+$ cd ~/catkin_ws2/src
+$ catkin_init_workspace
+$ cd ~/catkin_ws2
+$ catkin_make
+$ source devel/setup.bash
+$ sudo apt-get update
+$ sudo apt-get upgrade -y
+```
+
+* TurtleBot3 Gazebo Package
+
+```sh
+$ cd ~/catkin_ws2/src
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ cd ~/catkin_ws2
+$ catkin_make
+```
+
+* Launch the `Burger` bot
+
+```sh
+cd ~/catkin_ws2
+source devel/setup.bash
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch  ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_house.launch
+```
+```sh
+cd ~/catkin_ws2 ## in a new terminal
+source devel/setup.bash  
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch    
+```
+
+* 
+
+```sh
+$ cd ~/catkin_ws2/src/
+$ git config --global init.defaultBranch main
+$ git config --global user.email "you@example.com"    ## any content, no need to change
+$ git config --global user.name "nov05"               ## your GitHub user
+$ git init
+$ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p3-src2.git
+$ git checkout -b main
+$ git fetch origin
+$ git merge origin/main --allow-unrelated-histories
+$ git add .
+$ git commit -m "initial commit from vm"
+$ git push --set-upstream origin main
+$ cd ~/catkin_ws2/
+$ catkin_make
+```
+
+```
+$ rosdep -i install turtlebot_gazebo
+$ source devel/setup.bash
+```   
+
+
+

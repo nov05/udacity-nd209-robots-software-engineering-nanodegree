@@ -533,6 +533,34 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     angular_z: 0.0"  # This request should bring your robot to a complete stop
     ```
 
+### 🏷️ **Course 4, Localization**
+
+* `Turtlebot3` on `ROS`-Noetic, launch the `burger` robot in an empty world.   
+
+    ```sh
+    cd ~/catkin_ws2/src
+    source devel/setup.bash
+    export TURTLEBOT3_MODEL=burger
+    roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+    ```
+
+    ```sh
+    cd ~/catkin_ws2/src  ## in a new terminal
+    source devel/setup.bash  
+    export TURTLEBOT3_MODEL=burger
+    roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch    
+    ```
+
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250307_turtlebot3_ros-noetic.gif?raw=true" width=800>   
+
+* `turtlebot3_world.launch` and `turtlebot3_house.launch`  
+
+    ```sh
+    $ roslaunch turtlebot3_gazebo turtlebot3_world.launch  ## or
+    $ roslaunch turtlebot3_gazebo turtlebot3_house.launch
+    ```
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_23_13-Gazebo%20(Ubuntu-20.04).jpg" width=400><img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_28_00-Gazebo%20(Ubuntu-20.04).jpg" width=400>
 
 
 
@@ -600,6 +628,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
                 at line 118 in /build/urdfdom-VnCcob/urdfdom-1.0.4+ds/urdf_parser/src/model.cpp
         ERROR: Model Parsing the xml failed
         ```
+
 
 <br><br><br>  
 
