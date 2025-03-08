@@ -173,9 +173,9 @@ catkin_make clean
 catkin_make 
 ```
 
-👉 Course 4, P3
+## 👉 Course 4, Turtlebot3 on ROS Noetic
 
-* Do the same with `~/catkin_ws/` to create `~/catkin_ws2/`  
+* Create Catkin workspace `~/catkin_ws2/`  
 
 ```sh
 $ cd ~
