@@ -562,6 +562,9 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_23_13-Gazebo%20(Ubuntu-20.04).jpg" width=400><img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_28_00-Gazebo%20(Ubuntu-20.04).jpg" width=400>
 
+* **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekl`
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2004_52_29-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=600>
 
 
 <br><br><br>  
@@ -629,7 +632,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         ERROR: Model Parsing the xml failed
         ```
 
-
+* Check `RViz`: In one terminal run `$ roscore`, in another run `$ rosrun rviz rviz`. (Cehck [example output](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf?permalink_comment_id=5476872#gistcomment-5476872))
 
 <br><br><br>  
 

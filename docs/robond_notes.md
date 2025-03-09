@@ -223,7 +223,7 @@ $ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc   ## add to user .bashrc
 $ export TURTLEBOT3_MODEL=burger
 ```
 
-* Launch the `Burger` bot
+* Launch the `burger` bot
 
 ```sh
 source devel/setup.bash
@@ -245,13 +245,29 @@ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 $ sudo apt-get install liborocos-bfl-dev  ## ⚠️
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/nov05/udacity-robot_pose_ekf.git robot_pos_ekf  ## ⚠️ edit robot_pose_ekf.launch
+$ rm -rf robot_pos_ekf/.git robot_pos_ekf/.github
 $ cd ~/catkin_ws2
 $ catkin_make
-$ source devel/setup.bash
-$ roslaunch robot_pose_ekf robot_pose_ekf.launch
-$ rosrun rqt_graph rqt_graph  ## in a new terminal
+source devel/setup.bash
+roslaunch robot_pose_ekf robot_pose_ekf.launch
 ```
 
+* Odometry to Trajectory Package
+
+```sh
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/nov05/udacity-odom_to_trajectory.git odom_to_trajectory
+$ rm -rf odom_to_trajectory/.git odom_to_trajectory/.github
+$ cd ~/catkin_ws
+$ catkin_make
+source devel/setup.bash
+roslaunch odom_to_trajectory create_trajectory.launch
+```
+
+```sh
+$ rosrun rqt_graph rqt_graph     ## in a new terminal
+$ rosrun rviz rviz               ## in a new terminal
+```
 
 
 
