@@ -5,9 +5,10 @@
   The default user is `robond` (password `robo-nd`).  
 
 ```sh
-$ source /opt/ros/noetic/setup.bash    ## when open a terminal or
+$ sudo su robond                                         ## switch user
+$ source /opt/ros/noetic/setup.bash                      ## when open a terminal or 
 $ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc  ## do only once
-$ source ~/.bashrc   ## do only once
+$ source ~/.bashrc                                       ## do only once
 $ gazebo
 ```
 
@@ -228,14 +229,14 @@ $ export TURTLEBOT3_MODEL=burger
 ```sh
 source devel/setup.bash
 roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  ## or
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch  ## or
-$ roslaunch turtlebot3_gazebo turtlebot3_house.launch
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch      ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_house.launch      ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch   ## burger with camera
 ```
 
 * In a new terminal
 
 ```sh
-source devel/setup.bash  
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch    
 ```
 

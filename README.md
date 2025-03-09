@@ -562,9 +562,9 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_23_13-Gazebo%20(Ubuntu-20.04).jpg" width=400><img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_28_00-Gazebo%20(Ubuntu-20.04).jpg" width=400>
 
-* **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekl`
+* **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekf`
 
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2004_52_29-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=600>
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2012_29_40-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=800>
 
 
 <br><br><br>  
