@@ -564,7 +564,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekf`
 
-    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2012_29_40-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=800>
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2013_16_28-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=800>
 
 
 <br><br><br>  

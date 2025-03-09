@@ -266,8 +266,9 @@ roslaunch odom_to_trajectory create_trajectory.launch
 ```
 
 ```sh
-$ rosrun rqt_graph rqt_graph     ## in a new terminal
-$ rosrun rviz rviz               ## in a new terminal
+$ rosrun robot_state_publisher robot_state_publisher  ## in a new terminal
+$ rosrun rqt_graph rqt_graph                          ## in a new terminal
+$ rosrun rviz rviz                                    ## in a new terminal
 ```
 
 
