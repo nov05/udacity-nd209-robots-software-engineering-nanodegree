@@ -13,7 +13,7 @@ $ gazebo
 ```
 
 
-## 👉 Course 2 Gazebo World, P1 Build a world (no ROS)
+## 👉 Course 2 Gazebo World, P1 Build a world (without ROS)
 
 ```sh
 $ cd ~
@@ -220,8 +220,9 @@ $ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 $ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 $ cd ~/catkin_ws2
 $ catkin_make
-$ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc   ## add to user .bashrc
-$ export TURTLEBOT3_MODEL=burger
+$ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc   ## add to user .bashrc, or
+$ echo "export TURTLEBOT3_MODEL=burger_for_autorace" >> ~/.bashrc   ## with camera
+$ export TURTLEBOT3_MODEL=burger_for_autorace
 ```
 
 * Launch the `burger` bot
@@ -268,9 +269,24 @@ roslaunch odom_to_trajectory create_trajectory.launch
 ```sh
 $ rosrun robot_state_publisher robot_state_publisher  ## in a new terminal
 $ rosrun rqt_graph rqt_graph                          ## in a new terminal
-$ rosrun rviz rviz                                    ## in a new terminal
+$ rosrun rviz rviz                                    ## in a new terminal, or
+$ rosrun rviz rviz -d ~/catkin_ws2/src/main/rviz/ekf_lab.rviz
 ```
 
+* Create pakcage `main` and launch file
+
+```sh
+$ cd ~/catkin_ws/src
+$ catkin_create_pkg main
+$ cd ~/catkin_ws
+$ catkin_make
+```
+
+```sh
+$ cd ~/catkin_ws/
+$ source devel/setup.bash
+$ roslaunch main main.launch
+```
 
 
 
