@@ -562,9 +562,20 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_23_13-Gazebo%20(Ubuntu-20.04).jpg" width=400><img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-07%2020_28_00-Gazebo%20(Ubuntu-20.04).jpg" width=400>
 
-* **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekf`
+* **Sensor fusion**: `ROS Noetic` + `Turtlebot3` + `robot_pose_ekf` (Extended Kalman Filter)
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2013_16_28-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=800>
+
+
+* There are 3 models in [`Turtlebot3`](https://web.archive.org/web/20250310023522/https://www.turtlebot.com/about/): `burger`, `waffle`, `waffle_pi`. However `burger` isn't equipped with camera, while `burger_for_autorace` is.  
+    * burger: [`turtlebot3\turtlebot3_description\urdf\turtlebot3_burger.gazebo.xacro`](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/turtlebot3/turtlebot3_description/urdf/turtlebot3_burger.gazebo.xacro)   
+    * burger_for_autorace: [`turtlebot3\turtlebot3_description\urdf\turtlebot3_burger_for_autorace.gazebo.xacro`](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/turtlebot3/turtlebot3_description/urdf/turtlebot3_burger_for_autorace.gazebo.xacro)    
+
+    ```sh
+    $ export TURTLEBOT3_MODEL=burger_for_autorace
+    $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    $ rosrun rqt_image_view rqt_image_view                       ## in a new terminal, topic /camera/image
+    ```
 
 
 <br><br><br>  

@@ -228,20 +228,15 @@ $ export TURTLEBOT3_MODEL=burger_for_autorace
 * Launch the `burger` bot
 
 ```sh
-source devel/setup.bash
-roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  ## or
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch      ## or
-$ roslaunch turtlebot3_gazebo turtlebot3_house.launch      ## or
-$ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch   ## burger with camera
+$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch        ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_house.launch        ## or
+$ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch     ## burger with camera
+$ rosrun rqt_image_view rqt_image_view                       ## in a new terminal, topic /camera/image
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch   ## in a new terminal, launch keyboard control
 ```
 
-* In a new terminal
-
-```sh
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch    
-```
-
-* Robot Pose EKF Package
+* Install the "Robot Pose EKF" Package
 
 ```sh
 $ sudo apt-get install liborocos-bfl-dev  ## ⚠️
@@ -254,7 +249,7 @@ source devel/setup.bash
 roslaunch robot_pose_ekf robot_pose_ekf.launch
 ```
 
-* Odometry to Trajectory Package
+* Install the "Odometry to Trajectory" Package
 
 ```sh
 $ cd ~/catkin_ws/src
