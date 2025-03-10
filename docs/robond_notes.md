@@ -232,8 +232,8 @@ $ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  ## or
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch        ## or
 $ roslaunch turtlebot3_gazebo turtlebot3_house.launch        ## or
 $ roslaunch turtlebot3_gazebo turtlebot3_autorace.launch     ## burger with camera
-$ rosrun rqt_image_view rqt_image_view                       ## in a new terminal, topic /camera/image
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch   ## in a new terminal, launch keyboard control
+$ rosrun rqt_image_view rqt_image_view                       ## in a new terminal, topic /camera/image
 ```
 
 * Install the "Robot Pose EKF" Package
@@ -277,8 +277,15 @@ $ cd ~/catkin_ws2
 $ catkin_make
 ```
 ```sh
-$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## temporary fix
+$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## ⚠️ temporary fix
+$ roslaunch main main_no_rviz.launch 2> >(grep -v TF_REPEATED_DATA|at line 278) 
 ```
 
+* Install `rqt_multiplot` package
+```sh
+$ sudo apt-get update
+$ sudo apt-get install ros-noetic-rqt-multiplot
+$ rosrun rqt_multiplot rqt_multiplot --multiplot-config ~/catkin_ws2/src/main/multiplot/ekf_lab.xml
+```
 
 

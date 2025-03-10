@@ -579,9 +579,15 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2021_18_45-turtlebot3_burger_for_autorace_emptyworld_camera.jpg" width=800>
 
 * **Extended Kalman Filter** packages
+
     * `$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## temporary fix`
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250309_ekf_lab.mp4.gif?raw=true" width=800>
+
+    * `$ rosrun rqt_multiplot rqt_multiplot --multiplot-config ~/catkin_ws2/src/main/multiplot/ekf_lab.xml`
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2023_45_05-ekf_lab_multiplot.jpg" width=800>  
+
 
 
 <br><br><br>  
