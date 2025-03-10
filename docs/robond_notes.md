@@ -276,16 +276,13 @@ $ rosrun rviz rviz -d ~/catkin_ws2/src/main/rviz/ekf_lab.rviz
 * Create pakcage `main` and launch file
 
 ```sh
-$ cd ~/catkin_ws/src
+$ cd ~/catkin_ws2/src
 $ catkin_create_pkg main
-$ cd ~/catkin_ws
+$ cd ~/catkin_ws2
 $ catkin_make
 ```
-
 ```sh
-$ cd ~/catkin_ws/
-$ source devel/setup.bash
-$ roslaunch main main.launch
+$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## temporary fix
 ```
 
 
