@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/scripts/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,7 +12,8 @@
             ],
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "windows-gcc-x64"
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gcc.exe"
         }
     ],
     "version": 4
