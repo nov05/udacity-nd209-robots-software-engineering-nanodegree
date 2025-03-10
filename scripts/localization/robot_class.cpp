@@ -72,8 +72,8 @@ public:
 
         for (int i = 0; i < sizeof(landmarks) / sizeof(landmarks[0]); i++)
         {
-            dist = sqrt(pow((x - landmarks[i][0]), 2) + pow((y - landmarks[i][1]), 2));
-            dist += gen_gauss_random(0.0, sense_noise);
+            dist = sqrt(pow((x - landmarks[i][0]), 2) + pow((y - landmarks[i][1]), 2));  // Euclidean distance
+            dist += gen_gauss_random(0.0, sense_noise);  // add noise
             z[i] = dist;
         }
         return z;
