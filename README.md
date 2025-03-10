@@ -574,7 +574,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     ```sh
     $ export TURTLEBOT3_MODEL=burger_for_autorace
     $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
-    $ rosrun rqt_image_view rqt_image_view                       ## in a new terminal, topic /camera/image
+    $ rosrun rqt_image_view rqt_image_view   ## in a new terminal, topic /camera/image
     ```
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2021_18_45-turtlebot3_burger_for_autorace_emptyworld_camera.jpg" width=800>
 
