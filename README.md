@@ -590,7 +590,16 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * **Monte Carlo Localization (MCL)** 
 
-    * To run a `C++` script including the Python 2.7 pakcage `matplotlib` 2.2 in `VS Code` with the `C/C++ Extension Pack` plugin, carefully configurate `c_cpp_properties.json`, `launch.json`, `tasks.json` in [the `.vscode` folder](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/tree/main/.vscode), and `Shift+Ctrl+D` then select the right launch configuration label. Make sure to activate the right Python environment (e.g. `$ conda activate robond_py27` for me) in the debug terminal, and set the proper environment variables (e.g Powershell `$env:PYTHONHOME="D:\Users\guido\miniconda3\envs\robond_py27"` and `$env:PYTHONPATH="D:\Users\guido\miniconda3\envs\robond_py27\Lib"`).
+    * To run a `C++` script including the `Python==2.7` pakcage `matplotlib==2.2` in `Windows 11` `VS Code` with the `C/C++ Extension Pack` plugin, carefully configurate `c_cpp_properties.json`, `launch.json`, `tasks.json` in [the `.vscode` folder](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/tree/main/.vscode), and `Shift+Ctrl+D` then select the right launch configuration label. Make sure to activate the right Python environment (e.g. `$ conda activate robond_py27` for me) in the debug terminal, and set the proper environment variables (e.g Powershell `$env:PYTHONHOME="D:\Users\guido\miniconda3\envs\robond_py27"` and `$env:PYTHONPATH="D:\Users\guido\miniconda3\envs\robond_py27\Lib"`).
+
+    * Change the `matplotlibcpp.h` if necessary. E.g.
+        ```cpp
+        // Py_DECREF(args);  // nov05
+		if (args) {
+			Py_INCREF(args);
+			Py_DECREF(args);
+		}
+        ```
 
     * [matplotlibcpp.h](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/include/matplotlibcpp.h), [mcl_visualization.cpp](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/pycpp/mcl_visualization.cpp)    
 
