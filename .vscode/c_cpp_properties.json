@@ -3,7 +3,10 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/scripts/**"
+                "D:/Users/guido/miniconda3/envs/robond_py27/include",
+                "D:/Users/guido/miniconda3/envs/robond_py27/Lib/site-packages/numpy/core/include",
+                "D:/Users/guido/miniconda3/envs/robond_py27/libs",
+                "${workspaceFolder}/scripts/include/**"
             ],
             "defines": [
                 "_DEBUG",

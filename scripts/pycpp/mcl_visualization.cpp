@@ -1,13 +1,13 @@
-// #include "src/matplotlibcpp.h"//Graph Library
 #include <iostream>
 #include <string>
 #include <math.h>
 #include <vector>
 #include <stdexcept> // throw errors
 #include <random>    // C++ 11 Random Numbers
+#include "../include/matplotlibcpp.h" // Python2.7 graph Library
 
-// namespace plt = matplotlibcpp;
 using namespace std;
+namespace plt = matplotlibcpp;
 
 // Landmarks
 double landmarks[8][2] = {
@@ -198,7 +198,6 @@ double max(double arr[], int n)
     return max;
 }
 
-/*
 void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 {
     // Draw the robot, landmarks, particles and resampled particles on a graph
@@ -233,7 +232,6 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
     plt::save("./images/step" + to_string(step) + ".png");
     plt::clf();
 }
-*/
 
 int main()
 {
@@ -249,6 +247,8 @@ int main()
     // Create a set of particles
     int n = 1000;
     Robot p[n];
+    // Simulate a robot motion for each of these particles
+    // Robot p2[n];
 
     for (int i = 0; i < n; i++)
     {
@@ -268,9 +268,8 @@ int main()
         // Move the robot and sense the environment afterwards
         my_robot = my_robot.move(0.1, 5.0);
         z = my_robot.sense();
-
-        // Simulate a robot motion for each of these particles
         Robot p2[n];
+
         for (int i = 0; i < n; i++)
         {
             p2[i] = p[i].move(0.1, 5.0);
@@ -314,6 +313,8 @@ int main()
         // Step = <t>, Evaluation = <error_value>;
         cout << "Step = " << t << ", Evaluation = " << evaluation(my_robot, p, n) << endl;
     }
+
+    // visualization(n, my_robot, localization_steps, p, p2);
 
     return 0;
 }
