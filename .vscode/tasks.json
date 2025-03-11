@@ -29,8 +29,8 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file with Python2.7",
-            // "command": "D:\\Program Files\\msys64\\ucrt64\\bin\\g++.exe",
-            "command": "D:\\Program Files\\msys64\\mingw64\\bin\\g++.exe",
+            "command": "D:\\Program Files\\msys64\\ucrt64\\bin\\g++.exe",
+            // "command": "D:\\Program Files\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-std=c++11",
                 "-g",
@@ -46,9 +46,6 @@
                 "D:\\Users\\guido\\miniconda3\\envs\\robond_py27\\Lib\\site-packages\\numpy\\core\\include",
                 "-L",
                 "D:\\Users\\guido\\miniconda3\\envs\\robond_py27\\libs",
-                // "-static-libgcc",  // Add this flag to ensure correct linking
-                // "-lmsvcrt",  // Add MSVCRT linking
-                // "-D__MSVCRT__=1"  // Add the define flag for correct symbol linkage
             ],
             "options": {
                 "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",

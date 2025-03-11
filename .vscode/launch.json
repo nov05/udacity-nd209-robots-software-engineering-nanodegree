@@ -38,7 +38,8 @@
             "stopAtEntry": false,
             "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",
             // "cwd": "D:\\Program Files\\msys64\\mingw64\\bin",
-            "environment": [],
+            "environment": [
+            ],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gdb.exe",
