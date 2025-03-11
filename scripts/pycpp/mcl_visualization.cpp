@@ -211,8 +211,9 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
     // p[]: particles
     // pr[]: particles resampled
 
-    // Set backend to TkAgg explicitly (before using pyplot), nov05
-    plt::backend("TkAgg");
+    // Set backend explicitly (before using pyplot) for Windows, nov05
+    // plt::backend("AkAgg");  // for plt::show();
+    plt::backend("Agg");       // for plt::save();
 
     // Graph Format with Python library matplotlib
     plt::title("MCL, step " + to_string(step));
@@ -241,7 +242,7 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
     plt::plot({robot.x}, {robot.y}, "bo");
 
     // Save/Show the image and close the plot
-    plt::save("./step" + to_string(step) + ".png");  // nov05
+    plt::save("D:/tmp/step" + to_string(step) + ".png");  // nov05
     // plt::show();  // nov05
     plt::clf();
 }
@@ -274,7 +275,7 @@ int main()
     vector<double> z;
 
     // Iterating 50 times over the set of particles
-    int localization_steps = 50;
+    int localization_steps = 20;
 
     for (int t = 0; t < localization_steps; t++)
     {
@@ -315,10 +316,11 @@ int main()
             p2[i] = p[index];
         }
 
-        if (t == 0 || t == localization_steps - 1) 
-        {
-            visualization(n, my_robot, t, p, p2);
-        } 
+        visualization(n, my_robot, t, p, p2);
+        // if (t == 0 || t == (localization_steps -1) / 2 || t == localization_steps - 1) 
+        // {
+        //     visualization(n, my_robot, t, p, p2);
+        // } 
 
         for (int i = 0; i < n; i++)
         {

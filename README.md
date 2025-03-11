@@ -588,7 +588,14 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-09%2023_45_05-ekf_lab_multiplot.jpg" width=800>  
 
+* **Monte Carlo Localization (MCL)** 
 
+    * To run a `C++` script including the Python 2.7 pakcage `matplotlib` 2.2 in `VS Code` with the `C/C++ Extension Pack` plugin, carefully configurate `c_cpp_properties.json`, `launch.json`, `tasks.json` in [the `.vscode` folder](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/tree/main/.vscode), and `Shift+Ctrl+D` then select the right launch configuration label. Make sure to activate the right Python environment (e.g. `$ conda activate robond_py27` for me) in the debug terminal, and set the proper environment variables (e.g Powershell `$env:PYTHONHOME="D:\Users\guido\miniconda3\envs\robond_py27"` and `$env:PYTHONPATH="D:\Users\guido\miniconda3\envs\robond_py27\Lib"`).
+
+    * [matplotlibcpp.h](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/include/matplotlibcpp.h), [mcl_visualization.cpp](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/pycpp/mcl_visualization.cpp)    
+
+  
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250311_monte%20carlo%20localization.gif?raw=true" width=400>  
 
 <br><br><br>  
 

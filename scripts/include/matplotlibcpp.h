@@ -853,7 +853,10 @@ namespace matplotlibcpp {
         {
             PyObject *kwargs = PyDict_New();
             PyDict_SetItemString(kwargs, "block", Py_False);
-            res = PyObject_Call( detail::_interpreter::get().s_python_function_show, detail::_interpreter::get().s_python_empty_tuple, kwargs);
+            res = PyObject_Call( 
+				detail::_interpreter::get().s_python_function_show, 
+				detail::_interpreter::get().s_python_empty_tuple, kwargs
+			);
         }
 
 
