@@ -20,7 +20,7 @@
 #endif // WITHOUT_NUMPY
 
 #if PY_MAJOR_VERSION >= 3
-	#define PyString_FromString PyUnicode_FromString
+#define PyString_FromString PyUnicode_FromString
 #endif
 
 
@@ -91,7 +91,11 @@ namespace matplotlibcpp {
 				}
 
 				PyObject* matplotlib = PyImport_Import(matplotlibname);
-				Py_DECREF(matplotlibname);
+				// Py_DECREF(matplotlibname); // nov05
+				if (matplotlibname) {
+					Py_INCREF(matplotlibname);  // Safeguard before decrementing
+					Py_DECREF(matplotlibname);
+				} 
 				if(!matplotlib) { throw std::runtime_error("Error loading module matplotlib!"); }
 
 				// matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
@@ -101,12 +105,20 @@ namespace matplotlibcpp {
 				}
 
 				PyObject* pymod = PyImport_Import(pyplotname);
-				Py_DECREF(pyplotname);
+				// Py_DECREF(pyplotname);  // nov05
+				if (pyplotname) {
+					Py_INCREF(pyplotname);  // Safeguard before decrementing
+					Py_DECREF(pyplotname);
+				}
 				if(!pymod) { throw std::runtime_error("Error loading module matplotlib.pyplot!"); }
 
 
 				PyObject* pylabmod = PyImport_Import(pylabname);
-				Py_DECREF(pylabname);
+				// Py_DECREF(pylabname);  // nov05
+				if (pylabname) {
+					Py_INCREF(pylabname);  // Safeguard before decrementing
+					Py_DECREF(pylabname);
+				}
 				if(!pylabmod) { throw std::runtime_error("Error loading module pylab!"); }
 
 				s_python_function_show = PyObject_GetAttrString(pymod, "show");
@@ -403,8 +415,16 @@ namespace matplotlibcpp {
 
 		PyObject* res = PyObject_CallObject(detail::_interpreter::get().s_python_function_plot, plot_args);
 
-		Py_DECREF(plot_args);
-		if(res) Py_DECREF(res);
+		// Py_DECREF(plot_args); // nov05
+		if (plot_args) {
+			Py_INCREF(plot_args);  // Safeguard before decrementing
+			Py_DECREF(plot_args);
+		}
+		// if(res) Py_DECREF(res);  // nov05
+		if (res) {
+			Py_INCREF(res);  // Safeguard before decrementing
+			Py_DECREF(res);
+		}
 
 		return res;
 	}
@@ -671,8 +691,16 @@ namespace matplotlibcpp {
 		PyObject* res = PyObject_CallObject(detail::_interpreter::get().s_python_function_ylim, args);
 		if(!res) throw std::runtime_error("Call to ylim() failed.");
 
-		Py_DECREF(args);
-		Py_DECREF(res);
+		// Py_DECREF(args); // nov05
+		if (args) {
+			Py_INCREF(args);  // Safeguard before decrementing
+			Py_DECREF(args);
+		}
+		// Py_DECREF(res); // nov05
+		if (res) {
+			Py_INCREF(res);  // Safeguard before decrementing
+			Py_DECREF(res);
+		}
 	}
 
 	template<typename Numeric>
@@ -688,8 +716,16 @@ namespace matplotlibcpp {
 		PyObject* res = PyObject_CallObject(detail::_interpreter::get().s_python_function_xlim, args);
 		if(!res) throw std::runtime_error("Call to xlim() failed.");
 
-		Py_DECREF(args);
-		Py_DECREF(res);
+		// Py_DECREF(args);  // nov05
+		if (args) {
+			Py_INCREF(args);  // Safeguard before decrementing
+			Py_DECREF(args);
+		}
+		// Py_DECREF(res); // nov05
+		if (res) {
+			Py_INCREF(res);  // Safeguard before decrementing
+			Py_DECREF(res);
+		}
 	}
   
   
@@ -859,9 +895,17 @@ namespace matplotlibcpp {
 
 		PyObject* res = PyObject_CallObject(detail::_interpreter::get().s_python_function_save, args);
 		if (!res) throw std::runtime_error("Call to save() failed.");
-
-		Py_DECREF(args);
-		Py_DECREF(res);
+	
+		// Py_DECREF(args);  // nov05
+		if (args) {
+			Py_INCREF(args);
+			Py_DECREF(args);
+		}
+		// Py_DECREF(res);  // nov05
+		if (res) {
+			Py_INCREF(res);
+			Py_DECREF(res);
+		}
 	}
 
 	inline void clf() {

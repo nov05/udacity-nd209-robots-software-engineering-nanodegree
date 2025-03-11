@@ -6,6 +6,10 @@
 #include <stdexcept> // throw errors
 #include <random>    // C++ 11 Random Numbers
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 // namespace plt = matplotlibcpp;
 using namespace std;
 

@@ -36,11 +36,13 @@
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",
+            // "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",
+            "cwd": "D:\\Program Files\\msys64\\mingw64\\bin",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gdb.exe",
+            // "miDebuggerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gdb.exe",
+            "miDebuggerPath": "D:\\Program Files\\msys64\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

@@ -1,13 +1,20 @@
+#include "../include/matplotlibcpp.h" // Python2.7 graph Library
 #include <iostream>
 #include <string>
 #include <math.h>
 #include <vector>
 #include <stdexcept> // throw errors
 #include <random>    // C++ 11 Random Numbers
-#include "../include/matplotlibcpp.h" // Python2.7 graph Library
 
-using namespace std;
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+
 namespace plt = matplotlibcpp;
+using namespace std;
+
 
 // Landmarks
 double landmarks[8][2] = {
@@ -201,6 +208,11 @@ double max(double arr[], int n)
 void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 {
     // Draw the robot, landmarks, particles and resampled particles on a graph
+    // p[]: particles
+    // pr[]: particles resampled
+
+    // Set backend to TkAgg explicitly (before using pyplot), nov05
+    plt::backend("TkAgg");
 
     // Graph Format with Python library matplotlib
     plt::title("MCL, step " + to_string(step));
@@ -228,8 +240,9 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
     // Draw robot position in blue
     plt::plot({robot.x}, {robot.y}, "bo");
 
-    // Save the image and close the plot
-    plt::save("./images/step" + to_string(step) + ".png");
+    // Save/Show the image and close the plot
+    plt::save("./step" + to_string(step) + ".png");  // nov05
+    // plt::show();  // nov05
     plt::clf();
 }
 
@@ -248,7 +261,7 @@ int main()
     int n = 1000;
     Robot p[n];
     // Simulate a robot motion for each of these particles
-    // Robot p2[n];
+    Robot p2[n];
 
     for (int i = 0; i < n; i++)
     {
@@ -268,7 +281,6 @@ int main()
         // Move the robot and sense the environment afterwards
         my_robot = my_robot.move(0.1, 5.0);
         z = my_robot.sense();
-        Robot p2[n];
 
         for (int i = 0; i < n; i++)
         {
@@ -303,6 +315,11 @@ int main()
             p2[i] = p[index];
         }
 
+        if (t == 0 || t == localization_steps - 1) 
+        {
+            visualization(n, my_robot, t, p, p2);
+        } 
+
         for (int i = 0; i < n; i++)
         {
             p[i] = p2[i];
@@ -312,9 +329,8 @@ int main()
         // Evaluate the error by priting it in this form:
         // Step = <t>, Evaluation = <error_value>;
         cout << "Step = " << t << ", Evaluation = " << evaluation(my_robot, p, n) << endl;
+        
     }
-
-    // visualization(n, my_robot, localization_steps, p, p2);
 
     return 0;
 }
