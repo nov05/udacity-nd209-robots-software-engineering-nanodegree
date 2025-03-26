@@ -18,7 +18,7 @@ $ gazebo
 ```sh
 $ cd ~
 $ git clone -b master https://<PAT>@github.com/nov05/udacity-RoboND-myrobot.git myrobot  ## replace <PAT> with your token
-$ mkdir -p myrobt/build
+$ mkdir -p myrobot/build
 $ cd myrobot/build
 $ sudo cmake ..
 $ sudo apt-get update && sudo apt-get upgrade -y  
@@ -30,6 +30,9 @@ $ gazebo UdacityOffice --verbose
 ```
 
 ## 👉 Course 3 ROS Essentials, the `catkin` workspace directory
+
+* `simple_arm` is a self-contained package   
+* P2 `Go Chase It`: packages `my_robot` and `ball_chaser`
 
 ```
 catkin_ws/
@@ -91,7 +94,7 @@ $ rm -rf ~/.gazebo
 
 
 
-## 👉 Course 3, P2 my_robot
+## 👉 Course 3, the `my_robot` package
 
 * Get the catkin packages from the repo (except that `simple_arm` is managed by another repo)
 ```sh
@@ -101,8 +104,9 @@ $ git config --global user.email "you@example.com"    ## any content, no need to
 $ git config --global user.name "nov05"               ## your GitHub user ID
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p2-src.git
-$ it checkout -b main
+$ git checkout -b main
 $ git fetch origin
+$ rm CMakeLists.txt
 $ git merge origin/main --allow-unrelated-histories
 $ git add .
 $ git commit -m "init, fetch, merge with simple_arm repo"
@@ -174,7 +178,24 @@ catkin_make clean
 catkin_make 
 ```
 
-## 👉 Course 4, Turtlebot3 on ROS Noetic
+## 👉 Course 4, `Turtlebot3` on `ROS Noetic`
+
+```
+catkin_ws2/
+├── build/
+├── devel/
+└── src/                   ## managed by GitHub repo `udacity-RoboND-p3-src`
+    ├── CMakeLists.txt  
+    ├── main/      
+    ├── where_am_i/        ## P3 "Where Am I?"
+    ├── turtlebot3/
+    ├── turtlebot3_msgs/ 
+    ├── turtlebot3_simulations/
+    ├── robot_pose_ekf/
+    ├── odom_to_trajectory/
+    ├── pgm_map_creator/
+    ...
+```
 
 * Create Catkin workspace `~/catkin_ws2/`  
 
@@ -188,38 +209,38 @@ $ catkin_make
 $ echo "cd ~/catkin_ws2" >> ~/.bashrc  ## ⚠️ remove lines in user .bashrc for catkin_ws first, then run this line
 $ echo "source ~/catkin_ws2/devel/setup.bash" >> ~/.bashrc   ## add to user .bashrc
 $ source devel/setup.bash
-$ sudo apt-get update
-$ sudo apt-get upgrade -y
+$ sudo apt-get update && sudo apt-get upgrade -y
 ```
 
-* GitHub repo
+* Setup the GitHub repo
 
 ```sh
 $ cd ~/catkin_ws2/src/
 $ git config --global init.defaultBranch main
 $ git config --global user.email "you@example.com"    ## any content, no need to change
-$ git config --global user.name "nov05"               ## your GitHub user
+$ git config --global user.name "nov05"               ## your GitHub user ID
 $ git init
 $ git remote add origin https://<PAT>@github.com/nov05/udacity-RoboND-p3-src2.git   ## replace <PAT>
 $ git checkout -b main
 $ git fetch origin
+$ rm CMakeLists.txt
 $ git merge origin/main --allow-unrelated-histories
 $ git add .
 $ git commit -m "initial commit from vm"
 $ git push --set-upstream origin main
-$ cd ~/catkin_ws2/
-$ catkin_make
 ```
 
-* TurtleBot3 Gazebo Package
+* TurtleBot3 Gazebo Packages
 
 ```sh
-$ cd ~/catkin_ws2/src
-$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3.git
-$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
-$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ cd ~/catkin_ws2/src                                                           ## ⚠️ skip if clone from the Nov05 repo
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3.git             ## ⚠️ skip if clone from the Nov05 repo
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git        ## ⚠️ skip if clone from the Nov05 repo
+$ git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws2
-$ catkin_make
+$ source devel/setup.bash
+$ rosdep -i install turtlebot3_gazebo
+$ catkin_make                                                                   ## ⚠️ skip if clone from the Nov05 repo
 $ echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc   ## add to user .bashrc, or
 $ echo "export TURTLEBOT3_MODEL=burger_for_autorace" >> ~/.bashrc   ## with camera
 $ export TURTLEBOT3_MODEL=burger_for_autorace
@@ -239,10 +260,11 @@ $ rosrun rqt_image_view rqt_image_view                       ## in a new termina
 * Install the "Robot Pose EKF" Package
 
 ```sh
-$ sudo apt-get install liborocos-bfl-dev  ## ⚠️
+$ sudo apt-get install liborocos-bfl-dev                                       ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws/src
-$ git clone https://github.com/nov05/udacity-robot_pose_ekf.git robot_pos_ekf  ## ⚠️ edit robot_pose_ekf.launch
-$ rm -rf robot_pos_ekf/.git robot_pos_ekf/.github
+## ⚠️ skip the following git clone command if clone from the Nov05 repo 
+$ git clone https://github.com/nov05/udacity-robot_pose_ekf.git robot_pos_ekf  ##  ⚠️ edit robot_pose_ekf.launch if necessary
+$ rm -rf robot_pos_ekf/.git robot_pos_ekf/.github                              ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws2
 $ catkin_make
 source devel/setup.bash
@@ -277,8 +299,8 @@ $ cd ~/catkin_ws2
 $ catkin_make
 ```
 ```sh
-$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## ⚠️ temporary fix
-$ roslaunch main main_no_rviz.launch 2> >(grep -v TF_REPEATED_DATA|at line 278) 
+$ roslaunch main main.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)           ## ⚠️ temporary fix
+$ roslaunch main main_no_rviz.launch 2> >(grep -v TF_REPEATED_DATA|at line 278)   ## ⚠️ temporary fix
 ```
 
 * Install `rqt_multiplot` package
@@ -288,4 +310,27 @@ $ sudo apt-get install ros-noetic-rqt-multiplot
 $ rosrun rqt_multiplot rqt_multiplot --multiplot-config ~/catkin_ws2/src/main/multiplot/ekf_lab.xml
 ```
 
+## 👉 Course 4, P3 "Where Am I?"
 
+```sh
+$ sudo apt-get install ros-noetic-navigation
+$ cd ~/catkin_ws2/src
+$ git clone https://github.com/nov05/udacity-pgm_map_creator.git pgm_map_creator  
+$ rm -rf pgm_map_creator/.git pgm_map_creator/.github  ## ⚠️ edit msgs/CMakeLists.txt if necessary
+$ cd ~/catkin_ws2
+$ catkin_make clean
+$ catkin_make
+$ source devel/setup.bash
+$ gzserver src/pgm_map_creator/world/udacity_office.world  ## ⚠️ copy the .world file and add plugin first
+```  
+
+* Create pakcage `where_am_i` and launch file
+
+```sh
+$ cd ~/catkin_ws2/src
+$ catkin_create_pkg where_am_i
+$ mkdir ~/catkin_ws2/src/where_am_i/maps
+...
+$ cd ~/catkin_ws2
+$ catkin_make
+```

@@ -6,7 +6,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree (this repo)  
     * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1, as `~/myrobot` in VM) 
     * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3, as `~/catkin_ws/src/simple_arm` in VM) 
-    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, Project 2, as `~/catkin_ws/src` in VM)
+    * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, Project 2, as `~/catkin_ws/src` in VM)  
+    * https://github.com/nov05/udacity-RoboND-p3-src2 (Course 4, Proejct 3, as `~/catkin_ws2/src` in VM)
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
@@ -605,8 +606,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     * [matplotlibcpp.h](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/include/matplotlibcpp.h), [mcl_visualization.cpp](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/scripts/pycpp/mcl_visualization.cpp)    
 
-  
-    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250311_monte%20carlo%20localization.gif?raw=true" width=400>  
+        <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250311_monte%20carlo%20localization.gif?raw=true" width=400>  
 
 <br><br><br>  
 
