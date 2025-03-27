@@ -322,29 +322,41 @@ $ git clone https://github.com/nov05/pgm_map_creator_JZX-MY_20250326.git pgm_map
 $ rm -rf pgm_map_creator/.git pgm_map_creator/.github     
 $ cd ~/catkin_ws2
 $ catkin_make clean
-$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator" ## ⚠️ compile the 1st time
-$ gedit src/pgm_map_creator/msgs/CMakeLists.txt             ## ⚠️ edit msgs/CMakeLists.txt if necessary
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator"  ## ⚠️ compile the 1st time
+$ gedit ~/catkin_ws2/src/pgm_map_creator/msgs/CMakeLists.txt ## ⚠️ edit msgs/CMakeLists.txt if necessary
 $ catkin_make clean
-$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator" ## ⚠️ compile the 2nd time
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator"  ## ⚠️ compile the 2nd time
 $ source devel/setup.bash 
-$ roslaunch pgm_map_creator open_world.launch               ## verify
-$ roslaunch pgm_map_creator request_publisher.launch        ## verify                    
+$ roslaunch pgm_map_creator open_world.launch                ## verify
+$ roslaunch pgm_map_creator request_publisher.launch         ## verify                    
 $ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_map_creator/worlds/udacity_office.world
 ## ⚠️ add plugin to the world file, change the launch files
-$ gzserver src/pgm_map_creator/worlds/udacity_office.world  ## no GUI
+$ gzserver src/pgm_map_creator/worlds/udacity_office.world   ## no GUI
 ## or $ roslaunch pgm_map_creator open_world_udacity_office.launch
 $ roslaunch pgm_map_creator request_publisher_udacity_office.launch  
-$ mv map.pgm udacity_office.pgm                             ## rename the file
+$ mv map.pgm udacity_office.pgm                              ## rename the file
 $ touch ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml    
 $ gedit ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
 ```  
 
-* AMCL, pakcage `where_am_i`
+* AMCL, pakcage `teleop_twist_keyboard`, P3 `where_am_i`
 
 ```sh
 $ sudo apt-get install ros-noetic-navigation   ## Adaptive Monte Carlo Localization (AMCL) included
 $ cd ~/catkin_ws2/src
-$ catkin_create_pkg where_am_i
+$ git clone https://github.com/ros-teleop/teleop_twist_keyboard.git ## ⚠️ skip if clone from the Nov05 repo
+$ rm -rf ~/catkin_ws2/src/teleop_twist_keyboard/.git                ## ⚠️ skip if clone from the Nov05 repo
+$ cd ~/catkin_ws2
+$ catkin_make
+$ source devel/setup.bash
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## verify
+$ catkin_create_pkg where_am_i                                      ## ⚠️ skip if clone from the Nov05 repo
+$ roslaunch my_robot udacity_office.launch                          ##
+$ rosrun ball_chaser process_image
+$ roslaunch where_am_i amcl.launch 
+$ rosrun rviz rviz -d ~/catkin_ws2/src/main/rviz/ekf_lab.rviz
 ```
+
 
 
