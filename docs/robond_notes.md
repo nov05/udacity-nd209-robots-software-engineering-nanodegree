@@ -333,21 +333,18 @@ $ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_m
 ## ⚠️ add plugin to the world file, change the launch files
 $ gzserver src/pgm_map_creator/worlds/udacity_office.world  ## no GUI
 ## or $ roslaunch pgm_map_creator open_world_udacity_office.launch
-$ roslaunch pgm_map_creator request_publisher_udacity_office.launch    
-$ touch ~/catkin_ws2/src/pgm_map_creator/maps/map.yaml    
+$ roslaunch pgm_map_creator request_publisher_udacity_office.launch  
+$ mv map.pgm udacity_office.pgm                             ## rename the file
+$ touch ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml    
+$ gedit ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
 ```  
 
-* Create pakcage `where_am_i` and launch file
+* AMCL, pakcage `where_am_i`
 
 ```sh
+$ sudo apt-get install ros-noetic-navigation   ## Adaptive Monte Carlo Localization (AMCL) included
 $ cd ~/catkin_ws2/src
 $ catkin_create_pkg where_am_i
-$ mkdir ~/catkin_ws2/src/where_am_i/maps
-...
-$ cd ~/catkin_ws2
-$ catkin_make
 ```
 
-```
-$ sudo apt-get install ros-noetic-navigation
-```
+
