@@ -608,6 +608,12 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
         <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250311_monte%20carlo%20localization.gif?raw=true" width=400>  
 
+* The `bgm_map_creator` package   
+    * [Check the bgm maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps)   
+
+        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400>  
+
+
 <br><br><br>  
 
 # 👉 **Tips**

@@ -263,7 +263,7 @@ $ rosrun rqt_image_view rqt_image_view                       ## in a new termina
 $ sudo apt-get install liborocos-bfl-dev                                       ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws/src
 ## ⚠️ skip the following git clone command if clone from the Nov05 repo 
-$ git clone https://github.com/nov05/udacity-robot_pose_ekf.git robot_pos_ekf  ##  ⚠️ edit robot_pose_ekf.launch if necessary
+$ git clone https://github.com/nov05/udacity-robot_pose_ekf.git robot_pos_ekf  ## ⚠️ edit robot_pose_ekf.launch if necessary
 $ rm -rf robot_pos_ekf/.git robot_pos_ekf/.github                              ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws2
 $ catkin_make
@@ -312,16 +312,29 @@ $ rosrun rqt_multiplot rqt_multiplot --multiplot-config ~/catkin_ws2/src/main/mu
 
 ## 👉 Course 4, P3 "Where Am I?"
 
+* Install package `pgm_map_creator`
+
 ```sh
-$ sudo apt-get install ros-noetic-navigation
+$ sudo apt-get update
+$ sudo apt-get install libboost-all-dev protobuf-compiler
 $ cd ~/catkin_ws2/src
-$ git clone https://github.com/nov05/udacity-pgm_map_creator.git pgm_map_creator  
-$ rm -rf pgm_map_creator/.git pgm_map_creator/.github  ## ⚠️ edit msgs/CMakeLists.txt if necessary
+$ git clone https://github.com/nov05/pgm_map_creator_JZX-MY_20250326.git pgm_map_creator  
+$ rm -rf pgm_map_creator/.git pgm_map_creator/.github     
 $ cd ~/catkin_ws2
 $ catkin_make clean
-$ catkin_make
-$ source devel/setup.bash
-$ gzserver src/pgm_map_creator/world/udacity_office.world  ## ⚠️ copy the .world file and add plugin first
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator" ## ⚠️ compile the 1st time
+$ gedit src/pgm_map_creator/msgs/CMakeLists.txt             ## ⚠️ edit msgs/CMakeLists.txt if necessary
+$ catkin_make clean
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="pgm_map_creator" ## ⚠️ compile the 2nd time
+$ source devel/setup.bash 
+$ roslaunch pgm_map_creator open_world.launch               ## verify
+$ roslaunch pgm_map_creator request_publisher.launch        ## verify                    
+$ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_map_creator/worlds/udacity_office.world
+## ⚠️ add plugin to the world file, change the launch files
+$ gzserver src/pgm_map_creator/worlds/udacity_office.world  ## no GUI
+## or $ roslaunch pgm_map_creator open_world_udacity_office.launch
+$ roslaunch pgm_map_creator request_publisher_udacity_office.launch    
+$ touch ~/catkin_ws2/src/pgm_map_creator/maps/map.yaml    
 ```  
 
 * Create pakcage `where_am_i` and launch file
@@ -333,4 +346,8 @@ $ mkdir ~/catkin_ws2/src/where_am_i/maps
 ...
 $ cd ~/catkin_ws2
 $ catkin_make
+```
+
+```
+$ sudo apt-get install ros-noetic-navigation
 ```
