@@ -40,8 +40,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Bash commands to reproduce the results:    
     * Launch `Go Chase It`.
         ```sh
-        $ mkdir catkin_p2
-        $ cd ~/catkin_p2/
+        $ mkdir catkin_ws
+        $ cd ~/catkin_ws/
         $ git clone https://github.com/nov05/udacity-RoboND-p2-src.git src
         $ git clone https://github.com/nov05/udacity-RoboND-simple_arm.git src/simple_arm  ## optional, skip if you want
         $ catkin_make
@@ -49,7 +49,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         $ roslaunch my_robot udacity_office.launch          ## or
         $ roslaunch my_robot udacity_office_camera.launch   ## with "rqt_image_view" node to display the camera view
         $ cd ~
-        $ rm -rf ~/catkin_p2/                               ## ⚠️ delete the workspace
+        $ rm -rf ~/catkin_ws/                               ## ⚠️ delete the workspace
         ```
         
 * Catkin Workspace `catkin_ws` Directory:  
