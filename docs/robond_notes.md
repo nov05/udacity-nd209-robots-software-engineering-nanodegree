@@ -359,8 +359,8 @@ $ rm -rf ~/catkin_ws2/src/teleop_twist_keyboard/.git                ## ⚠️ sk
 $ cd ~/catkin_ws2
 $ catkin_make
 $ source devel/setup.bash
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify
-$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## verify
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify "turtlebot3"
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## verify "teleop"
 $ roslaunch my_robot udacity_office.launch                          ## verify "ball chaser"                     
 $ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"
 ```
