@@ -1,4 +1,4 @@
-## 👉 Launch the ROS enviroment
+## 👉 Launch the ROS Environment
 
 * `VMWare Workstation Pro` + a image of (`Ubuntu-16.04` + `ROS` + `Gazebo Classic`) or     
 * `WSL2` + `Ubuntu-20.04` + `ROS Noetic` + `Gazebo 11 (Classic)`   
@@ -21,7 +21,7 @@ $ sudo su -
 $ sudo mv /root/.bashrc.bak /root/.bashrc
 ```
 
-## 👉 Course 2 Gazebo World, P1 Build a world (without ROS)
+## 👉 Course 2 Gazebo World, P1 Build A World (without ROS)
 
 ```sh
 $ cd ~
@@ -102,7 +102,7 @@ $ rm -rf ~/.gazebo
 
 
 
-## 👉 Course 3, the `my_robot` and `ball_chaser` packages
+## 👉 Course 3 ROS Essentials, the `my_robot` and `ball_chaser` packages
 
 * Get the catkin packages from the repo (except that `simple_arm` is managed by another repo)
 ```sh
@@ -168,6 +168,7 @@ $ rosrun ball_chaser process_image
 
 * Adjust the worlds, models, etc. if needed  
   ⚠️ Use `$ gazebo` to edit the worlds. **Do NOT** edit or save anything in `$ roslaunch`! 
+
 ```sh
 $ gazebo ~/catkin_ws/src/my_robot/worlds/empty.world
 $ gazebo ~/catkin_ws/src/my_robot/worlds/udacity_office.world --verbose
@@ -188,7 +189,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-## 👉 Course 4, `Turtlebot3` on `ROS Noetic`
+## 👉 Course 4 Localization, `Turtlebot3` on `ROS Noetic`
 
 ```
 catkin_ws2/
@@ -320,7 +321,7 @@ $ sudo apt-get install ros-noetic-rqt-multiplot
 $ rosrun rqt_multiplot rqt_multiplot --multiplot-config ~/catkin_ws2/src/main/multiplot/ekf_lab.xml
 ```
 
-## 👉 Course 4, P3 "Where Am I?"
+## 👉 Course 4 Localization, Project 3 "Where Am I?"
 
 * Install package `pgm_map_creator`
 
@@ -349,7 +350,7 @@ $ touch ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
 $ gedit ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
 ```  
 
-* AMCL, pakcage `teleop_twist_keyboard`, P3 `where_am_i`
+* AMCL, pakcage `teleop_twist_keyboard`, P3 `Where Am I?`
 
 ```sh
 $ sudo apt-get install ros-noetic-navigation   ## Adaptive Monte Carlo Localization (AMCL) included
