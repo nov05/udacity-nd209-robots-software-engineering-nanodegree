@@ -18,19 +18,37 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 <br><br><br> 
 
+# 👉 **Project 3: Localization - Where Am I?**  
+
+* Launch `my_robot` and `amcl` nodes in the `udacity_office` world. 
+
+    * Tips: The base link name of the robot has to be `base_link`, or warnings will flood the terminal.
+
+  <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
+
+    * Make sure to [configure the `amcl` parameters](http://wiki.ros.org/amcl#Parameters) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
+
+  <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
+
+
+<br><br><br>  
 
 # 👉 **Project 2: ROS Essentials - Go Chase It!**  
 
-* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://www.youtube.com/watch?v=E2hdfOP_BzM) 
+* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://www.youtube.com/watch?v=E2hdfOP_BzM)   
+
     * Note: `RViz` was causing insufficient memory issues on my local machine, so I’m using the camera window for visualization instead.
 
-* Explore Room 3, find a Mars rover
+* Explore Room 3, find a Mars rover  
+
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_mars_rover.gif?raw=true" width=800>     
 
 * Explore Room 2, go around the fountain  
+
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_02_hallway.gif?raw=true" width=800>  
 
 * Explore Room 4, go under the ladder  
+
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p2_cover_03_ladder.gif?raw=true" width=800>   
 
 <br>  
