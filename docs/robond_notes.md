@@ -342,11 +342,10 @@ $ roslaunch pgm_map_creator open_world.launch                ## verify
 $ roslaunch pgm_map_creator request_publisher.launch         ## verify                    
 $ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_map_creator/worlds/udacity_office.world
 ## ⚠️ add plugin to the world file, change the launch files
-$ gzserver src/pgm_map_creator/worlds/udacity_office.world   ## no GUI
-## or $ roslaunch pgm_map_creator open_world_udacity_office.launch
+$ gzserver src/pgm_map_creator/worlds/udacity_office.world          ## no Gazebo GUI
+## or $ roslaunch pgm_map_creator open_world_udacity_office.launch  ## Gazebo GUI
 $ roslaunch pgm_map_creator request_publisher_udacity_office.launch  
-$ mv map.pgm udacity_office.pgm                              ## rename the file
-$ touch ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml    
+$ mv map.pgm udacity_office.pgm                                     ## rename the file   
 $ gedit ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
 ```  
 
@@ -361,9 +360,9 @@ $ cd ~/catkin_ws2
 $ catkin_make
 $ source devel/setup.bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify "turtlebot3"
-$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## verify "teleop"
-$ roslaunch my_robot udacity_office.launch                          ## verify "ball chaser"                     
-$ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"
+$ roslaunch my_robot udacity_office_ball_chaser.launch              ## verify "ball chaser"
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional, keyboard control 
+$ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"                 
 ```
 
 
