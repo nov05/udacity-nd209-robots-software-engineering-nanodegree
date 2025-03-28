@@ -19,7 +19,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 <br><br><br> 
 
 
-# 👉 **Project 2: ROS Essentials - Go Chase it!**  
+# 👉 **Project 2: ROS Essentials - Go Chase It!**  
 
 * [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://www.youtube.com/watch?v=E2hdfOP_BzM) 
     * Note: `RViz` was causing insufficient memory issues on my local machine, so I’m using the camera window for visualization instead.
@@ -38,32 +38,23 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`, `Nvidia` GPU   
 
 * Operations:  
-    * Switch to user `robond`
+    * Launch `Go Chase It`.
         ```sh
-        sudo su robond
-        ```
-
-    * Launch `udacity_office.world`. (You can echo the setup commands to `~/.bashrc`)
-        ```sh
-        cd ~/catkin_ws/
-        source devel/setup.bash
-        roslaunch my_robot udacity_office.launch
-        ```
-
-    * In a new terminal, launch camera window
-        ```sh
-        cd ~/catkin_ws/
-        source devel/setup.bash
-        rqt_image_view /camera/rgb/image_raw
-        ```
-    * In a new terminal, run the `/ball_chaser/process_image` node
-        ```sh
-        rosrun ball_chaser process_image
+        $ mkdir catkin_p2
+        $ cd ~/catkin_p2/
+        $ git clone https://github.com/nov05/udacity-RoboND-p2-src.git src
+        $ git clone https://github.com/nov05/udacity-RoboND-simple_arm.git src/simple_arm  ## optional, skip if you want
+        $ catkin_make
+        $ source devel/setup.bash
+        $ roslaunch my_robot udacity_office.launch          ## or
+        $ roslaunch my_robot udacity_office_camera.launch   ## with "rqt_image_view" node to display the camera view
+        $ cd ~
+        $ rm -rf ~/catkin_p2/                               ## ⚠️ delete the workspace
         ```
         
 * Catkin Workspace `catkin_ws` Directory:  
-    * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (<- The development artifacts such as code, etc. are included here.) 
-    * 3 Catkin packages: `simple_arm`, `my_robot`, `ball_chaser`     
+    * ✅ 2 GitHub repositories: [`src`](https://github.com/nov05/udacity-RoboND-p2-src), [`simple_arm`](https://github.com/nov05/udacity-RoboND-simple_arm) (The development artifacts such as code, etc. are included here.) 
+    * 3 Catkin packages: `my_robot`, `ball_chaser`, `simple_arm` (`simple_arm` isn't part of Project 2 "Go Chase It".)      
         ```sh
         ~/catkin_ws/
         ├── build/

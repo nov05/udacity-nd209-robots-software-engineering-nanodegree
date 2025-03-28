@@ -5,13 +5,21 @@
   The default user is `robond` (password `robo-nd`).  
 
 ```sh
+$ echo "sudo su robond" >> ~/.bashrc                     ## ⚠️ do only once
 $ sudo su robond                                         ## switch user
 $ source /opt/ros/noetic/setup.bash                      ## when open a terminal or 
-$ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc  ## do only once
-$ source ~/.bashrc                                       ## do only once
+$ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc  ## ⚠️ do only once
+$ source ~/.bashrc                                       ## ⚠️ do only once
 $ gazebo
 ```
 
+* Tips: temporarily switch back to the root user
+
+```sh
+$ sudo mv /root/.bashrc /root/.bashrc.bak
+$ sudo su - 
+$ sudo mv /root/.bashrc.bak /root/.bashrc
+```
 
 ## 👉 Course 2 Gazebo World, P1 Build a world (without ROS)
 
@@ -94,7 +102,7 @@ $ rm -rf ~/.gazebo
 
 
 
-## 👉 Course 3, the `my_robot` package
+## 👉 Course 3, the `my_robot` and `ball_chaser` packages
 
 * Get the catkin packages from the repo (except that `simple_arm` is managed by another repo)
 ```sh
@@ -115,7 +123,8 @@ $ cd ~/catkin_ws/
 $ catkin_make
 $ source devel/setup.bash
 $ roslaunch my_robot empty_world.launch            ## or
-$ roslaunch my_robot udacity_office.launch
+$ roslaunch my_robot udacity_office.launch         ## or
+$ roslaunch my_robot udacity_office_camera.launch
 ```
 
 * View the camera image stream, in a new terminal
@@ -176,6 +185,7 @@ $ rm -rf ~/.gazebo      ## it might take a while to re-download and re-render
 cd ~/catkin_ws               
 catkin_make clean
 catkin_make 
+source devel/setup.bash
 ```
 
 ## 👉 Course 4, `Turtlebot3` on `ROS Noetic`
@@ -351,11 +361,8 @@ $ catkin_make
 $ source devel/setup.bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## verify
-$ catkin_create_pkg where_am_i                                      ## ⚠️ skip if clone from the Nov05 repo
-$ roslaunch my_robot udacity_office.launch                          ##
-$ rosrun ball_chaser process_image
-$ roslaunch where_am_i amcl.launch 
-$ rosrun rviz rviz -d ~/catkin_ws2/src/main/rviz/ekf_lab.rviz
+$ roslaunch my_robot udacity_office.launch                          ## verify "ball chaser"                     
+$ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"
 ```
 
 
