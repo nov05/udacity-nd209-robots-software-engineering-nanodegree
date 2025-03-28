@@ -341,7 +341,7 @@ $ source devel/setup.bash
 $ roslaunch pgm_map_creator open_world.launch                ## verify
 $ roslaunch pgm_map_creator request_publisher.launch         ## verify                    
 $ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_map_creator/worlds/udacity_office.world
-## ⚠️ add plugin to the world file, change the launch files
+## ⚠️ add plugin to the world file, create launch files accordingly
 $ gzserver src/pgm_map_creator/worlds/udacity_office.world          ## no Gazebo GUI
 ## or $ roslaunch pgm_map_creator open_world_udacity_office.launch  ## Gazebo GUI
 $ roslaunch pgm_map_creator request_publisher_udacity_office.launch  

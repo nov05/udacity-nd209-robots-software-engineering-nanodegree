@@ -617,7 +617,17 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
         <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250311_monte%20carlo%20localization.gif?raw=true" width=400>  
 
-* The `bgm_map_creator` package   
+* The `bgm_map_creator` package    
+
+    * [Install the package and generate bgm maps](https://github.com/nov05/pgm_map_creator_JZX-MY_20250326).   
+        ```sh
+        $ cd ~/catkin_ws2
+        ## ⚠️ add plugin to the world file, create launch files accordingly
+        $ gzserver src/pgm_map_creator/worlds/udacity_office.world          ## no Gazebo GUI
+        ## or $ roslaunch pgm_map_creator udacity_office_open_world.launch  ## Gazebo GUI
+        $ roslaunch pgm_map_creator udacity_office_request_publisher.launch 
+        ```
+
     * [Check the bgm maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps)   
 
         <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400>  
