@@ -37,7 +37,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`, `Nvidia` GPU   
 
-* Operations:  
+* Bash commands to reproduce the results:    
     * Launch `Go Chase It`.
         ```sh
         $ mkdir catkin_p2
