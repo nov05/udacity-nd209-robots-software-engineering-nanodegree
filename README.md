@@ -21,7 +21,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
-* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video]() 
+* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video](https://youtu.be/FdI7RMqOLJI) 
 
 * ROS Noetic `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
 
