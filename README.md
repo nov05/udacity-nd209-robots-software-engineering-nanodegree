@@ -23,7 +23,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 * Launch `my_robot` and `amcl` nodes in the `udacity_office` world. 
 
     * Tips: 
-        1. The base link name of the robot has to be `base_link`, or warnings will flood the terminal.  
+        1. [The base link name of the robot](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/my_robot/urdf) has to be `base_link`, or warnings will flood the terminal.  
         2. `Shift`+`Ctrl`+`left click`: Move the world along the X and Y axes in `RViz`. 
     
 
