@@ -21,21 +21,28 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
-* `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
+* ROS Noetic `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
 
-    * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position. The green arrows (usually behind the robot) are the `2D Pose Estimate`. The green arrows, usually found behind the robot as it moves, represent the 2D Pose Estimate. 
+    * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.   
 
-    * Navigation Stack Components:  
-        * move_base: The main node in the navigation stack that handles goal setting, path planning, and control. 
+    * The green arrow button `2D Pose Estimate` is used to manually set the current pose (position and orientation) of the robot in a 2D map for localization purposes, typically when the robot starts in an unknown position or after a reset to help the localization system get started.
+
+    * Navigation Stack Components:   
+
+        * `move_base`: The main node in the navigation stack that handles goal setting, path planning, and control. 
         * Global Planner: An algorithm that calculates a path for the robot to follow from its current position to the goal position. 
         * Local Planner: An algorithm that generates the actual trajectory for the robot to follow, taking into account dynamic obstacles. 
         * Costmaps: Maps that represent the environment and obstacles, used by the planners. 
 
+* **Demo 1**: Find the Mars rover
+
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_00_find-mars-rover.gif?raw=true" width=800>   
+
+<br>      
+
+* **Demo 3**: A less successful attempt, where keyboard control was used to manually get the robot out of a stuck situation
+
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
-
-    * If you examine the recording closely, you'll notice a few green arrows appearing as the robot moves, representing `2D Pose Estimation`, along with a thin green line ahead of the robot, indicating the planned path.  
-
-        <img src = "https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2010_53_42-Media%20Player.jpg" width=500>  
 
 <br>  
 
@@ -76,6 +83,48 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
+
+    &nbsp;  
+
+    * E.g. `common_costmap_params.yaml` (http://wiki.ros.org/costmap_2d)    
+
+        In the **ROS move_base** configuration, the **local** and **global costmaps** are used to represent the environment around the robot. They help in planning paths by assigning costs to different areas of the environment based on obstacles, inflation, and other factors. The parameters you've listed define how the **costmaps** are generated and updated.
+
+        Here's a breakdown of what each parameter means:
+
+        1. `map_type: costmap`  
+            This specifies the type of map used in the costmap. In this case, it’s a `costmap`, which means the planner will use a grid where each cell holds a "cost" representing how difficult it is to traverse that area. Costs are assigned based on obstacles, inflation, etc.
+
+        2. `obstacle_range: 1.0`   
+            **Description**: Defines the maximum distance from the robot at which obstacles are considered by the costmap. Any obstacle beyond this range is ignored.  
+            **Effect**: Obstacles closer than this range will affect the costmap, but those farther than 1.0 meters are not considered.  
+        
+        3. `raytrace_range: 2.0`  
+            **Description**: The maximum distance up to which the costmap uses raytracing for obstacle detection. This is used when clearing obstacles from the costmap based on sensor readings (e.g., LIDAR or depth cameras).  
+            **Effect**: Rays are traced from the robot to a maximum range of 2.0 meters, and areas along the path of the ray are marked as free unless an obstacle is detected.    
+
+        4. `transform_tolerance: 0.5`  
+            **Description**: The amount of time (in seconds) the costmap will wait for a valid transformation between frames before considering it unavailable.  
+            **Effect**: If transformations between the robot's frames (e.g., `base_link` to `map`) are delayed or slow, this tolerance allows the costmap to wait for up to 0.5 seconds before timing out.  
+
+        5. `robot_radius: 0.3`  
+            **Description**: Defines the radius of the robot in meters for collision checking. The costmap will inflate obstacles accordingly to ensure the robot's physical size is accounted for.   
+            **Effect**: Obstacles within 0.3 meters of the robot's center will be considered a collision.  
+
+        6. `inflation_radius: 0.5`  
+            **Description**: Specifies how far (in meters) from an obstacle the costmap should start inflating costs. This inflation ensures that areas near obstacles are assigned higher costs, making it less likely for the robot to move close to obstacles.  
+            **Effect**: Obstacles are "inflated" outwards by 0.5 meters, creating a buffer zone that assigns higher costs to cells near obstacles.   
+
+        7. `cost_scaling_factor: 5.0`  
+            **Description**: This factor determines how quickly the costs increase near obstacles within the inflation radius. Higher values make the cost increase more steeply as you get closer to obstacles.  
+            **Effect**: A higher scaling factor makes it less likely for the robot to move near obstacles, as the cost grows significantly with proximity.  
+
+    * **Summary**    
+    These parameters define how the **costmap** is generated for the robot to plan its path:    
+        - **Obstacle and raytrace ranges** manage how the robot perceives and handles obstacles at various distances.
+        - **Transform tolerance** ensures robust frame transformations.  
+        - **Robot radius and inflation radius** account for the robot's size and create buffer zones around obstacles.  
+        - **Cost scaling factor** controls how cautious the robot is when navigating near obstacles.  
 
 <br>  
 
@@ -711,6 +760,12 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * Once a building model is created, it can't be edited again using the `Building Editor`. ([StackExchange](https://robotics.stackexchange.com/a/27555))    
 
+* You can run `wsl --shutdown` in PowerShell to stop all the hanging processes and shut down the virtual machine. This way, when you open an Ubuntu terminal again, everything will be fresh, like a system reboot.
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2013_13_24-Settings.jpg" width=800>  
+
+<br>  
+
 * You could technically apply a monkey patch to the Python code, but it's generally not recommended.  
     ```sh
     $ sudo gedit /opt/ros/kinetic/lib/python2.7/dist-packages/gazebo_ros/gazebo_interface.py
@@ -770,7 +825,11 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         ERROR: Model Parsing the xml failed
         ```
 
-* Check `RViz`: In one terminal run `$ roscore`, in another run `$ rosrun rviz rviz`. (Cehck [example output](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf?permalink_comment_id=5476872#gistcomment-5476872))
+* Check `RViz`: In one terminal run `$ roscore`, in another run `$ rosrun rviz rviz`. (Check [the example output](https://gist.github.com/nov05/4bc90dcbfdd213fd1072c3dc85becdbf?permalink_comment_id=5476872#gistcomment-5476872))  
+
+* If your robot flips upside down during a crash, you can either restart the experiment or manually flip it back upright in Gazebo.
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_car%20crash_gazebo.jpg" width=800>   
 
 <br><br><br>  
 
