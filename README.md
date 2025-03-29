@@ -21,6 +21,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
+* [<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/icons/youtube_red_2000x2000.png" width=30> Watch the demo video]() 
+
 * ROS Noetic `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
 
     * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.   
@@ -29,24 +31,26 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     * Navigation Stack Components:   
 
+        In ROS navigation, the default global path planning algorithm is based on `Dijkstra's` algorithm, used by the Navfn planner, while the default local path planning algorithm is the `Dynamic Window Approach (DWA)`.   
+
         * `move_base`: The main node in the navigation stack that handles goal setting, path planning, and control. 
         * Global Planner: An algorithm that calculates a path for the robot to follow from its current position to the goal position. 
         * Local Planner: An algorithm that generates the actual trajectory for the robot to follow, taking into account dynamic obstacles. 
         * Costmaps: Maps that represent the environment and obstacles, used by the planners. 
 
-* **Demo 1**: Find the Mars rover
+* **Demo 1**: Find the Mars rover, autonomous path planning and navigation  
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_00_find-mars-rover.gif?raw=true" width=800>   
 
 <br>  
 
-* **Demo 2**: Go the trash bin, a less successful attempt, where `2D Pose Estimate` was used to manually set the current pose  
+* **Demo 2**: Go the trash bin, a less successful attempt, where occasional `2D Pose Estimate` was used to manually set the current pose  
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_03_2d-pose-estimate.gif?raw=true" width=800>  
 
 <br>  
 
-* **Demo 3**: A less successful attempt, where keyboard control was used to manually get the robot out of a stuck situation
+* **Demo 3**: A less successful attempt, where occasional keyboard control was used to manually get the robot out of a stuck situation
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
 
@@ -57,7 +61,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * Bash commands to reproduce the results:   
  
-    * Launch P3 `Where Am I`, which includes the `udacity_office` world, `my_robot`, `amcl`, `move_base`, and `rviz` nodes. (This repository contains all the packages for Course 4, but here we only build what's necessary for Project 3.)
+    * Launch Project 3 `Where Am I`, which includes the `udacity_office` world, `my_robot`, `amcl`, `move_base`, and `rviz` nodes. (This repository contains [all the packages for Course 4](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md), but here we only build what's necessary for Project 3.)
 
         ```sh
         $ sudo apt-get update
