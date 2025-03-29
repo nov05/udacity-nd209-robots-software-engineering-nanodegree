@@ -197,8 +197,10 @@ catkin_ws2/
 ├── devel/
 └── src/                   ## managed by GitHub repo `udacity-RoboND-p3-src`
     ├── CMakeLists.txt  
-    ├── main/      
-    ├── where_am_i/        ## P3 "Where Am I?"
+    ├── main/              ## P3 "Where Am I?"   
+    ├── my_robot/
+    ├── ball_chaser/ 
+    ├── teleop_twist_keyboard/
     ├── turtlebot3/
     ├── turtlebot3_msgs/ 
     ├── turtlebot3_simulations/
@@ -360,9 +362,9 @@ $ cd ~/catkin_ws2
 $ catkin_make
 $ source devel/setup.bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify "turtlebot3"
-$ roslaunch my_robot udacity_office_ball_chaser.launch              ## verify "ball chaser"
-$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional, keyboard control 
-$ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"                 
+$ roslaunch my_robot udacity_office_ball_chaser.launch              ## verify "ball chaser" 
+$ roslaunch main udacity_office_amcl.launch                         ## P3 "Where Am I?"   
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional, keyboard control              
 ```
 
 

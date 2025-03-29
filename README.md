@@ -13,12 +13,36 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * Download them to both the virtual machine and the local computer.   
     * Use the VM for graphic design in **Gazebo**, and handle coding and other tasks on the local machine using **VS Code**.
     * Synchronize all the work through GitHub between both environments.    
-* [All Bash commands](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md) (to reproduce the results)
+* [All the Bash commands](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md) (to reproduce the projects)  
+* Environment: Windows 11, VS Code, GitHub, WSL2 with Ubuntu 20.04, Gazebo 11, ROS Noetic, C++, Python 2,7
 
 
 <br><br><br> 
 
 # 👉 **Project 3: Localization - Where Am I?**  
+
+* Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`,   
+    `Nvidia` GPU, `C++`, `Python 2.7`, `GitHub`, `VS Code`   
+
+* Bash commands to reproduce the results:   
+ 
+    * Launch `Where Am I`. (These repo includes all the packages for Course 4. However here we only build what we need for Project 3.)  
+
+        ```sh
+        $ sudo apt-get update
+        $ sudo apt-get install libboost-all-dev
+        $ sudo apt-get install ros-noetic-navigation             ## Adaptive Monte Carlo Localization (AMCL) included
+        $ cd ~
+        $ mkdir catkin_tmp
+        $ cd ~/catkin_tmp/
+        $ git clone https://github.com/nov05/udacity-RoboND-p3-src2.git src
+        $ catkin_make -DCATKIN_WHITELIST_PACKAGES="main my_robot teleop_twist_keyboard"
+        $ source devel/setup.bash
+        $ roslaunch main udacity_office_amcl.launch              ## P3 "Where Am I?"
+        $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py  ## optional, keyboard control
+        $ cd ~
+        $ rm -rf ~/catkin_tmp/                                   ## ⚠️ delete the workspace
+        ```
 
 * Launch `my_robot` and `amcl` nodes in the `udacity_office` world. Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.
 
@@ -30,8 +54,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
 
     &nbsp;  
-    
-    * Make sure to [configure the `amcl` parameters](http://wiki.ros.org/amcl#Parameters) and [the `base local planner` parameters](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
+
+    * Make sure to configure the parameters of [the `amcl`](http://wiki.ros.org/amcl#Parameters), [`move_base`](http://wiki.ros.org/move_base#Parameters) and [`base local planner`](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
 
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
 
@@ -64,11 +88,12 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 <br>  
 
-* Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`, `Nvidia` GPU   
+* Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`, `Nvidia` GPU, C++   
 
 * Bash commands to reproduce the results:    
     * Launch `Go Chase It`.
         ```sh
+        $ cd ~
         $ mkdir catkin_tmp
         $ cd ~/catkin_tmp/
         $ git clone https://github.com/nov05/udacity-RoboND-p2-src.git src
