@@ -14,7 +14,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * Use the VM for graphic design in **Gazebo**, and handle coding and other tasks on the local machine using **VS Code**.
     * Synchronize all the work through GitHub between both environments.    
 * [All the Bash commands](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md) (to reproduce the projects)  
-* Environment: Windows 11, VS Code, GitHub, WSL2 with Ubuntu 20.04, Gazebo 11, ROS Noetic, C++, Python 2,7
+* Environment: Windows 11, VS Code, GitHub, WSL2 with Ubuntu 20.04, Gazebo 11, ROS Noetic, C++, Python 2.7
 
 
 <br><br><br> 
@@ -23,7 +23,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
 
-    * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.  
+    * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position. The green arrows (usually behind the robot) are the `2D Pose Estimate`. The green arrows, usually found behind the robot as it moves, represent the 2D Pose Estimate. 
 
     * Navigation Stack Components:  
         * move_base: The main node in the navigation stack that handles goal setting, path planning, and control. 
@@ -33,12 +33,18 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
 
+    * If you examine the recording closely, you'll notice a few green arrows appearing as the robot moves, representing `2D Pose Estimation`, along with a thin green line ahead of the robot, indicating the planned path.  
+
+        <img src = "https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2010_53_42-Media%20Player.jpg" width=500>  
+
+<br>  
+
 * Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`,   
     `Nvidia` GPU, `C++`, `Python 2.7`, `GitHub`, `VS Code`   
 
 * Bash commands to reproduce the results:   
  
-    * Launch `Where Am I`. (These repo includes all the packages for Course 4. However here we only build what we need for Project 3.)  
+    * Launch P3 `Where Am I`, which includes the `udacity_office` world, `my_robot`, `amcl`, `move_base`, and `rviz` nodes. (This repository contains all the packages for Course 4, but here we only build what's necessary for Project 3.)
 
         ```sh
         $ sudo apt-get update
@@ -56,8 +62,6 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         $ rm -rf ~/catkin_tmp/                                   ## ⚠️ delete the workspace
         ```
 
-* Launch `my_robot` and `amcl` nodes in the `udacity_office` world.  
-
     * Tips: 
         1. [The base link name of the robot](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/my_robot/urdf) has to be `base_link`, or warnings will flood the terminal.  
         2. `Shift`+`Ctrl`+`left click`: Move the world along the X and Y axes in `RViz`. 
@@ -69,6 +73,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     &nbsp;  
 
     * Make sure to configure the parameters of [the `amcl`](http://wiki.ros.org/amcl#Parameters), [`move_base`](http://wiki.ros.org/move_base#Parameters) and [`base local planner`](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
+
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
 
