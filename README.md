@@ -44,13 +44,13 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 <br>  
 
-* **Demo 2**: Go the trash bin, a less successful attempt, where occasional `2D Pose Estimate` was used to manually set the current pose  
+* **Demo 2**: Go the trash bin, a less successful attempt, where occasionally `2D Pose Estimate` was used to manually set the current pose  
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_03_2d-pose-estimate.gif?raw=true" width=800>  
 
 <br>  
 
-* **Demo 3**: A less successful attempt, where occasional keyboard control was used to manually get the robot out of a stuck situation
+* **Demo 3**: A less successful attempt, where occasionally keyboard control was used to manually get the robot out of a stuck situation
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
 
