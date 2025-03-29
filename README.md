@@ -22,13 +22,22 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * Launch `my_robot` and `amcl` nodes in the `udacity_office` world. 
 
-    * Tips: The base link name of the robot has to be `base_link`, or warnings will flood the terminal.
+    * Tips: 
+        1. The base link name of the robot has to be `base_link`, or warnings will flood the terminal.  
+        2. `Shift`+`Ctrl`+`left click`: Move the world along the X and Y axes in `RViz`. 
+    
 
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
 
     * Make sure to [configure the `amcl` parameters](http://wiki.ros.org/amcl#Parameters) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
 
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
+
+<br>  
+
+* View the map topic `/move_base/global_costmap/costmap` in RViz. The walls and other obstacles are represented by black pixels, indicating that the cost is extremely high, which causes the path planning to avoid them.
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2020_26_56_move_base-global_costmap-costmap.jpg" width=800>  
 
 
 <br><br><br>  
@@ -619,7 +628,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 * The `bgm_map_creator` package    
 
-    * [Install the package and generate bgm maps](https://github.com/nov05/pgm_map_creator_JZX-MY_20250326).   
+    * [Install the package and generate `.pgm` maps](https://github.com/nov05/pgm_map_creator_JZX-MY_20250326).   
         ```sh
         $ cd ~/catkin_ws2
         ## ⚠️ add plugin to the world file, create launch files accordingly
@@ -628,9 +637,21 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         $ roslaunch pgm_map_creator udacity_office_request_publisher.launch 
         ```
 
-    * [Check the bgm maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps)   
+        If the map is generated successfully, you will see the following messages in the terminal.  
+        ```sh
+        ...
+        Percent complete: 99.5
+        Percent complete: 99.625
+        Percent complete: 99.75
+        Percent complete: 99.875
+        Completed calculations, writing to image
+        running
+        Output location: /home/robond/catkin_ws2/src/pgm_map_creator/maps/map
+        ```
 
-        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400>  
+    * [Check the `.pgm` maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps). You can convert `.pgm` to `.jpg` and edit it then convert it back. For example, I added "doors" to the map of the `udacity_office.world`.      
+
+        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400><img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_pgm_edited.jpg" width=400>    
 
 
 <br><br><br>  
