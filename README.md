@@ -20,7 +20,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
-* Launch `my_robot` and `amcl` nodes in the `udacity_office` world. 
+* Launch `my_robot` and `amcl` nodes in the `udacity_office` world. Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.
 
     * Tips: 
         1. [The base link name of the robot](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/my_robot/urdf) has to be `base_link`, or warnings will flood the terminal.  
@@ -29,7 +29,9 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
 
-    * Make sure to [configure the `amcl` parameters](http://wiki.ros.org/amcl#Parameters) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
+    &nbsp;  
+    
+    * Make sure to [configure the `amcl` parameters](http://wiki.ros.org/amcl#Parameters) and [the `base local planner` parameters](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
 
   <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
 
