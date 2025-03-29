@@ -38,7 +38,13 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_00_find-mars-rover.gif?raw=true" width=800>   
 
-<br>      
+<br>  
+
+* **Demo 2**: Go the trash bin, a less successful attempt, where `2D Pose Estimate` was used to manually set the current pose  
+
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_03_2d-pose-estimate.gif?raw=true" width=800>  
+
+<br>  
 
 * **Demo 3**: A less successful attempt, where keyboard control was used to manually get the robot out of a stuck situation
 
