@@ -21,7 +21,15 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
-* `AMCL` and `move_base` navigation   
+* `AMCL` (Adaptive Monte Carlo Localization) and `move_base` navigation.  
+
+    * Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.  
+
+    * Navigation Stack Components:  
+        * move_base: The main node in the navigation stack that handles goal setting, path planning, and control. 
+        * Global Planner: An algorithm that calculates a path for the robot to follow from its current position to the goal position. 
+        * Local Planner: An algorithm that generates the actual trajectory for the robot to follow, taking into account dynamic obstacles. 
+        * Costmaps: Maps that represent the environment and obstacles, used by the planners. 
 
     <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
 
@@ -48,26 +56,33 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
         $ rm -rf ~/catkin_tmp/                                   ## ⚠️ delete the workspace
         ```
 
-* Launch `my_robot` and `amcl` nodes in the `udacity_office` world. Notice the red arrows around the robots, which are the `Monte Carlo localization` particle filters and are updated as the robot moves and senses its environment, converging towards the actual robot position.
+* Launch `my_robot` and `amcl` nodes in the `udacity_office` world.  
 
     * Tips: 
         1. [The base link name of the robot](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/my_robot/urdf) has to be `base_link`, or warnings will flood the terminal.  
         2. `Shift`+`Ctrl`+`left click`: Move the world along the X and Y axes in `RViz`. 
     
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2002_57_50-Settings.jpg" width=800>  
 
-  <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2013_06_32-amcl.rviz%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>      
 
     &nbsp;  
 
     * Make sure to configure the parameters of [the `amcl`](http://wiki.ros.org/amcl#Parameters), [`move_base`](http://wiki.ros.org/move_base#Parameters) and [`base local planner`](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
 
-  <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
 
 <br>  
 
 * View the map topic `/move_base/global_costmap/costmap` in RViz. The walls and other obstacles are represented by black pixels, indicating that the cost is extremely high, which causes the path planning to avoid them.
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2020_26_56_move_base-global_costmap-costmap.jpg" width=800>  
+
+<br>  
+
+* Check the node graph (`$ rosrun rqtgraph rqtgraph`) and TF tree (`$ rosrun rqt_tf_tree rqt_tf_tree`).   
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2004_03_58-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2004_07_30-rqt_tf_tree__RosTfTree%20-%20rqt%20(Ubuntu-20.04).jpg" width=400>    
 
 
 <br><br><br>  
@@ -682,7 +697,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     * [Check the `.pgm` maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps). You can convert `.pgm` to `.jpg` and edit it then convert it back. For example, I added "doors" to the map of the `udacity_office.world`.      
 
-        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400><img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_pgm_edited.jpg" width=400>    
+        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_pgm_edited.jpg" width=400>    
 
 
 <br><br><br>  
