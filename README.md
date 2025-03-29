@@ -21,6 +21,10 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 # 👉 **Project 3: Localization - Where Am I?**  
 
+* `AMCL` and `move_base` navigation   
+
+    <img src="https://github.com/nov05/pictures/blob/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/p3_amcl_rviz.gif?raw=true" width=800> 
+
 * Environment: `Windows 11`, `WSL2`, `Ubuntu 20.04`, `Gazebo 11` (Classic), `ROS Noetic`,   
     `Nvidia` GPU, `C++`, `Python 2.7`, `GitHub`, `VS Code`   
 
