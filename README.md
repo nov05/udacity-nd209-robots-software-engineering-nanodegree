@@ -15,6 +15,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * Synchronize all the work through GitHub between both environments.    
 * [All the Bash commands](https://github.com/nov05/udacity-nd209-robots-software-engineering-nanodegree/blob/main/docs/robond_notes.md) (to reproduce the projects)  
 * Environment: Windows 11, VS Code, GitHub, WSL2 with Ubuntu 20.04, Gazebo 11, ROS Noetic, C++, Python 2.7
+* [Course content](https://docs.google.com/document/d/1_Db2GAFUqI-keQkRsCEntAGOvuWH1VeEW4K6jkZvGR8)  
 
 
 <br><br><br> 
