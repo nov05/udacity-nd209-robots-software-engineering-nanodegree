@@ -89,7 +89,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     &nbsp;  
 
-    * Make sure to configure the parameters of [the `amcl`](http://wiki.ros.org/amcl#Parameters), [`move_base`](http://wiki.ros.org/move_base#Parameters) and [`base local planner`](http://wiki.ros.org/base_local_planner) properly. Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
+    * Make sure to configure the parameters of [the `amcl`](http://wiki.ros.org/amcl#Parameters), [`move_base`](http://wiki.ros.org/move_base#Parameters) and [`base local planner`](http://wiki.ros.org/base_local_planner) properly.  
+        Check [my `config` folder](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/main/config) for reference.    
 
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-28%2014_05_19-Settings.jpg" width=800>
