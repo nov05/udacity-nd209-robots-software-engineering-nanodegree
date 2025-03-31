@@ -7,6 +7,7 @@ using namespace std;
 // Sensor characteristic: Min and Max ranges of the beams
 double Zmax = 5000, Zmin = 170;
 // Defining free cells(lfree), occupied cells(locc), unknown cells(l0) log odds values
+// For p0 = 0.5, l0 = log(0.5/(1-0.5)) = log(1) = 0
 double l0 = 0, locc = 0.4, lfree = -0.4;
 // Grid dimensions
 double gridWidth = 100, gridHeight = 100;
@@ -14,8 +15,8 @@ double gridWidth = 100, gridHeight = 100;
 double mapWidth = 30000, mapHeight = 15000;
 // Robot size with respect to the map
 double robotXOffset = mapWidth / 5, robotYOffset = mapHeight / 3;
-// Defining an l vector to store the log odds values of each cell
-vector<vector<double>> l(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight));
+// Defining an l vector to store the log odds values of each cell, initialize with l0
+vector<vector<double>> l(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight, l0));
 
 double inverseSensorModel(double x, double y, double theta, double xi, double yi, double sensorData[])
 {
@@ -57,9 +58,11 @@ int main()
     // Scanning the files and retrieving measurement and poses at each timestamp
     while (fscanf(posesFile, "%lf %lf %lf %lf", &timeStamp, &robotX, &robotY, &robotTheta) != EOF)
     {
+        // Read the time stamp of a line
         fscanf(measurementFile, "%lf", &timeStamp);
         for (int i = 0; i < 8; i++)
         {
+            // Read the 8 measurements of a line
             fscanf(measurementFile, "%lf", &measurementData[i]);
         }
         occupancyGridMapping(robotX, robotY, (robotTheta / 10) * (M_PI / 180), measurementData);

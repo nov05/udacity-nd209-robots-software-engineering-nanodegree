@@ -68,3 +68,8 @@ int main()
 
     return 0;
 }
+
+/*
+Expected output: 
+Map: 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 Start: 0 , 0 Goal: 4 , 5 Cost: 1 Robot Movements: ^ , < , v , > Delta: -1 0 0 -1 1 0 0 1
+*/

@@ -66,3 +66,5 @@ int main()
 
     return 0;
 }
+
+// Expected output: [11, 4, 5]

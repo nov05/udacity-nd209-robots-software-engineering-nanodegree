@@ -12,9 +12,6 @@ void sensorFusion(double m1[][mapWidth], double m2[][mapWidth])
     //map in a matrix form:
     //a  b
     //c  d
-
-
-
 }
 
 int main()
@@ -26,3 +23,5 @@ int main()
 
     return 0;
 }
+
+// Expected output: 0.93 0.76 0.46 0.65
