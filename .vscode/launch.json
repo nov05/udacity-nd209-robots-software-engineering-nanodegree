@@ -9,8 +9,10 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",
-            "environment": [],
             "externalConsole": false,
+            // "cwd": "${fileDirname}",
+            // "externalConsole": true,
+            "environment": [],
             "MIMode": "gdb",
             "miDebuggerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gdb.exe",
             "setupCommands": [
@@ -27,8 +29,6 @@
             ],
             "preLaunchTask": "C/C++: gcc.exe build active file"
         },
-
-
         {
             "name": "C/C++: g++.exe build active file with Python2.7",
             "type": "cppdbg",
@@ -38,8 +38,7 @@
             "stopAtEntry": false,
             "cwd": "D:\\Program Files\\msys64\\ucrt64\\bin",
             // "cwd": "D:\\Program Files\\msys64\\mingw64\\bin",
-            "environment": [
-            ],
+            "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "D:\\Program Files\\msys64\\ucrt64\\bin\\gdb.exe",
@@ -58,6 +57,5 @@
             ],
             "preLaunchTask": "C/C++: gcc.exe build active file with Python2.7"
         },
-
     ]
 }

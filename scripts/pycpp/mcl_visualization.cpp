@@ -243,7 +243,7 @@ void visualization(int n, Robot robot, int step, Robot p[], Robot pr[])
 
     // Save/Show the image and close the plot
     // plt::show();  // nov05
-    plt::save("./step" + to_string(step) + ".png");  // nov05
+    plt::save("D:/tmp/step" + to_string(step) + ".png");  // nov05
     plt::clf();
 }
 
@@ -316,11 +316,11 @@ int main()
             p2[i] = p[index];
         }
 
-        visualization(n, my_robot, t, p, p2);
         // if (t == 0 || t == (localization_steps -1) / 2 || t == localization_steps - 1) 
         // {
         //     visualization(n, my_robot, t, p, p2);
         // } 
+        visualization(n, my_robot, t, p, p2);
 
         for (int i = 0; i < n; i++)
         {
