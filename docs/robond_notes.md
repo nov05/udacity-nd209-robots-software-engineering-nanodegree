@@ -370,17 +370,19 @@ $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional,
 * ROS `gmapping`
 
 ```sh
-$ cd ~/catkin_ws2/src
-$ git clone --branch melodic-devel --single-branch https://github.com/ros-perception/slam_gmapping.git
-$ rm -rf ~/catkin_ws2/src/slam_gmapping/.git ~/catkin_ws2/src/slam_gmapping/.gitignore
-$ cd ~/catkin_ws2
-$ catkin_make -DCATKIN_WHITELIST_PACKAGES="slam_gmapping"
-$ source devel/setup.bash
+$ sudo apt-get update && sudo apt-get upgrade -y
+$ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean
+$ sudo apt-get install ros-noetic-slam-gmapping
 ## Launch gmapping
-$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=worlds/willowgarage.world
-$ roslaunch turtlebot_teleop keyboard_teleop.launch
+$ cd catkin_ws2
+$ source devel/setup.bash
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch world_file:=worlds/willowgarage.world
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 $ rosrun gmapping slam_gmapping
 $ rosrun rviz rviz
+## or
+$ roslaunch turtlebot3_slam turtlebot3_gmapping.launch
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch
+$ rqt_image_view /camera/image
 ```
-
 

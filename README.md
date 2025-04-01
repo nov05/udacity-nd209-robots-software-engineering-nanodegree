@@ -146,7 +146,7 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
 <br>  
 
-* Check the node graph (`$ rosrun rqtgraph rqtgraph`) and TF tree (`$ rosrun rqt_tf_tree rqt_tf_tree`).   
+* Check the node graph (`$ rosrun rqt_graph rqt_graph`) and TF tree (`$ rosrun rqt_tf_tree rqt_tf_tree`).   
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2004_03_58-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-03-29%2004_07_30-rqt_tf_tree__RosTfTree%20-%20rqt%20(Ubuntu-20.04).jpg" width=400>    
 
