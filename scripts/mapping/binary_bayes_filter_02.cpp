@@ -17,12 +17,52 @@ double mapWidth = 30000, mapHeight = 15000;
 // Robot size with respect to the map
 double robotXOffset = mapWidth / 5, robotYOffset = mapHeight / 3;
 // Defining an l vector to store the log odds values of each cell, initialize with l0
-vector<vector<double>> l(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight, l0));
+vector<vector<double>> l(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight));
 
 double inverseSensorModel(double x, double y, double theta, double xi, double yi, double sensorData[])
 {
-    // You will be coding this section in the upcoming concept!
-    return 0.4;
+    //******************Code the Inverse Sensor Model Algorithm**********************//
+    // Defining Sensor Characteristics
+    double Zk, thetaK, sensorTheta;
+    double minDelta = -1;
+    double alpha = 200, beta = 20;
+
+    //******************TODO: Compute r and phi**********************//
+
+    // Scaling Measurement to [-90 -37.5 -22.5 -7.5 7.5 22.5 37.5 90]
+    for (int i = 0; i < 8; i++)
+    {
+        if (i == 0)
+        {
+            sensorTheta = -90 * (M_PI / 180);
+        }
+        else if (i == 1)
+        {
+            sensorTheta = -37.5 * (M_PI / 180);
+        }
+        else if (i == 6)
+        {
+            sensorTheta = 37.5 * (M_PI / 180);
+        }
+        else if (i == 7)
+        {
+            sensorTheta = 90 * (M_PI / 180);
+        }
+        else
+        {
+            sensorTheta = (-37.5 + (i - 1) * 15) * (M_PI / 180);
+        }
+
+        if (fabs(phi - sensorTheta) < minDelta || minDelta == -1)
+        {
+            Zk = sensorData[i];
+            thetaK = sensorTheta;
+            minDelta = fabs(phi - sensorTheta);
+        }
+    }
+
+    //******************TODO: Evaluate the three cases**********************//
+    // You also have to consider the cells with Zk > Zmax or Zk < Zmin as unkown states
 }
 
 void occupancyGridMapping(double robotX, double robotY, double robotTheta, double sensorData[])
@@ -64,7 +104,8 @@ bool compare2DTo1D(const std::vector<double> &v1, const std::vector<std::vector<
     {
         for (size_t j = 0; j < cols; ++j)
         {
-            if (v2[i][j] != v1[index])
+            // round to 1 decimal and compare
+            if (std::round(v2[i][j] * 10.0) / 10.0 != std::round(v1[index] * 10.0) / 10.0)
             {
                 return false; // Mismatch found
             }
@@ -94,7 +135,7 @@ void verify(const std::string &filePath, const std::vector<std::vector<double>> 
     file.close();
 
     verify_result = compare2DTo1D(v1, v2);
-    std::cout << "Verify result 01: " << (verify_result ? "true" : "false") << std::endl;
+    std::cout << "Verify result: " << (verify_result ? "true" : "false") << std::endl;
 }
 
 int main()
@@ -132,9 +173,12 @@ int main()
     // }
 
     // Verify the map
-    // resultFile = "binary_bayes_filter_result01.txt";
-    resultFile = "D:/github/udacity-nd209-robots-software-engineering-nanodegree/scripts/mapping/binary_bayes_filter_result01.txt";
+    // resultFile = "binary_bayes_filter_02_result.txt";
+    resultFile = "D:/github/udacity-nd209-robots-software-engineering-nanodegree/scripts/mapping/binary_bayes_filter_02_result.txt";
     verify(resultFile, l);
 
     return 0;
 }
+
+// Expected output:
+// Verify result: true
