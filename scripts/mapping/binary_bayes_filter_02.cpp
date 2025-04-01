@@ -9,6 +9,8 @@ using namespace std;
 double Zmax = 5000, Zmin = 170;
 // Defining free cells(lfree), occupied cells(locc), unknown cells(l0) log odds values
 // For p0 = 0.5, l0 = log(0.5/(1-0.5)) = log(1) = 0
+//     pocc = 0.6, locc = log(0.6/(1-0.6)) = 0.4
+//     pfree = 0.4, lfree = log(0.4/(1-0.4)) = -0.4
 double l0 = 0, locc = 0.4, lfree = -0.4;
 // Grid dimensions
 double gridWidth = 100, gridHeight = 100;
@@ -19,15 +21,17 @@ double robotXOffset = mapWidth / 5, robotYOffset = mapHeight / 3;
 // Defining an l vector to store the log odds values of each cell, initialize with l0
 vector<vector<double>> l(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight));
 
-double inverseSensorModel(double x, double y, double theta, double xi, double yi, double sensorData[])
+double inverseSensorModel(double robotX, double robotY, double theta, double xi, double yi, double sensorData[])
 {
     //******************Code the Inverse Sensor Model Algorithm**********************//
     // Defining Sensor Characteristics
     double Zk, thetaK, sensorTheta;
-    double minDelta = -1;
+    double minDelta = -1; // no value
     double alpha = 200, beta = 20;
 
     //******************TODO: Compute r and phi**********************//
+    double r = sqrt(pow(xi - robotX, 2) + pow(yi - robotY, 2));
+    double phi = atan2(yi - robotY, xi - robotX) - theta;
 
     // Scaling Measurement to [-90 -37.5 -22.5 -7.5 7.5 22.5 37.5 90]
     for (int i = 0; i < 8; i++)
@@ -35,14 +39,6 @@ double inverseSensorModel(double x, double y, double theta, double xi, double yi
         if (i == 0)
         {
             sensorTheta = -90 * (M_PI / 180);
-        }
-        else if (i == 1)
-        {
-            sensorTheta = -37.5 * (M_PI / 180);
-        }
-        else if (i == 6)
-        {
-            sensorTheta = 37.5 * (M_PI / 180);
         }
         else if (i == 7)
         {
@@ -63,6 +59,20 @@ double inverseSensorModel(double x, double y, double theta, double xi, double yi
 
     //******************TODO: Evaluate the three cases**********************//
     // You also have to consider the cells with Zk > Zmax or Zk < Zmin as unkown states
+    if (r > std::min(Zmax, Zk + alpha / 2) || fabs(thetaK - phi) > beta / 2 || Zk > Zmax || Zk < Zmin)
+    {
+        return l0;
+    }
+    else if ((Zk < Zmax) && (fabs(r - Zk) < alpha / 2))
+    {
+        return locc;
+    }
+    else if (r < Zk)
+    {
+        return lfree;
+    }
+    
+    return l0;
 }
 
 void occupancyGridMapping(double robotX, double robotY, double robotTheta, double sensorData[])
@@ -76,8 +86,8 @@ void occupancyGridMapping(double robotX, double robotY, double robotTheta, doubl
     {
         for (int y = 0; y < mapHeight / gridHeight; y++)
         {
-            double xi = x * gridWidth + gridWidth / 2 - robotXOffset;
-            double yi = -(y * gridHeight + gridHeight / 2) + robotYOffset;
+            double xi = (x + 0.5) * gridWidth - robotXOffset;
+            double yi = -(y + 0.5) * gridHeight + robotYOffset;
 
             if (sqrt(pow(xi - robotX, 2) + pow(yi - robotY, 2)) <= Zmax)
             {
