@@ -1,7 +1,7 @@
 ## 👉 Launch the ROS Environment
 
 * `VMWare Workstation Pro` + a image of (`Ubuntu-16.04` + `ROS` + `Gazebo Classic`) or     
-* `WSL2` + `Ubuntu-20.04` + `ROS Noetic` + `Gazebo 11 (Classic)`   
+* ✅ `WSL2` + `Ubuntu-20.04` + `ROS Noetic` + `Gazebo 11 (Classic)`   
   The default user is `robond` (password `robo-nd`).  
 
 ```sh
@@ -359,7 +359,7 @@ $ cd ~/catkin_ws2/src
 $ git clone https://github.com/ros-teleop/teleop_twist_keyboard.git ## ⚠️ skip if clone from the Nov05 repo
 $ rm -rf ~/catkin_ws2/src/teleop_twist_keyboard/.git                ## ⚠️ skip if clone from the Nov05 repo
 $ cd ~/catkin_ws2
-$ catkin_make
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="teleop_twist_keyboard"
 $ source devel/setup.bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch               ## verify "turtlebot3"
 $ roslaunch my_robot udacity_office_ball_chaser.launch              ## verify "ball chaser" 
@@ -367,5 +367,20 @@ $ roslaunch main udacity_office_amcl.launch                         ## P3 "Where
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional, keyboard control              
 ```
 
+* ROS `gmapping`
+
+```sh
+$ cd ~/catkin_ws2/src
+$ git clone --branch melodic-devel --single-branch https://github.com/ros-perception/slam_gmapping.git
+$ rm -rf ~/catkin_ws2/src/slam_gmapping/.git ~/catkin_ws2/src/slam_gmapping/.gitignore
+$ cd ~/catkin_ws2
+$ catkin_make -DCATKIN_WHITELIST_PACKAGES="slam_gmapping"
+$ source devel/setup.bash
+## Launch gmapping
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=worlds/willowgarage.world
+$ roslaunch turtlebot_teleop keyboard_teleop.launch
+$ rosrun gmapping slam_gmapping
+$ rosrun rviz rviz
+```
 
 

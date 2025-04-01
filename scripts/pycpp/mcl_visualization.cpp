@@ -343,4 +343,5 @@ int main()
 // $env:PYTHONPATH="D:\Users\guido\miniconda3\envs\robond_py27\Lib"
 //
 // In VS Code, choose menu "View -> Open View... -> Run and Debug" (Ctrl+Shift+D)
-// Select the self-defined profile in .vscode for this C++ script
+// Select the self-defined configuration in .vscode/launch.json for this C++ script
+// In my case, "C/C++: g++.exe build active file with Python2.7"
