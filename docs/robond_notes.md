@@ -376,13 +376,13 @@ $ sudo apt-get install ros-noetic-slam-gmapping
 ## Launch gmapping
 $ cd catkin_ws2
 $ source devel/setup.bash
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch world_file:=worlds/willowgarage.world
-$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-$ rosrun gmapping slam_gmapping
-$ rosrun rviz rviz
-## or
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  ## optional, keyboard control
+# $ export TURTLEBOT3_MODEL=burger  ## ⚠️ Or add config yaml files for burger_for_autorace
+$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch 
 $ roslaunch turtlebot3_slam turtlebot3_gmapping.launch
-$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch
-$ rqt_image_view /camera/image
+# $ rosrun gmapping slam_gmapping
+# $ rqt_image_view /camera/image
+# $ rosrun rviz rviz 
 ```
 
