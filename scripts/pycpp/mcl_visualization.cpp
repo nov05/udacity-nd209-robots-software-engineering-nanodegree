@@ -336,3 +336,11 @@ int main()
 
     return 0;
 }
+
+// In a PowerShell terminal:
+// conda activate robond_py27
+// $env:PYTHONHOME="D:\Users\guido\miniconda3\envs\robond_py27"
+// $env:PYTHONPATH="D:\Users\guido\miniconda3\envs\robond_py27\Lib"
+//
+// In VS Code, choose menu "View -> Open View... -> Run and Debug" (Ctrl+Shift+D)
+// Select the self-defined profile in .vscode for this C++ script

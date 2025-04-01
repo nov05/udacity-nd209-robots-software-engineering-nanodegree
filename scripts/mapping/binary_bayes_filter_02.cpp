@@ -130,6 +130,7 @@ void verify(const std::string &filePath, const std::vector<std::vector<double>> 
 {
     bool verify_result;
     std::vector<double> v1;
+    
     std::ifstream file(filePath);
 
     if (!file.is_open())
