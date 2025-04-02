@@ -376,6 +376,7 @@ $ sudo apt-get install ros-noetic-slam-gmapping
 $ cd catkin_ws2
 $ source devel/setup.bash     
 ## ⚠️ Add config yaml files for burger_for_autorace
+$ export TURTLEBOT3_MODEL=burger_for_autorace
 $ roslaunch main turtlebot3_navigation.launch                 ## Turtlebot3 world
 $ roslaunch main turtlebot3_udacity_amcl.launch               ## Turtlebot3 in Udacity office
 # $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  ## optional, keyboard control
