@@ -777,11 +777,19 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     # $ rosrun gmapping slam_gmapping                             ## or run this
     $ rosrun map_server map_saver -f ~/catkin_ws2/src/main/maps/map
     ```
+     
+     * Check the files that launches [a TurtleBot3 in the TurtleBot3 `world`](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/main/launch/turtlebot3_navigation.launch) and [in the `udacity_office`](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/main/launch/turtlebot3_udacity_amcl.launch).  
+     * To enable the camera for the robot model `burger`, `$ export TURTLEBOT3_MODEL=burger_for_autorace` and add AMCL parameter files.  
+        * [turtlebot3/turtlebot3_navigation/param/costmap_common_params_burger_for_autorace.yaml](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/turtlebot3/turtlebot3_navigation/param/costmap_common_params_burger_for_autorace.yaml)  
+        * [turtlebot3/turtlebot3_navigation/param/dwa_local_planner_params_burger_for_autorace.yaml](https://github.com/nov05/udacity-RoboND-p3-src2/blob/main/turtlebot3/turtlebot3_navigation/param/dwa_local_planner_params_burger_for_autorace.yaml)     
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-04-02%2001_03_52-%5BWARN_COPY%20MODE%5D%20turtlebot3_navigation.rviz_%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>   
 
     <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250402_udacity_slam_gmapping.jpg" width=800>
 
+    * `TurtleBot3` ROS grpsh and TF tree  
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-04-02%2009_11_31-rqt_graph__RosGraph%20-%20rqt%20(Ubuntu-20.04).jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-04-02%2009_14_15-rqt_tf_tree__RosTfTree%20-%20rqt%20(Ubuntu-20.04).jpg" width=400>  
 <br><br><br>  
 
 # 👉 **Tips**
