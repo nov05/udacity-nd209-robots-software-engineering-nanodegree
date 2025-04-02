@@ -763,8 +763,24 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
 
     * [Check the `.pgm` maps](https://github.com/nov05/udacity-RoboND-p3-src2/tree/main/pgm_map_creator/maps). You can convert `.pgm` to `.jpg` and edit it then convert it back. For example, I added "doors" to the map of the `udacity_office.world`.      
 
-        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_bgm.jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/pgm_map_creator/maps/20250326_udacity_office_pgm_edited.jpg" width=400>    
+        <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/main/maps/20250326_udacity_office.jpg" width=400> <img src="https://raw.githubusercontent.com/nov05/udacity-RoboND-p3-src2/refs/heads/main/main/maps/20250326_udacity_office_edited.jpg" width=400>    
 
+### 🏷️ **Course 5 Mapping and SLAM**  
+
+* `ros-noetic-slam-gmapping`  
+
+    ```sh
+    $ roslaunch main turtlebot3_navigation.launch                 ## Turtlebot3 world
+    $ roslaunch main turtlebot3_udacity_amcl.launch               ## Turtlebot3 in Udacity office
+    # $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  ## optional, keyboard control
+    $ roslaunch turtlebot3_slam turtlebot3_gmapping.launch        ## SLAM gmapping
+    # $ rosrun gmapping slam_gmapping                             ## or run this
+    $ rosrun map_server map_saver -f ~/catkin_ws2/src/main/maps/map
+    ```
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/2025-04-02%2001_03_52-%5BWARN_COPY%20MODE%5D%20turtlebot3_navigation.rviz_%20-%20RViz%20(Ubuntu-20.04).jpg" width=800>   
+
+    <img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/Udacity/20250213_nd209_udacity_robotics_nanodegree/20250402_udacity_slam_gmapping.jpg" width=800>
 
 <br><br><br>  
 

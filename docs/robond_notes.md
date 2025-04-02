@@ -347,8 +347,8 @@ $ cp ~/catkin_ws/src/my_robot/worlds/udacity_office.world ~/catkin_ws2/src/pgm_m
 $ gzserver src/pgm_map_creator/worlds/udacity_office.world          ## no Gazebo GUI
 ## or $ roslaunch pgm_map_creator open_world_udacity_office.launch  ## Gazebo GUI
 $ roslaunch pgm_map_creator request_publisher_udacity_office.launch  
-$ mv map.pgm udacity_office.pgm                                     ## rename the file   
-$ gedit ~/catkin_ws2/src/pgm_map_creator/maps/udacity_office.yaml
+$ mv map.pgm ~/catkin_ws2/src/main/maps/udacity_office.pgm          ## rename and move the file   
+$ gedit ~/catkin_ws2/src/main/maps/udacity_office.yaml              ## create map yaml file
 ```  
 
 * AMCL, pakcage `teleop_twist_keyboard`, P3 `Where Am I?`
@@ -373,16 +373,14 @@ $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional,
 $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean
 $ sudo apt-get install ros-noetic-slam-gmapping
-## Launch gmapping
 $ cd catkin_ws2
-$ source devel/setup.bash
-$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
-$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  ## optional, keyboard control
-# $ export TURTLEBOT3_MODEL=burger  ## ⚠️ Or add config yaml files for burger_for_autorace
-$ roslaunch turtlebot3_navigation turtlebot3_navigation.launch 
-$ roslaunch turtlebot3_slam turtlebot3_gmapping.launch
+$ source devel/setup.bash     
+## ⚠️ Add config yaml files for burger_for_autorace
+$ roslaunch main turtlebot3_navigation.launch                 ## Turtlebot3 world
+$ roslaunch main turtlebot3_udacity_amcl.launch               ## Turtlebot3 in Udacity office
+# $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  ## optional, keyboard control
+$ roslaunch turtlebot3_slam turtlebot3_gmapping.launch        ## SLAM gmapping
 # $ rosrun gmapping slam_gmapping
-# $ rqt_image_view /camera/image
-# $ rosrun rviz rviz 
+$ rosrun map_server map_saver -f ~/catkin_ws2/src/main/maps/map
 ```
 
