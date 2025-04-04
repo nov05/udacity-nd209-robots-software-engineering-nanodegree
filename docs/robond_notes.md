@@ -21,6 +21,13 @@ $ sudo su -
 $ sudo mv /root/.bashrc.bak /root/.bashrc
 ```
 
+* ROS package path
+
+```sh
+$ echo $ROS_PACKAGE_PATH
+## /home/robond/catkin_ws3/src:/home/robond/catkin_ws2/src:/home/robond/catkin_ws/src:/opt/ros/noetic/share
+```
+
 ## 👉 Course 2 Gazebo World, P1 Build A World (without ROS)
 
 ```sh
@@ -371,8 +378,8 @@ $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py             ## optional,
 
 ```sh
 $ sudo apt-get update && sudo apt-get upgrade -y
-$ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean
 $ sudo apt-get install ros-noetic-slam-gmapping
+$ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean
 $ cd catkin_ws2
 $ source devel/setup.bash     
 ## ⚠️ Add config yaml files for burger_for_autorace
@@ -385,3 +392,33 @@ $ roslaunch turtlebot3_slam turtlebot3_gmapping.launch        ## SLAM gmapping
 $ rosrun map_server map_saver -f ~/catkin_ws2/src/main/maps/map
 ```
 
+## 👉 **Course 5 Mapping and SLAM, Project 4 Map The World**  
+
+```sh
+## Create GitHub repo udacity-robond-p4-src
+$ git clone https://<UserID>:<PAT>@github.com/nov05/udacity-robond-p4-src.git ~/catkin_ws3/src
+$ cd catkin_ws3/src
+$ catkin_init_workspace
+$ cd ~/catkin_ws3
+$ catkin_make
+$ echo "source ~/catkin_ws3/devel/setup.bash" >> ~/.bashrc    ## or $ gedit ~/.bashrc
+$ source ~/.bashrc
+$ echo $ROS_PACKAGE_PATH  ## verify the path
+```
+
+ * ROS package `rtabmap_ros`  
+
+```sh
+$ sudo apt-get update && sudo apt-get upgrade -y
+$ sudo apt install ros-noetic-rtabmap-ros  
+$ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean 
+$ roslaunch my_robot udacity_office.launch  ## verify my_robot
+$ catkin_create_pkg main  ## launch, rviz, etc.
+$ catkin_make
+$ source devel/setup.bash
+$ roslaunch rtabmap_demos demo_robot_mapping.launch localization:=true  ## demo
+$ rosbag play --clock demo_mapping.bag                                  ## demo
+## $ cat /opt/ros/noetic/share/rtabmap_launch/launch/rtabmap.launch
+$ roslaunch main udacity_office_rtabmap.launch
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py  ## keyboard control
+ ```
