@@ -413,7 +413,7 @@ $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt install ros-noetic-rtabmap-ros  
 $ sudo apt-get autoremove -y && sudo apt-get autoclean && sudo apt-get clean 
 $ roslaunch my_robot udacity_office.launch  ## verify my_robot
-$ catkin_create_pkg main  ## launch, rviz, etc.
+$ catkin_create_pkg main  ## for folders such as launch, rviz, etc.
 $ catkin_make
 $ source devel/setup.bash
 $ roslaunch rtabmap_demos demo_robot_mapping.launch localization:=true  ## demo
