@@ -7,7 +7,8 @@ Fuse computer vision, machine learning, mechanics, and hardware systems to build
     * https://github.com/nov05/udacity-RoboND-myrobot (Course 2, Project 1, as `~/myrobot` in VM) 
     * https://github.com/nov05/udacity-RoboND-simple_arm (Course 3, as `~/catkin_ws/src/simple_arm` in VM) 
     * https://github.com/nov05/udacity-RoboND-p2-src (Course 3, Project 2, as `~/catkin_ws/src` in VM)  
-    * https://github.com/nov05/udacity-RoboND-p3-src2 (Course 4, Proejct 3, as `~/catkin_ws2/src` in VM)
+    * https://github.com/nov05/udacity-RoboND-p3-src2 (Course 4, Project 3, as `~/catkin_ws2/src` in VM)  
+    * https://github.com/nov05/udacity-robond-p4-src (Course 5, Project 4, as `~/catkin_ws3/src` in VM)
 * Workflow: 
     * Create repositories on **GitHub**.  
     * Download them to both the virtual machine and the local computer.   
